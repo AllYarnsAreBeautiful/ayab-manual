@@ -1,17 +1,5 @@
-# Welcome to MkDocs
+![AYAB Logo](../img/ayab_logo.jpg)
 
-For full documentation visit [mkdocs.org](https://mkdocs.org).
+Information about the AYAB project can be found at [ayab-knitting.com](http://ayab-knitting.com).
 
-## Commands
-
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs help` - Print this help message.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+The code for the AYAB project is hosted on [GitHub](https://github.com/AllYarnsAreBeautiful).

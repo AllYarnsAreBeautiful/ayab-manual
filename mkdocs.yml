@@ -1,3 +1,16 @@
-site_name: AYAB Documentation
+site_name: AYAB Manual
+theme: readthedocs
+repo_url: https://github.com/AllYarnsAreBeautiful/ayab-manual
+extra:
+  version: 0.95
 nav:
   - Home: index.md
+  - Installation:
+    - Hardware: installation/hardware.md
+    - Software: installation/software.md
+  - Graphical User Interface: gui.md
+  - How To Knit:
+    - Basics: how_to_knit/basics.md
+  - Frequently Asked Questions: faq.md
+  - Development:
+    - Connectors: development/connectors.md
