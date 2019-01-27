@@ -10,7 +10,8 @@ nav:
     - Software: installation/software.md
   - Graphical User Interface: gui.md
   - How To Knit:
-    - Basics: how_to_knit/basics.md
+#    - Basics: how_to_knit/basics.md
+    - Double Bed Jaquard (2-color): how_to_knit/dbj_2-color.md
     - Circular Knitting: how_to_knit/circular_knitting.md
   - Frequently Asked Questions: faq.md
   - Development:
