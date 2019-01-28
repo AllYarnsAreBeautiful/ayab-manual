@@ -68,6 +68,14 @@
             
     <li class="toctree-l3"><a href="#linux">Linux</a></li>
     
+        <ul>
+        
+            <li><a class="toctree-l4" href="#prerequisites">Prerequisites</a></li>
+        
+            <li><a class="toctree-l4" href="#installation">Installation</a></li>
+        
+        </ul>
+    
 
     <li class="toctree-l3"><a href="#windows">Windows</a></li>
     
@@ -156,9 +164,44 @@
             <div class="section">
               
                 <h1 id="linux">Linux</h1>
-<p>Copy information from the ayab-desktop README.md</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>You need Python 3.5 and from your package manager's repository.
+The other main dependencies can be found in requirements.txt</p>
+<p><em>For Debian/Ubuntu</em></p>
+<pre><code>sudo apt-get install python3-pip python3-dev python3-virtualenv python3-gi
+</code></pre>
+<p><em>For openSUSE</em></p>
+<pre><code>sudo zypper install python3-pip python3-virtualenv python3-gi
+</code></pre>
+<p><em>All Distributions</em></p>
+<p>To be able to communicate with your Arduino, it might be necessary to add the rights for USB communication by adding your user to some groups.</p>
+<pre><code>sudo usermod -a -G tty [userName]
+sudo usermod -a -G dialout [userName]
+</code></pre>
+<h2 id="installation">Installation</h2>
+<p>Checkout the git repository</p>
+<pre><code>git clone https://github.com/AllYarnsAreBeautiful/ayab-desktop
+</code></pre>
+<p>Create a virtual enviroment in the cloned repository</p>
+<pre><code>cd ayab-desktop
+virtualenv -p python3 --system-site-packages venv/
+source venv/bin/activate
+pip3 install -r requirements.txt
+</code></pre>
+<p>Now start ayab with</p>
+<pre><code>python3 -m fbs run
+</code></pre>
 <h1 id="windows">Windows</h1>
+<p>The Windows version which is available at <a href="https://ayab-knitting.com">ayab-knitting.com</a> has been packed with
+PyInstaller and should not require any additional dependencies.
+Just unzip the archive or use the Installer and run</p>
+<pre><code>C:\AYAB\AYAB.exe
+</code></pre>
 <h1 id="macos">macOS</h1>
+<p>Download the DMG image from <a href="https://ayab-knitting.com">ayab-knitting.com</a>, open the DMG image and copy the app to your Application folder.
+Then just run</p>
+<pre><code>AYAB
+</code></pre>
               
             </div>
           </div>
