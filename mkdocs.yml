@@ -12,6 +12,8 @@ nav:
   - How To Knit:
 #    - Basics: how_to_knit/basics.md
     - Double Bed Jaquard (2-color): how_to_knit/dbj_2-color.md
+    - Middle-Color-Twice: how_to_knit/dbj_middle-color-twice.md
+    - Heart of Pluto: how_to_knit/dbj_heart-of-pluto.md
     - Circular Knitting: how_to_knit/circular_knitting.md
   - Frequently Asked Questions: faq.md
   - Development:
