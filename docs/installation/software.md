@@ -39,15 +39,25 @@ Now start ayab with
 
 # Windows
 
-The Windows version which is available at [ayab-knitting.com](https://ayab-knitting.com) has been packed with
-PyInstaller and should not require any additional dependencies.
-Just unzip the archive or use the Installer and run
+Requires Windows 10 or Windows 7
 
-    C:\AYAB\AYAB.exe
+The Windows setup is available at 
+[ayab-knitting.com](https://ayab-knitting.com/ayab-software/).  
+Run the setup, install AYAB and run it with the icon on your Desktop.
+
+Important:
+
+- When choosing the installation directory, make sure that you do not overwrite any previous versions. Remove them or use another folder for installation.
+- Currently, no spaces in the installation path are allowed.
 
 # macOS
 
-Download the DMG image from [ayab-knitting.com](https://ayab-knitting.com), open the DMG image and copy the app to your Application folder.
-Then just run
+Requires macOS 10.12 or newer
 
-    AYAB
+Download the DMG image from [ayab-knitting.com](https://ayab-knitting.com/ayab-software/), open the DMG image and drag&drop the app to your Application folder.
+Then run AYAB from your Application folder.
+
+Important:
+
+- In case macOS tells you the application can't be opened because it's from
+  an unidentified developer, just Ctrl+Click it and choose "Open".
