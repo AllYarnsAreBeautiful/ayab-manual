@@ -4,9 +4,11 @@
 Instructions for 2-color Double Bed Jacquard
 (AYAB’s “Ribber” setting.)
 
-DBJ is known in Brother manuals as Multi-Colour Rib. See page 38 of the KR850
-ribber manual (the penguins) and page 11 of the manual for the KRC-900 color
-changer.  
+DBJ (more specifically: Rib Jacquard with birds-eye backing, see David J. 
+Spencer, Knitting Technology: A Comprehensive Handbook and Practical Guide, 3rd 
+ed., 2001, pp. 107ff.) is known in Brother manuals as Multi-Colour Rib. 
+See page 38 of the [KR850 ribber manual](http://machineknittingetc.com/brother-kr850-ribber-user-guide.html) (the penguins) 
+and page 11 of the [manual for the KRC-900 color changer](http://machineknittingetc.com/brother-krc900-double-bed-color-changer-user-guide.html).  
 Note that DBJ in 3 or more colors has some differences, though the basic
 instructions are the same.
 
@@ -36,14 +38,16 @@ it’s doing.
 
 # Instructions
 
-- Set up the color changer with the black yarn; the white slot is open ready to
-  accept the yarn after the cast on.  
+- Set up the color changer with the black yarn (foreground color); the white slot 
+  (background color) is open ready to accept the yarn after the cast on.  
 - You might need the fine knit bar. Try it if your stitches sometimes tuck
-  instead of knitting off.  
-- On the ribber, set P-H lever to H, Rack=5
+  instead of knitting off. 
+- On the ribber, set half-pitch lever to H (P-H lever=H, see KR850 manual, page 13), 
+- On the ribber, set racking grip handle to 5 (Rack=5, KR850 manual p.13)
+- set bracket lever to the normal (highest) position (KR850 manual, p.14)
 - Needles L30-R30 on both beds for our first Triangles sample
 - Make sure you have an even number of stitches on the ribber.
-- Cast on in white in FNR (Full Needle Rib) as shown on page 26 of the KR850 manual.
+- Cast on in white in FNR (Full Needle Rib) as shown on pages 26-28 of the KR850 manual.
 - Knit one or two rows of FNR.
 - Carriage on left, outside the left turn mark.
 - Set the row counter, RC=000
@@ -58,7 +62,7 @@ it’s doing.
 - Open a black/white image in AYAB. It must be at least as wide as the needles
   you are using.
 - Set AYAB to 2-color, start at row 1, Infinite Repeat, start/stop needles 30/30,
-  Ribber, Center.
+  Ribber ("Ribber: Classic" for AYAB v0.95), Center.
 - Configure
 - Knit
 - Press the color changer button for the black yarn
@@ -88,7 +92,25 @@ After about 10 rows (20 passes), stop with the carriage on the right and check:
 
 Then check again after several inches have been knit, by now you may be able to
 put a mirror underneath and check that the pattern you want is appearing on the
-work on the side away from you, and birdseye stripes on the side facing you.
+work on the side away from you, and birds-eye stripes on the side facing you.
+
+For finalizing the knit, you may want to add 1-2 rows of FNR (KR850 
+manual, p. 28). Binding off (casting off) is described on page 53 of the KR850 manual. 
+An alternative method ("Das Abketten II") is translated as follows: 
+Transfer all stitches to the rear needle bed [to the needle bed  of the KH 910 
+(KR850 manual, p.52)] and immediately set the empty needles of the KR 850 
+ribber back to the B-position.
+At the K carriage of the KH 910, set the tension dial 4 steps higher [to 7]. 
+The tension dial of the KR 850 ribber carriage remains unchanged. Move the 
+carriage from left to right. On the needles of the KR 850 ribber, stitches have 
+formed around the previously empty needles. Disconnect the carriages 
+[(KR850 manual, p. 15)] and move the KR 850 ribber carriage from right to left. 
+Thereby, the stitches are removed from the needles of the KR 850 ribber. Now, 
+lower the KR 850 ribber [to the lowest position (KR850 manual, p. 14)]. 
+Set the needles of the KH 910 needle bed to the E-position. Remove the weights 
+and the comb, then proceed by binding off as described on page 22 or 
+pages 111-114 of the 
+[KH910 manual](http://machineknittingetc.com/brother-kh910-user-guide.html).
 
 # More description on how 2-color DBJ works
 
@@ -183,6 +205,7 @@ is counted as the last pass of the previous set.
 
     ![ ](img/dbj_2-color/DSCF0020.JPG)
 
-This article is copied from [ravelry](https://www.ravelry.com/discuss/ayab/3714047/1-25).
+This article is copied from [ravelry](https://www.ravelry.com/discuss/ayab/3714047/1-25) 
+and modified by [DerAndere](https://it-by-derandere.blogspot.com/p/blog-page_46.html).
 Thanks, Adrienne!  
 [Feel free to improve it!](https://github.com/AllYarnsAreBeautiful/ayab-manual)
