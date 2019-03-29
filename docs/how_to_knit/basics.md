@@ -2,7 +2,7 @@
 ## Single Bed Fair Isle
 For your first practice piece, load a test pattern such as:
 
-![Alt Image Text](/Users/adriennehunter/Documents/AYAB/patterns/triangles_60x10.png "Triangles")
+![triangles_60x10.png](img/dbj_2-color/triangles_60x10.png)
 
 1. Cast on using needles Left30 - Right30 and knit a few rows of stockinette, ending on the left 
    ([KH910 manual](http://machineknittingetc.com/brother-kh910-user-guide.html), pp. 10-15, 18-21).
