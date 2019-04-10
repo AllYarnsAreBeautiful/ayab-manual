@@ -1,14 +1,14 @@
 
 ## Create a pattern
 
-Create an image with a width of 200 pixels or less with indexed colours. For two 
+Create an image with a width of 200 pixels or less with indexed colors. For two 
 color knitwork, choose monochromatic: black and white (1 bit) with each pixel 
-representing a stitch. Save in the bitmap format. 
+representing a stitch. Save in the PNG format. 
 The following instructions show how to achieve this using the free open source 
 software GIMP 2.10.10 (or newer): 
 
 
-## Using GIMP to create patterns and save as bitmap file
+## Using GIMP to create patterns and save as PNG file
 
 1. Download GIMP 2.10.10 (or newer) from [the GIMP homepage](https://www.gimp.org/downloads/) 
    and install it.
@@ -30,8 +30,10 @@ software GIMP 2.10.10 (or newer):
    (foreground) is represented by black pixels. 
 10. In GIMP, left-click File -> "Export as". In the "Export Image" dialog that 
    pops up, type in a file name and select the target directory, then 
-   left-click "Select File Type (By Extension)" -> "Windows BMP image (.bmp)", 
-   then left-click "Export". 
+   left-click "Select File Type (By Extension)" -> "PNG (.PNG)", 
+   then left-click "Export". In the "Export as PNG" dialog that pops up, you can 
+   keep Compression level = 9 and optionally deselect all other options, then 
+   left-click "Export" at the bottom of that dialog.
 11. You can close GIMP now.
 
 

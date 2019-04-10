@@ -17,8 +17,8 @@ in the US, Woollike yarn works well.).
 1. Cast on using needles Left30 - Right30 and knit a few rows of stockinette, ending on the left 
    ([KH910 manual](http://machineknittingetc.com/brother-kh910-user-guide.html), pp. 10-15, 18-21).
 2. Position the carriage so that the magnet on the center back of the carriage is outside the left turn mark.
-3. Run the AYAB software. Open a black/white image (1bit bitmap) in AYAB. It 
-   must be at least as wide as the needles you are using.
+3. Run the AYAB software. Open a black/white raster image (preferrably in .PNG file format) in AYAB. 
+   It must be at least as wide as the needles you are using.
 4. In the AYAB software, leave all the settings as they are: 
    Single Bed, Color 2, Start Row 1, Start Needle 30, Stop Needle 30, Alignment Center.   
 5. Click Configure, wait a moment.

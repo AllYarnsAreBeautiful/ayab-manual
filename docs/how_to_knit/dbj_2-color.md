@@ -22,7 +22,7 @@ AYAB takes care of the colors for you, you just give it a black-and-white
 pattern as if you are going to do single bed Fair Isle. To create your own patterns,
 refer to the AYAB manual, section "pattern_image_creation". Make sure the 
 width of the pattern has an even number of pixels (=stitches).  
-Use thin yarns, you’ll be using side-by-side needles on both beds. (for those
+Use thin yarns, you'll be using side-by-side needles on both beds. (for those
 in the US, Woollike yarn works well.)  
 For your first practice sample, use this Triangles image that also comes with
 AYAB 0.9, find it in Documents>AYAB>patterns.
@@ -36,7 +36,7 @@ which looks like this:
 The useful thing about this Triangles pattern is that row 1 selects 1 black
 needle per triangle, row 2 selects groups of 2, row 3 groups of 3 etc.
 If you watch the needle selection carefully you’ll start to understand what
-it’s doing.
+it's doing.
 
 # Instructions
 - Set up the ribber (KR850 manual, pages 3-7)
@@ -73,7 +73,7 @@ it’s doing.
 - Bring the carriage out past the turn mark and stop to wait for the triple-beep
   as usual, just on this first row.
 - Also check that the black yarn is in the feeder, and if this is its first row,
-  check that the yarn end is hanging straight down and isn’t caught anywhere.
+  check that the yarn end is hanging straight down and isn't caught anywhere.
 - Knit across, wait for the beep.
 - Knit back and into the color changer, the beep happens as you do so.
 - Press the button to change to white.
@@ -81,7 +81,7 @@ it’s doing.
 - Knit back and into the color changer, the beep happens as you do so.
 - Press the button to change to black
 
-That’s it, repeat: Knit across, knit back, change color.  
+That's it, repeat: Knit across, knit back, change color.  
 After the first set AYAB will have counted up two rows and be starting row 3,
 the row counter will show 4 passes.
 
@@ -91,7 +91,7 @@ After about 10 rows (20 passes), stop with the carriage on the right and check:
 - make sure the ribber weights and comb are not caught on anything underneath
 - feel along the knitting on both sides from underneath, you may be able to tell
   if a loop is caught around a gate peg.
-- hang the “sevens” wires and weights if the edge stitches are having trouble
+- hang the "sevens" wires and weights if the edge stitches are having trouble
   knitting off.
 
 Then check again after several inches have been knit, by now you may be able to
@@ -118,13 +118,13 @@ pages 111-114 of the
 
 # More description on how 2-color DBJ works
 
-In our Triangles sample with Infinite Repeat on, let’s stop and observe, with
+In our Triangles sample with Infinite Repeat on, let's stop and observe, with
 the carriage on the left at the beginning of row 1 of its cycle of ten rows. We
 have just changed to the black yarn ready for the next row 1 as displayed in AYAB.  
-Remember that AYAB’s row numbering focuses on what’s being _selected_ not what’s
+Remember that AYAB's row numbering focuses on what’s being _selected_ not what’s
 being knitted.
 
-Notice that what’s selected now is the last set of 10 black needles to complete
+Notice that what's selected now is the last set of 10 black needles to complete
 the previous triangle.  
 Knit across from left-right.  
 It has completed knitting the previous triangle, and has selected sets of 1
@@ -147,7 +147,7 @@ Pass 4: White yarn, knit the selected needles, select for the black stitches of
 row 2 of this set.  
 Change color to black.
 
-Notice that the selection is an “ABBA” sequence. Black, white, white, black;
+Notice that the selection is an "ABBA" sequence. Black, white, white, black;
 repeat.
 
 Each set of four passes does the selections for two rows of the pattern. But the
@@ -155,9 +155,9 @@ set is not completely self-contained, its first pass completes the knitting of
 the previous set, and its fourth pass does a selection which will be knitted in
 the first pass of the next set of four passes.
 
-You’ll see discussions about Brother 2-color DBJ needing to start by selecting
+You'll see discussions about Brother 2-color DBJ needing to start by selecting
 from the right, so how does that square with AYAB always starting from the left?
-I think it’s just an alternative way of thinking about how 2-color DBJ works.  
+I think it's just an alternative way of thinking about how 2-color DBJ works.  
 In the AYAB context where everything starts from the left, each set of 4 passes
 has provided the selection for the next set during its last right-left pass. So
 in a sense the first selection of the set did start on the right; in AYAB that
@@ -174,18 +174,18 @@ is counted as the last pass of the previous set.
 - AYAB 0.9 and earlier expect the black yarn first. The more usual convention is
   to do the white first, more intuitive. That will likely be changed in a future
   release of AYAB; for now the instructions describe black first. Otherwise
-  2-color DBJ works well as it is, doesn’t particularly need any code changes.
+  2-color DBJ works well as it is, doesn't particularly need any code changes.
 
-- You might be wondering what happens on the very first pass. There’s nothing
+- You might be wondering what happens on the very first pass. There's nothing
   pre-selected on the main bed, so it only knits on the ribber (alternating
   needles because of the lili settings) while selecting for the first black
-  pattern stitches. Technically I think that means that there’s an extra ribber
+  pattern stitches. Technically I think that means that there's an extra ribber
   row at the beginning, but it gets absorbed into the backing pattern and is not
   noticeable. In subsequent first passes of the cycle of 4 passes/2 rows, it has
   been provided with selected needles to knit in black.
 
 - How do you end your pattern on exactly the right row at the end of a repeat?
-  In Infinite Repeat you’ll need to do one or two passes of the next cycle, but
+  In Infinite Repeat you'll need to do one or two passes of the next cycle, but
   cancelling any selection on the second pass. In non-repeating, the long beep
   sounds after it has _selected_ for the last row. Knit one or two more passes.
 
@@ -195,15 +195,15 @@ is counted as the last pass of the previous set.
   number on the ribber, your main bed will need on odd number of stitches.
 
 - Doing some FNR after the cast-on and before starting the pattern can make a
-  wavy edge. With careful management, it’s possible to use the last circular row
+  wavy edge. With careful management, it's possible to use the last circular row
   of your cast-on as the first (setup) row of your pattern.
 
-- Sometimes you want DBJ all in one color. Just make an image that’s all white
+- Sometimes you want DBJ all in one color. Just make an image that's all white
   or all black, no color-changing needed.
 
-- Some of Brother’s DBJ instructions claim that the extra “latch plate” to add
+- Some of Brother's DBJ instructions claim that the extra "latch plate" to add
   to the ribber connector arm is required. See page 49 of the 930/940 manual.
-  Not so, it’s optional. In fact when I tried it it seemed to make things worse,
+  Not so, it's optional. In fact when I tried it it seemed to make things worse,
   the color change was less reliable. (Latch plate is misspelled as Clatch Plate
   in the 930/940 manual.)  
 
