@@ -1,22 +1,35 @@
 
 ## Single Bed Fair Isle
-For your first practice piece, load a test pattern such as:
+
+To create your own patterns, refer to the AYAB manual, section "pattern_image_creation". Make sure the 
+width of the pattern has an even number of pixels (=stitches).  
+
+For your first practice sample, use this Triangles image that also comes with
+AYAB 0.9, find it in Documents>AYAB>patterns
 
 ![triangles_60x10.png](img/dbj_2-color/triangles_60x10.png)
+
+To create your own patterns, refer to the AYAB manual, section "pattern_image_creation". 
+Use thin yarns, you'll be using side-by-side needles on both beds. (for those
+in the US, Woollike yarn works well.). 
+ 
 
 1. Cast on using needles Left30 - Right30 and knit a few rows of stockinette, ending on the left 
    ([KH910 manual](http://machineknittingetc.com/brother-kh910-user-guide.html), pp. 10-15, 18-21).
 2. Position the carriage so that the magnet on the center back of the carriage is outside the left turn mark.
-3. Leave all the settings as they are. Single Bed, Color 2, Start Row 1, Start Needle 30, Stop Needle 30, Alignment Center.   
-4. Click Configure, wait a moment.
-5. Click Knit. Wait until it says “Please init machine…”
-6. Set the knob to KC1 or KC2.
-7. Move the carriage so the magnet on the back of the carriage crosses the left turn mark, and STOP.
-8. **IMPORTANT!!!** Wait 2 or 3 seconds, there will be a “triple-beep”
-9. Continue across the row. After you pass the end of the selected needles, it should beep.
+3. Run the AYAB software. Open a black/white image (1bit bitmap) in AYAB. It 
+   must be at least as wide as the needles you are using.
+4. In the AYAB software, leave all the settings as they are: 
+   Single Bed, Color 2, Start Row 1, Start Needle 30, Stop Needle 30, Alignment Center.   
+5. Click Configure, wait a moment.
+6. Click Knit. Wait until it says "Please init machine"
+7. Set the knob to KC1 or KC2.
+8. Move the carriage so the magnet on the back of the carriage crosses the left turn mark, and STOP.
+9. **IMPORTANT!!!** Wait 2 or 3 seconds, there will be a "triple-beep"
+10. Continue across the row. After you pass the end of the selected needles, it should beep.
 
 Our pattern has some black squares in row 1, you can see that they have been selected forward to D position.  
-If you are “air-knitting” (no yarn) you can just continue passing the carriage back and forth from here.
+If you are "air-knitting" (no yarn) you can just continue passing the carriage back and forth from here.
 
 ####To set up for Fair Isle:
 
@@ -32,3 +45,7 @@ At Row 10, you'll see "Image Transmission finished."
 Knit until the long beep, then stop and look at the needles. Notice that it has selected the needles for row 10, but we haven't knitted them yet. So knit one more pass from left to right. Now we have really finished, all needles are at B.  
 Set the KC knob to NL, unthread the contrast color and knit a few rows of white (KH910 manual, p.43).
 Binding off is described on page 22 or pages 111-114 of the KH910 manual.
+
+
+This article was written by Adrienne and modified by [DerAndere](https://it-by-derandere.blogspot.com/p/blog-page_46.html)  
+[Feel free to improve it!](https://github.com/AllYarnsAreBeautiful/ayab-manual)

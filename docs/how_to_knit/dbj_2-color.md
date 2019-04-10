@@ -19,7 +19,9 @@ Smiley was made from this image:
 ![ ](img/dbj_2-color/Smiley_4_72x30.png)
 
 AYAB takes care of the colors for you, you just give it a black-and-white
-pattern as if you are going to do single bed Fair Isle.  
+pattern as if you are going to do single bed Fair Isle. To create your own patterns,
+refer to the AYAB manual, section "pattern_image_creation". Make sure the 
+width of the pattern has an even number of pixels (=stitches).  
 Use thin yarns, you’ll be using side-by-side needles on both beds. (for those
 in the US, Woollike yarn works well.)  
 For your first practice sample, use this Triangles image that also comes with
@@ -37,12 +39,14 @@ If you watch the needle selection carefully you’ll start to understand what
 it’s doing.
 
 # Instructions
-
-- Set up the color changer with the black yarn (foreground color); the white slot 
-  (background color) is open ready to accept the yarn after the cast on.  
+- Set up the ribber (KR850 manual, pages 3-7)
+- Set up the color changer (KHR900 manual, pages 2-4) with the black yarn 
+  (foreground color); the white slot (background color) is open ready to accept 
+  the yarn after the cast on.  
 - You might need the fine knit bar. Try it if your stitches sometimes tuck
   instead of knitting off. 
-- On the ribber, set half-pitch lever to H (P-H lever=H, see KR850 manual, page 13), 
+- On the ribber, set half-pitch lever to H (P-H lever=H, see KR850 manual, 
+  page 13), 
 - On the ribber, set racking grip handle to 5 (Rack=5, KR850 manual p.13)
 - set bracket lever to the normal (highest) position (KR850 manual, p.14)
 - Needles L30-R30 on both beds for our first Triangles sample
@@ -60,7 +64,7 @@ it’s doing.
   Stitch Size depends on your yarn. Try 4/4.
 
 - Open a black/white image in AYAB. It must be at least as wide as the needles
-  you are using.
+  you are using. 
 - Set AYAB to 2-color, start at row 1, Infinite Repeat, start/stop needles 30/30,
   Ribber ("Ribber: Classic" for AYAB v0.95), Center.
 - Configure
