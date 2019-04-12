@@ -1,15 +1,15 @@
 
 ## Single Bed Fair Isle
 
-To create your own patterns, refer to the AYAB manual, section "pattern_image_creation". Make sure the 
-width of the pattern has an even number of pixels (=stitches).  
+To create your own patterns, refer to [section "Pattern creation"](../pattern_image_creation.md). 
+Make sure the width of the pattern has an even number of pixels (=stitches).  
 
 For your first practice sample, use this Triangles image that also comes with
-AYAB 0.9, find it in Documents>AYAB>patterns
+AYAB 0.9, find it on your computer in the folder [path to your AYAB installation]/AYAB/patterns/ 
 
 ![triangles_60x10.png](img/dbj_2-color/triangles_60x10.png)
 
-To create your own patterns, refer to the AYAB manual, section "pattern_image_creation". 
+To create your own patterns, refer to [section "Pattern creation"](../pattern_image_creation.md). 
 Use thin yarns, you'll be using side-by-side needles on both beds. (for those
 in the US, Woollike yarn works well.). 
  
@@ -17,8 +17,10 @@ in the US, Woollike yarn works well.).
 1. Cast on using needles Left30 - Right30 and knit a few rows of stockinette, ending on the left 
    ([KH910 manual](http://machineknittingetc.com/brother-kh910-user-guide.html), pp. 10-15, 18-21).
 2. Position the carriage so that the magnet on the center back of the carriage is outside the left turn mark.
-3. Run the AYAB software. Open a black/white raster image (preferrably in .PNG file format) in AYAB. 
-   It must be at least as wide as the needles you are using.
+3. Run the AYAB software. In AYAB, left-click "Load pattern" and browse for the image 
+   triangles_60x10.png that is located in [Path to your AYAB installation]/AYAB/patterns/. 
+   (If you want to knit a different pattern, choose a black/white raster image, 
+   preferrably in .PNG file format. It must be at least as wide as the needles you are using)
 4. In the AYAB software, leave all the settings as they are: 
    Single Bed, Color 2, Start Row 1, Start Needle 30, Stop Needle 30, Alignment Center.   
 5. Click Configure, wait a moment.

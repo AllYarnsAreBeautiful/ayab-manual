@@ -2,7 +2,7 @@
 # Introduction
 
 Instructions for 2-color Double Bed Jacquard
-(AYAB’s “Ribber” setting.)
+(AYAB's "Ribber" setting.)
 
 DBJ (more specifically: Rib Jacquard with birds-eye backing, see David J. 
 Spencer, Knitting Technology: A Comprehensive Handbook and Practical Guide, 3rd 
@@ -20,12 +20,11 @@ Smiley was made from this image:
 
 AYAB takes care of the colors for you, you just give it a black-and-white
 pattern as if you are going to do single bed Fair Isle. To create your own patterns,
-refer to the AYAB manual, section "pattern_image_creation". Make sure the 
-width of the pattern has an even number of pixels (=stitches).  
+refer to section ["Pattern creation"](../pattern_image_creation.md). 
 Use thin yarns, you'll be using side-by-side needles on both beds. (for those
 in the US, Woollike yarn works well.)  
 For your first practice sample, use this Triangles image that also comes with
-AYAB 0.9, find it in Documents>AYAB>patterns.
+AYAB 0.9 (or newer), find it in the folder [Path to your AYAB installation]/AYAB/patterns/.
 
 ![ ](img/dbj_2-color/triangles_60x10.png)
 
@@ -35,7 +34,7 @@ which looks like this:
 
 The useful thing about this Triangles pattern is that row 1 selects 1 black
 needle per triangle, row 2 selects groups of 2, row 3 groups of 3 etc.
-If you watch the needle selection carefully you’ll start to understand what
+If you watch the needle selection carefully you'll start to understand what
 it's doing.
 
 # Instructions
@@ -63,8 +62,9 @@ it's doing.
   Lower slide lever to lili (center).  
   Stitch Size depends on your yarn. Try 4/4.
 
-- Open a black/white image in AYAB. It must be at least as wide as the needles
-  you are using. 
+- In the AYAB software, left-click "Load pattern" and select the image triangles_60x10.png.
+  (For other patterns, choose a black/white image that is at least as wide as the 
+  needles you are using) 
 - Set AYAB to 2-color, start at row 1, Infinite Repeat, start/stop needles 30/30,
   Ribber ("Ribber: Classic" for AYAB v0.95), Center.
 - Configure
@@ -121,7 +121,7 @@ pages 111-114 of the
 In our Triangles sample with Infinite Repeat on, let's stop and observe, with
 the carriage on the left at the beginning of row 1 of its cycle of ten rows. We
 have just changed to the black yarn ready for the next row 1 as displayed in AYAB.  
-Remember that AYAB's row numbering focuses on what’s being _selected_ not what’s
+Remember that AYAB's row numbering focuses on what's being _selected_ not what's
 being knitted.
 
 Notice that what's selected now is the last set of 10 black needles to complete
@@ -171,7 +171,7 @@ is counted as the last pass of the previous set.
   feeder every time as it come out of the color changer. You may be able to stop
   in time to fix it.
 
-- AYAB 0.9 and earlier expect the black yarn first. The more usual convention is
+- AYAB 0.95 and earlier expect the black yarn first. The more usual convention is
   to do the white first, more intuitive. That will likely be changed in a future
   release of AYAB; for now the instructions describe black first. Otherwise
   2-color DBJ works well as it is, doesn't particularly need any code changes.
