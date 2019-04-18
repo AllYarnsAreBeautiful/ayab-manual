@@ -99,7 +99,8 @@ put a mirror underneath and check that the pattern you want is appearing on the
 work on the side away from you, and birds-eye stripes on the side facing you.
 
 For finalizing the knit, you may want to add 1-2 rows of FNR (KR850 
-manual, p. 28). Binding off (casting off) is described on page 53 of the KR850 manual. 
+manual, p. 28). Binding off (casting off) is described on page 53 of the KR850 
+manual or in this video on Youtube: [Double Bed Bind-Off Video](https://youtu.be/VEzJg0oRzVw)) 
 An alternative method ("Das Abketten II") is translated as follows: 
 Transfer all stitches to the rear needle bed [to the needle bed  of the KH 910 
 (KR850 manual, p.52)] and immediately set the empty needles of the KR 850 
