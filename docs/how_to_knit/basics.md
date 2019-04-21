@@ -9,11 +9,6 @@ AYAB 0.9, find it on your computer in the folder [path to your AYAB installation
 
 ![triangles_60x10.png](img/dbj_2-color/triangles_60x10.png)
 
-To create your own patterns, refer to [section "Pattern creation"](../pattern_image_creation.md). 
-Use thin yarns, you'll be using side-by-side needles on both beds. (for those
-in the US, Woollike yarn works well.). 
- 
-
 1. Cast on using needles Left30 - Right30 and knit a few rows of stockinette, ending on the left 
    ([KH910 manual](http://machineknittingetc.com/brother-kh910-user-guide.html), pp. 10-15, 18-21).
 2. Position the carriage so that the magnet on the center back of the carriage is outside the left turn mark.

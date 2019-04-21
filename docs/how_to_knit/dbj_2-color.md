@@ -4,10 +4,8 @@
 Instructions for 2-color Double Bed Jacquard
 (AYAB's "Ribber" setting.)
 
-DBJ (more specifically: Rib Jacquard with birds-eye backing, see David J. 
-Spencer, Knitting Technology: A Comprehensive Handbook and Practical Guide, 3rd 
-ed., 2001, pp. 107ff.) is known in Brother manuals as Multi-Colour Rib. 
-See page 38 of the [KR850 ribber manual](http://machineknittingetc.com/brother-kr850-ribber-user-guide.html) (the penguins) 
+DBJ (more specifically: Rib Jacquard with birds-eye backing) is known in Brother 
+manuals as Multi-Colour Rib. See page 38 of the [KR850 ribber manual](http://machineknittingetc.com/brother-kr850-ribber-user-guide.html) (the penguins) 
 and page 11 of the [manual for the KRC-900 color changer](http://machineknittingetc.com/brother-krc900-double-bed-color-changer-user-guide.html).  
 Note that DBJ in 3 or more colors has some differences, though the basic
 instructions are the same.
