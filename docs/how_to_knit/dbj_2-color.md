@@ -4,13 +4,13 @@
 Instructions for 2-color Double Bed Jacquard
 (AYAB's "Ribber" setting.)
 
-DBJ (more specifically: Rib Jacquard with birds-eye backing, see David J. 
-Spencer, Knitting Technology: A Comprehensive Handbook and Practical Guide, 3rd 
-ed., 2001, pp. 107ff.) is known in Brother manuals as Multi-Colour Rib. 
-See page 38 of the [KR850 ribber manual](http://machineknittingetc.com/brother-kr850-ribber-user-guide.html) (the penguins) 
+DBJ (more specifically: Rib Jacquard with birds-eye backing) is known in Brother 
+manuals as Multi-Colour Rib. See page 38 of the [KR850 ribber manual](http://machineknittingetc.com/brother-kr850-ribber-user-guide.html) (the penguins) 
 and page 11 of the [manual for the KRC-900 color changer](http://machineknittingetc.com/brother-krc900-double-bed-color-changer-user-guide.html).  
 Note that DBJ in 3 or more colors has some differences, though the basic
-instructions are the same.
+instructions are the same. Carriage part names are defined on page 32 of the 
+[KH910 manual](http://machineknittingetc.com/brother-kh910-user-guide.html) and 
+on page 1 of the KR850 manual, respectively. 
 
 ![ ](img/dbj_2-color/DSCF9373_Smiley_cropped.jpg)
 
@@ -114,8 +114,7 @@ Thereby, the stitches are removed from the needles of the KR 850 ribber. Now,
 lower the KR 850 ribber [to the lowest position (KR850 manual, p. 14)]. 
 Set the needles of the KH 910 needle bed to the E-position. Remove the weights 
 and the comb, then proceed by binding off as described on page 22 or 
-pages 111-114 of the 
-[KH910 manual](http://machineknittingetc.com/brother-kh910-user-guide.html).
+pages 111-114 of the KH910 manual.
 
 # More description on how 2-color DBJ works
 
