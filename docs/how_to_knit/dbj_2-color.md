@@ -4,13 +4,15 @@
 Instructions for 2-color Double Bed Jacquard
 (AYAB's "Ribber" setting.)
 
-DBJ (more specifically: Rib Jacquard with birds-eye backing, see David J. 
-Spencer, Knitting Technology: A Comprehensive Handbook and Practical Guide, 3rd 
-ed., 2001, pp. 107ff.) is known in Brother manuals as Multi-Colour Rib. 
-See page 38 of the [KR850 ribber manual](http://machineknittingetc.com/brother-kr850-ribber-user-guide.html) (the penguins) 
-and page 11 of the [manual for the KRC-900 color changer](http://machineknittingetc.com/brother-krc900-double-bed-color-changer-user-guide.html).  
+Double bed jacquard (DBJ) as described here (Rib Jacquard with birds-eye backing) 
+is known in Brother manuals as Multi-Colour Rib. See pages 38-39 of the 
+[KR850 ribber manual](http://machineknittingetc.com/brother-kr850-ribber-user-guide.html) (the penguins) and 
+page 11 of the [manual for the KRC-900 color changer](http://machineknittingetc.com/brother-krc900-double-bed-color-changer-user-guide.html).  
+You can make other DBJ variants, too (see end of this page). 
 Note that DBJ in 3 or more colors has some differences, though the basic
-instructions are the same.
+instructions are the same. Carriage part names are defined on page 32 of the 
+[KH910 manual](http://machineknittingetc.com/brother-kh910-user-guide.html) and 
+on page 1 of the KR850 manual, respectively. 
 
 ![ ](img/dbj_2-color/DSCF9373_Smiley_cropped.jpg)
 
@@ -101,6 +103,8 @@ work on the side away from you, and birds-eye stripes on the side facing you.
 For finalizing the knit, you may want to add 1-2 rows of FNR (KR850 
 manual, p. 28). Binding off (casting off) is described on page 53 of the KR850 
 manual or in this video on Youtube: [Double Bed Bind-Off Video](https://youtu.be/VEzJg0oRzVw)) 
+Any bind off that requires latching stitches through each other requires the 
+last row before chaining stitches to be knit looser than previous ones (see below) 
 An alternative method ("Das Abketten II") is translated as follows: 
 Transfer all stitches to the rear needle bed [to the needle bed  of the KH 910 
 (KR850 manual, p.52)] and immediately set the empty needles of the KR 850 
@@ -111,11 +115,11 @@ carriage from left to right. On the needles of the KR 850 ribber, stitches have
 formed around the previously empty needles. Disconnect the carriages 
 [(KR850 manual, p. 15)] and move the KR 850 ribber carriage from right to left. 
 Thereby, the stitches are removed from the needles of the KR 850 ribber. Now, 
-lower the KR 850 ribber [to the lowest position (KR850 manual, p. 14)]. 
+lower the KR 850 ribber [to the lowest position (KR850 manual, p. 14)]. This has 
+created the elongated stitches that may again be chained through each other:
 Set the needles of the KH 910 needle bed to the E-position. Remove the weights 
 and the comb, then proceed by binding off as described on page 22 or 
-pages 111-114 of the 
-[KH910 manual](http://machineknittingetc.com/brother-kh910-user-guide.html).
+pages 111-114 of the KH910 manual.
 
 # More description on how 2-color DBJ works
 
@@ -210,7 +214,62 @@ is counted as the last pass of the previous set.
 
     ![ ](img/dbj_2-color/DSCF0020.JPG)
 
+
+# Alternative Jacquard variants with AYAB 
+
+Different variants of DBJ exist. A selection of carriage settings that can easily 
+be used with the AYAB hack is provided in table 1 and table 2 below. More 
+variants that require different degrees of hand manipulation are described 
+together with fabric properties in a [blog post by Alessandrina](http://alessandrina.com/2017/11/09/a-return-to-brother-ribber-and-dbj-settings/). 
+
+Table 1: Carriage settings for a selection of different DBJ variants. 
+Adapted from [a blog post by "steel breeze"](http://machineknitting101.blogspot.com/2010/08/double-bed-jacquard-variations.html) and [Alessandrina (2017)](http://alessandrina.com/2017/11/09/a-return-to-brother-ribber-and-dbj-settings/) 
+with permission from the original authors. 
+
+Lever               | striper (double) | striper (half) | tucked half Milano |
+--------------------|------------------|----------------|--------------------|
+KH carriage         | ...              | ...            | ...                |
+Cam buttons         | Part L, Part R   | Part L, Part R | Tuck R, Part L     |
+Change knob         | KCI or KCII      | KCI or KCII    | KCI                |
+KR carriage         | ...              | ...            | ...                |
+Holding Cam Lever L | N                | N              | N                  |
+Holding Cam Lever R | N                | N              | N                  |
+KR Change Knob L*   | 0                | 0              | 0                  |
+KR Change Knob R*   | 0                | 0              | 0                  |
+Cam Lever L         | N                | N              | N                  |
+Cam Lever R         | N                | P.R.           | N                  |
+Tucking Lever       | R                | R              | R                  |
+Slide Lever         | IiIi             | IiIi           | IiIi               |
+
+\* KR Change Knob = 0: turned inwards, away from IiIi mark.
+
+Table 2: carriage settings for DBJ with solid backing. Adapted from 
+["steel breeze" (2010)](http://machineknitting101.blogspot.com/2010/08/double-bed-jacquard-variations.html) and [Alessandrina (2017)](http://alessandrina.com/2017/11/09/a-return-to-brother-ribber-and-dbj-settings/) 
+with permission from the original authors. 
+
+Lever               | solid (col1)** |solid (col2)**  |
+--------------------|----------------|----------------|
+KH carriage         | ...            | ...            |
+Cam buttons         | Part L, Part R | Part L, Part R |
+Change knob         | KCI or KCII    | KCI or KCII    |
+KR carriage         | ...            | ...            |
+Holding Cam Lever L | N              | N              |
+Holding Cam Lever R | N              | N              |
+KR Change Knob L*   | 0              | 0              |
+KR Change Knob R*   | 0              | 0              |
+Cam Lever L         | P.R.           | N              |
+Cam Lever R         | P.R.           | N              |
+Tucking Lever       | R              | R              |
+Slide Lever         | IiIi           | IiIi           |
+
+\* KR Change Knob = 0: turned inwards, away from IiIi mark.
+\*\* After each 2 rows, change settings and proceed with the next color.
+
+
 This article is copied from [ravelry](https://www.ravelry.com/discuss/ayab/3714047/1-25) 
 and modified by [DerAndere](https://it-by-derandere.blogspot.com/p/blog-page_46.html).
-Thanks, Adrienne!  
+Thanks, Adrienne!
+Settings for alternative Jacquard variants were taken from 
+[a blog post by "steel breeze"](http://machineknitting101.blogspot.com/2010/08/double-bed-jacquard-variations.html) 
+and [a blog post by Alessandrina](http://alessandrina.com/2017/11/09/a-return-to-brother-ribber-and-dbj-settings/).
 [Feel free to improve it!](https://github.com/AllYarnsAreBeautiful/ayab-manual)
