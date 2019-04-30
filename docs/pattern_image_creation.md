@@ -113,11 +113,9 @@ Here are the basic steps:
 1. Use the select-tool, select all objects including the background rectangle.
    Left-click Object -> Transform..... Left-click the tab "Scale". 
    Change % to mm, verify that the option "proportional scaling" is disabled 
-   and set Hight to the new hight h:
-   
-   h = H * y / x .
-   
-   Here, H is the desired fabric hight in mm. Left-click Apply.   
+   and set Hight to the new hight h:  
+   h = H * y / x .  
+   Here, H is the desired fabric hight in mm. Left-click Apply.  
 1. Calculate the required stitches per row (s) for your textile using 
    formula 1): s = x * W . 
    Here, x is again the number of stitches per mm, W is the desired fabric 
