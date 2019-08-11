@@ -54,6 +54,8 @@ Important:
 
 Requires macOS 10.12 or newer
 
+Please make sure that you have installed the [SiLabs CP210x "VCP" Driver](http://www.silabs.com/products/mcu/pages/usbtouartbridgevcpdrivers.aspx) - it is required for use with most new boards.
+
 Download the DMG image from [ayab-knitting.com](https://ayab-knitting.com/ayab-software/), open the DMG image and drag&drop the app to your Application folder.
 Then run AYAB from your Application folder.
 
