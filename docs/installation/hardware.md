@@ -11,3 +11,5 @@ See also:
 <https://wiki.evilmadscientist.com/AYAB_Hardware_Installation>
 
 **Very Important: In the shield version, you have to isolate the USB of the Arduino from the Power Connector to prevent short circuits!!**
+
+**Very Important: Please use a high-quality USB cable. With some cheap cables, the computer doesn't recognize the hardware!**
