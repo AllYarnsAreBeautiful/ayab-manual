@@ -28,7 +28,7 @@ AYAB 0.9, find it on your computer in the folder [path to your AYAB installation
 Our pattern has some black squares in row 1, you can see that they have been selected forward to D position.  
 If you are "air-knitting" (no yarn) you can just continue passing the carriage back and forth from here.
 
-###To set up for Fair Isle:
+### To set up for Fair Isle:
 
 1. Stop when the carriage is on the right at the end of the first row.
 2. Press the top half of the center button on the front of the carriage (or the whole center button ("MC") if yours is all one piece, see KH910 manual, p.42)
