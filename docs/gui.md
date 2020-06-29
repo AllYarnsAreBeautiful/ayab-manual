@@ -1,5 +1,3 @@
-Description of the GUI Elements and their functions.
-
 # Windows
 
 ## Graphics Scene
@@ -42,9 +40,9 @@ Description of the GUI Elements and their functions.
 
 # Menu
 
-## File >> Quit
+### File >> Quit
 
-## Image Actions
+### Image Actions
 
 #### Invert
 
@@ -62,9 +60,9 @@ Description of the GUI Elements and their functions.
 
 #### Rotate Right
 
-## Tools >> Load AYAB Firmware
+### Tools >> Load AYAB Firmware
 
-## Preferences
+### Preferences
 
 #### Default Knitting Mode
 
@@ -78,4 +76,4 @@ Description of the GUI Elements and their functions.
 
 #### Language
 
-## Help >> Help – About
+### Help >> Help – About
