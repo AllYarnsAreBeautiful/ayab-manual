@@ -1,13 +1,13 @@
 site_name: AYAB Manual
 theme: readthedocs
 repo_url: https://github.com/AllYarnsAreBeautiful/ayab-manual
-extra:
-  version: 0.95
+plugins:
+  - search
 nav:
   - Home: index.md
   - Installation:
-    - Hardware: installation/hardware.md
-    - Software: installation/software.md
+      - Hardware: installation/hardware.md
+      - Software: installation/software.md
   - Graphical User Interface: gui.md
   - How To Knit:
     - Basics: how_to_knit/basics.md
@@ -18,4 +18,8 @@ nav:
   - Pattern Creation: pattern_image_creation.md
   - Frequently Asked Questions: faq.md
   - Development:
-    - Connectors: development/connectors.md
+      - Connectors: development/connectors.md
+extra_css:
+  - css/version-select.css
+extra_javascript:
+  - js/version-select.js
