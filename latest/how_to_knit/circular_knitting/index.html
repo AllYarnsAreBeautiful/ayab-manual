@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Circular Knitting - AYAB Manual</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  <link href="../../css/version-select.css" rel="stylesheet" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Circular Knitting";
+    var mkdocs_page_input_path = "how_to_knit/circular_knitting.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> AYAB Manual</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Installation</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../installation/hardware/">Hardware</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../installation/software/">Software</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../gui/">Graphical User Interface</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">How To Knit</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../basics/">Basics</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../dbj_2-color/">Double Bed Jaquard (2-color)</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../dbj_middle-color-twice/">Middle-Color-Twice</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../dbj_heart-of-pluto/">Heart of Pluto</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Circular Knitting</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pattern_image_creation/">Pattern Creation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../faq/">Frequently Asked Questions</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Development</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../development/connectors/">Connectors</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">AYAB Manual</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>How To Knit &raquo;</li>
+        
+      
+    
+    <li>Circular Knitting</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/AllYarnsAreBeautiful/ayab-manual/edit/master/docs/how_to_knit/circular_knitting.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <blockquote>
+<p>A full tutorial for circular. Comments and corrections welcome.<br />
+And thanks to Cindy for suggesting this feature in the first place.<br />
+I’m using AYAB v0.9, this was also available in 0.8.<br />
+(First draft Sept 26, 2017, minor edits Nov 9, 2017)</p>
+</blockquote>
+<hr />
+<p>The Circular technique is knitted in a very similar way to 2-color DBJ
+(Double Bed Jacquard, AYAB’s “Ribber” setting,) but Circular makes a 2-color
+stockinette tube. The Circular feature is the closest we can come to circular
+fair-isle on a Brother machine.<br />
+It helps to already be familiar with the standard ribber cast-on and with
+2-color DBJ before attempting Circular.</p>
+<p><img alt=" " src="../img/circular_knitting/DSCF9656crop.jpg" /></p>
+<p>This tutorial is very detailed but most of it is the casting on and setting up;
+the actual circular part consists of four passes of the carriage with two
+changes of color.<br />
+Steps 11 - 14 are the AYAB setup, and 15 - 20 are the actual knitting.</p>
+<p>For our first time through we will make one-row stripes on the ribber, there
+will be two rows on the ribber for every one completed row on the main bed. So
+the ribber side ends up twice as long as the patterned side knitted on the main
+bed, making a rather oddly shaped tube.</p>
+<p>This sample is a 64 stitch circle, L16-R16 on each bed. Stitch Size of T6/5
+(Main 6, Ribber 5) is about right as a sample for a possible sock in Sock-Ease
+yarn from Lion Brand. Or try going a bit tighter on the ribber to get a more
+balanced tube.<br />
+Steps 2 - 6 are a standard circular cast-on, with a small
+variation from the settings described in the manual</p>
+<ol>
+<li>
+<p>Choose a fair-isle pattern. It must have short floats, especially near the edges of the width you plan to use. And no rows that are entirely either color, which would be a whole-row float. My sample is StitchWorld #27, you can download and use this file.</p>
+<p><img alt=" " src="../img/circular_knitting/Stitchworld_27_80x16.png" /></p>
+</li>
+<li>
+<p>Install your ribber and color changer. Set the connected carriages on the right.</p>
+</li>
+<li>
+<p>Rack the ribber to its central position, (5) and set the P-H to H. All
+  settings on both carriages to normal, see p30 of the KR850 manual.</p>
+<p><img alt=" " src="../img/circular_knitting/KR850_page_30.png" /></p>
+</li>
+<li>
+<p>Thread the white yarn on the left side of the mast, black on the right.
+  Thread the black into button 1 of the CC, and anchor it underneath. No
+  buttons selected on the color changer yet. Take the white yarn behind the
+  black and over to the carriage to start the cast on from the right.</p>
+</li>
+<li>
+<p>Select needles L16 - R16 on both beds, and cast on for circular. Follow
+  page 30 in the 850 manual, EXCEPT, after the zigzag row set just the RIGHT
+  Part button on the main bed, and on the ribber set the LEFT slider up to P.R.
+  and the right one down on N. Middle slider down. Side levers up, bottom slider
+  on I. Both lili buttons to normal. Set the Stitch Sizes, try 6 on the main
+  bed and 5 on the ribber. (Use ravel cord for the initial zigzag if you want an
+  open tube, or you can just snip the cast-on later.)</p>
+<p><img alt=" " src="../img/circular_knitting/KR850_page_31a.png" /></p>
+</li>
+<li>
+<p>Knit the zigzag row, hang the cast-on comb and one or two ribber weights.
+  Set P-H to P. Leave the rest of the settings the same as the cast on.</p>
+</li>
+<li>
+<p>Knit a few rows of plain circular, about 12 passes (6 circular rounds) in
+  white ending COL (Carriage on Left).</p>
+</li>
+<li>
+<p>Press button 2 on the CC so it is open to catch the white yarn, and put the
+  carriage all the way out on the left into the color changer. The carriage
+  waits here while we do the pattern setup.</p>
+<p><img alt=" " src="../img/circular_knitting/KR850_page_31c.png" /></p>
+</li>
+<li>
+<p>Main carriage: KC knob to KC2, both Part buttons in.</p>
+</li>
+<li>
+<p>Ribber carriage: No changes. Check that the left slider is up (P.R, or Part)
+    right slider down (N, knit)</p>
+</li>
+<li>
+<p>Row counter = 000</p>
+</li>
+<li>
+<p>In AYAB: open the image, which must be at least as wide as the main bed
+    needles you are using. Set the start/stop needles to the width you are
+    knitting on the main bed, 16 and 16 in our example (or one or two wider,
+    just be sure the settings are not narrower than your actual needles);
+    2 colors; start at row 1 (usually); Infinite Repeat; Circular; Center.</p>
+</li>
+<li>
+<p>Click Configure, then Knit.</p>
+</li>
+<li>
+<p>Press Color Changer button 1 to select black.</p>
+</li>
+<li>
+<p>Move the carriage out of the color changer and over the left turn mark. Stop
+    and wait for the triple beep. And check that only the black yarn was selected.</p>
+</li>
+<li>
+<p>Knit across, left - right, wait for the beep.</p>
+</li>
+<li>
+<p>Knit across, right - left and all the way into the color changer, the beep
+    should happen as you do so.</p>
+</li>
+<li>
+<p>Press CC button 2, for white.</p>
+</li>
+<li>
+<p>Knit across, left - right, wait for the beep.</p>
+</li>
+<li>
+<p>Knit across, right - left and into the color changer, the beep should happen
+    as you do so.</p>
+</li>
+<li>
+<p>Press CC button 1, for black.</p>
+</li>
+</ol>
+<p>Repeat steps 16 - 21 for the rest of the project.</p>
+<p>For this sample do about 20 rows (80 passes.) See the note below about hanging
+extra weights on the ribber’s knitting.</p>
+<p>To finish the sample, cancel the main carriage settings from step 7. Set to
+standard circular (KC button at NL, right part button pushed in on main
+carriage, left slider up at P.R. on the ribber as before, no lili) and knit
+about 12 passes (6 rounds) in just one color. Bind off if you like, or just cut
+the yarn, hold onto the comb below and take the carriage across and back to let
+the knitting drop off.</p>
+<p>Notes:</p>
+<ul>
+<li>
+<p>The left-right rows knit on the ribber and select on the main bed. The
+  right-left rows knit on the main bed leaving all needles in B afterwards, and
+  slip (nothing knits) on the ribber.</p>
+</li>
+<li>
+<p>Don’t try to knit too fast. On the right you need to wait for the beep, and on
+  the left give it time to take up the slack yarn as you approach the knitting.
+  Also gives you time to check that the new yarn is correctly in the feeder.</p>
+</li>
+<li>
+<p>Watch the row numbers in AYAB as you knit. Note that 4 passes make 1 row; the
+  row counter will say 4 when AYAB has just switched up from 1 and is starting
+  the sequence of four passes for row 2. (AYAB v0.8 numbered the rows
+  differently.)</p>
+</li>
+<li>
+<p>As always with ribber work, stop with the carriage on the right after about 5
+  full rows (20 passes) to check:</p>
+<ul>
+<li>unhook the starting ends of the yarn</li>
+<li>make sure the ribber weights and comb are not caught on anything underneath</li>
+<li>feel along the knitting on both sides from underneath, you may be able to
+  tell if a loop is caught around a gate peg.</li>
+<li>hang the “sevens” wires and weights if the edge stitches are having trouble
+  knitting off.</li>
+<li>you generally don’t need the fine knit bar for circular knitting.</li>
+<li>IMPORTANT: hang some claw weights on the ribber side of the knitting,
+  nearest to you. Make sure they hook into just the ribber-side layer of the
+  knitting. This is because the ribber side is growing faster and its stitches
+  need extra weight to stay on the needles.</li>
+</ul>
+</li>
+</ul>
+<p>Then check again after several inches have been knit, by now you may be able to
+put a mirror underneath and check that the pattern you want is appearing on the
+work on the side away from you, and stripes on the side facing you.</p>
+<p>Look at your sample. Note that the striped back is twice as long as the front.
+Further instructions soon for a way to prevent that and make a balanced tube.</p>
+<p><img alt=" " src="../img/circular_knitting/DSCF9654.JPG" /></p>
+<p>And I think I just found a use for the unbalanced tube, and developed a new way
+to do socks! The heel and foot are seamless fair-isle-in-the-round. No short
+rows. Here’s the first prototype, the only seam (up the back of the leg) isn’t
+sewn yet. Full tutorial coming soon.</p>
+<p><img alt=" " src="../img/circular_knitting/DSCF9646.JPG" />
+<img alt=" " src="../img/circular_knitting/DSCF9643.JPG" /></p>
+<p>This article is copied from <a href="https://www.ravelry.com/discuss/ayab/3346844/#12">ravelry</a>.
+Thanks, Adrienne!<br />
+<a href="https://github.com/AllYarnsAreBeautiful/ayab-manual">Feel free to improve it!</a></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../pattern_image_creation/" class="btn btn-neutral float-right" title="Pattern Creation">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../dbj_heart-of-pluto/" class="btn btn-neutral" title="Heart of Pluto"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/AllYarnsAreBeautiful/ayab-manual/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../dbj_heart-of-pluto/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../pattern_image_creation/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../js/version-select.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
