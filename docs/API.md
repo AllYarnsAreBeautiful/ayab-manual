@@ -14,8 +14,9 @@ Checksums are calculated using **[FIXME: insert description of CRC8 algorithm.]*
 
 The host sends a single byte token as a request for information (ReqInfo = 0x03).
 
-In return, it expects a two-byte message consisting of a token (CnfInfo = 0xC3)
-and a parameter (API version = 0x05).
+In return, it expects a four-byte message consisting of a token (CnfInfo = 0xC3),
+a single-byte parameter (API version = 0x05), and a word declaring the firmware
+version (which is ignored).
 
 **[FIXME: Going forward, the host could adapt to whatever value of the API is used
 by the device, thereby ensuring backwards compatibility.]**
