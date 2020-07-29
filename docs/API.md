@@ -16,7 +16,7 @@ application note 27.
 The host sends a single byte token as a request for information (ReqInfo = 0x03).
 
 In return, it expects a four-byte message consisting of a token (CnfInfo = 0xC3),
-a single-byte parameter (API version = 0x05), the firmware major version, and the
+a single-byte parameter (API version = 0x06), the firmware major version, and the
 firmware minor version.
 
 ## Start sequence
