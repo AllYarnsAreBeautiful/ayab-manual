@@ -44,15 +44,8 @@ token (reqLine = 0x82) followed by a parameter indicating the requested line.
 Parameter value for the first line is zero and is incremented for each successive
 line that is requested.
 
-The host responds with a 28-byte message consisting of a token (CnfLine = 0x42),
-the requested line number, 25 bytes of needle data encoding 200 bits left-to-right
-in little-endian format, one byte of flag information, and a CRC8 checksum. The
-least significant bit of the flag byte indicates whether the requested line is the
-last line of the pattern.
-
-**[FIXME: For the next version of the API, the length of the needle data could be
-reduced to 15 bytes when knitting on a KH-270 machine, which has 114 needles
-instead of 200.]**
-
-**[FIXME: Perhaps add one byte to report the yarn color (palette index) so that
-in future it might be possible to support the KRC1000e automatic color changer.]**
+The host responds with a message consisting of a token (CnfLine = 0x42), the
+requested line number, one byte of flag information, one byte of color information,
+either 15 bytes (KH-270) or 25 bytes (all other machines) of needle data encoded in
+little-endian format, and a CRC8 checksum. The least significant bit of the flag
+byte indicates whether the requested line is the last line of the pattern.
