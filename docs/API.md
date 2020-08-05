@@ -19,18 +19,18 @@ In return, it expects a four-byte message consisting of a token (CnfInfo = 0xC3)
 a single-byte parameter (API version = 0x06), the firmware major version, and the
 firmware minor version.
 
-## Start sequence
-
-When the device is ready to receive a start signal, it sends a state indicator 
+When the device is ready to receive a further signal, it sends a state indicator 
 token (IndState = 0x84) followed by a parameter value of 0x01. Other parameter 
 values indicate an error state in the device.
 
-In response, the host sends a six-byte message consisting of a token byte
-(ReqStart = 0x01) followed by the machine type, start needle, stop needle, and a
-flag byte. Start needle and stop needle are both zero-indexed. The least
-significant bit of the flag byte indicates whether the device should continuously
-report carriage information. The final byte is a CRC8 checksum of the first five
-bytes.
+## Start sequence
+
+Having received the IndState message, the host may send a six-byte start request
+message consisting of a token byte (ReqStart = 0x01) followed by the machine type,
+start needle, stop needle, and a flag byte. Start needle and stop needle are both
+zero-indexed. The least significant bit of the flag byte indicates whether the
+device should continuously report carriage information. The final byte is a CRC8
+checksum of the first five bytes.
 
 The device confirms receipt of the start request by responding with a two-byte
 message consisting of a token (CnfStart = 0xC1) followed by a parameter value.
@@ -49,3 +49,19 @@ requested line number, one byte of flag information, one byte of color informati
 either 15 bytes (KH-270) or 25 bytes (all other machines) of needle data encoded in
 little-endian format, and a CRC8 checksum. The least significant bit of the flag
 byte indicates whether the requested line is the last line of the pattern.
+
+## Test sequence
+
+Having received the IndState message, the host may also send a two-byte test request
+message consisting of a token (reqTest = 0x04) followed by the machine type.
+
+The device confirms receipt of the start request by responding with a two-byte
+message consisting of a token (cnfTest = 0xC4) followed by a parameter value.
+A parameter value of 0x01 indicates that the device is ready to start the testing
+operation. Other parameter values indicate that the device is not ready.
+
+When the device has received confirmation it responds with a two-byte message
+consisting of a token (reqStream = 0x05) followed by a parameter byte. A parameter
+value of 0x01 indicates readiness to receive text from the device over the serial
+link. The device will continue to send test results until the host terminates the
+serial connection.
