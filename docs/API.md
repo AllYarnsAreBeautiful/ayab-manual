@@ -60,8 +60,6 @@ message consisting of a token (cnfTest = 0xC4) followed by a parameter value.
 A parameter value of 0x01 indicates that the device is ready to start the testing
 operation. Other parameter values indicate that the device is not ready.
 
-When the device has received confirmation it responds with a two-byte message
-consisting of a token (reqStream = 0x05) followed by a parameter byte. A parameter
-value of 0x01 indicates readiness to receive text from the device over the serial
-link. The device will continue to send test results until the host terminates the
-serial connection.
+When the device has test results to report it sends a variable length message
+consisting of plain text. The device will continue to send test results until the test
+is complete or the host terminates the serial connection.
