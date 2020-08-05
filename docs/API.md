@@ -61,5 +61,6 @@ A parameter value of 0x01 indicates that the device is ready to start the testin
 operation. Other parameter values indicate that the device is not ready.
 
 When the device has test results to report it sends a variable length message
-consisting of plain text. The device will continue to send test results until the test
-is complete or the host terminates the serial connection.
+consisting of a token (testResult = 0x85), a parameter value, and ASCII text.
+A parameter value of 0x01 indicates that the text contains test output. A value of
+0x00 indicates that the test has terminated.
