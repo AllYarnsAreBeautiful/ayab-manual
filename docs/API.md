@@ -62,7 +62,5 @@ message consisting of a token (cnfTest = 0xC4) followed by a parameter value.
 A parameter value of 0x01 indicates that the device is ready to start the testing
 operation. Other parameter values indicate that the device is not ready.
 
-When the device has test results to report it sends a variable length message
-consisting of a token (testResult = 0x85), a parameter value, and ASCII text.
-A parameter value of 0x01 indicates that the text contains test output. Other values
-indicate that the test has terminated.
+On receipt of the cnfTest message, the desktop will open a serial monitor to display
+test information from the device and to elicit user input at the appropriate prompts.
