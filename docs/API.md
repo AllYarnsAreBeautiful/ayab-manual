@@ -20,7 +20,9 @@ a single-byte parameter (API version = 0x06), the firmware major version, and th
 firmware minor version.
 
 When the device is ready to receive a further signal, it sends a state indicator 
-token (IndState = 0x84) followed by a parameter value of 0x01. Other parameter 
+token (IndState = 0x84) followed by a parameter value of 0x01. The six bytes that
+follow encode the left-hand Hall sensor (uint16_t), right-hand Hall sensor
+(uint16_t), carriage type, and carriage position, respectively. Other parameter 
 values indicate an error state in the device.
 
 ## Start sequence
