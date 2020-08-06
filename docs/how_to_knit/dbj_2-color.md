@@ -21,10 +21,11 @@ Smiley was made from this image:
 ![ ](img/dbj_2-color/Smiley_4_72x30.png)
 
 AYAB takes care of the colors for you, you just give it a black-and-white
-pattern as if you are going to do single bed Fair Isle. To create your own patterns,
-refer to section ["Pattern creation"](../pattern_image_creation.md). 
-Use thin yarns, you'll be using side-by-side needles on both beds. (for those
-in the US, Woollike yarn works well.)  
+pattern as if you are going to do single bed Fair Isle. This tutorial refers
+to the foreground color as black, and the background color as white.
+To create your own patterns, refer to section ["Pattern creation"](../pattern_image_creation.md). 
+Use thin yarns, you'll be using side-by-side needles on both beds.
+(For those in the US, Woollike yarn works well.)  
 For your first practice sample, use this Triangles image that also comes with
 AYAB 0.9 (or newer), find it in the folder [Path to your AYAB installation]/AYAB/patterns/.
 
@@ -65,23 +66,23 @@ it's doing.
   Stitch Size depends on your yarn. Try 4/4.
 
 - In the AYAB software, left-click "Load pattern" and select the image triangles_60x10.png.
-  (For other patterns, choose a black/white image that is at least as wide as the 
+  (For other patterns, choose a monochrome image that is at least as wide as the 
   needles you are using) 
 - Set AYAB to 2-color, start at row 1, Infinite Repeat, start/stop needles 30/30,
   Ribber ("Ribber: Classic" for AYAB v0.95), Center.
-- Configure
-- Knit
-- Press the color changer button for the black yarn
+- Press Configure.
+- Press Knit.
+- Press the color changer button for the black yarn.
 - Bring the carriage out past the turn mark and stop to wait for the triple-beep
   as usual, just on this first row.
-- Also check that the black yarn is in the feeder, and if this is its first row,
+- Also check that the white yarn is in the feeder, and if this is its first row,
   check that the yarn end is hanging straight down and isn't caught anywhere.
 - Knit across, wait for the beep.
 - Knit back and into the color changer, the beep happens as you do so.
-- Press the button to change to white.
+- Press the button to change to black.
 - Knit across, wait for the beep.
 - Knit back and into the color changer, the beep happens as you do so.
-- Press the button to change to black
+- Press the button to change to white.
 
 That's it, repeat: Knit across, knit back, change color.  
 After the first set AYAB will have counted up two rows and be starting row 3,
@@ -89,12 +90,12 @@ the row counter will show 4 passes.
 
 After about 10 rows (20 passes), stop with the carriage on the right and check:
 
-- let the starting ends of the yarn hang free
-- make sure the ribber weights and comb are not caught on anything underneath
-- feel along the knitting on both sides from underneath, you may be able to tell
+- Let the starting ends of the yarn hang free.
+- Make sure the ribber weights and comb are not caught on anything underneath.
+- Feel along the knitting on both sides from underneath, you may be able to tell
   if a loop is caught around a gate peg.
-- hang the "sevens" wires and weights if the edge stitches are having trouble
-  knitting off.
+- Hang [edge weights](http://kin.knititnow.com/2018/03/12/weight-hangers-for-knitting-machines-with-ribbers/)
+if you are having trouble knitting off the edge stitches.
 
 Then check again after several inches have been knit, by now you may be able to
 put a mirror underneath and check that the pattern you want is appearing on the
@@ -125,34 +126,35 @@ pages 111-114 of the KH910 manual.
 
 In our Triangles sample with Infinite Repeat on, let's stop and observe, with
 the carriage on the left at the beginning of row 1 of its cycle of ten rows. We
-have just changed to the black yarn ready for the next row 1 as displayed in AYAB.  
+have just changed to the white yarn ready for the next row 1 as displayed in AYAB.  
 Remember that AYAB's row numbering focuses on what's being _selected_ not what's
 being knitted.
 
-Notice that what's selected now is the last set of 10 black needles to complete
+Notice that what's selected now is the last set of 10 white needles to complete
 the previous triangle.  
 Knit across from left-right.  
-It has completed knitting the previous triangle, and has selected sets of 1
-needle to do the first point of the next triangle.  
-Knit across right-left and change color to white. Stop again and observe before
+It has completed knitting the previous triangle, and has selected sets of 9
+needles to do the background for the points of the next row of triangles.  
+Knit across right-left and change color to black. Stop again and observe before
 you knit the row.  
-It has just knitted the single black stitches, and selected sets of 9 to be the
-white stitches that go in between the single black ones for that same row.
+It has just knitted the sets of 9 white stitches, and selected
+the single black stitches that go in between them,
+forming the points of the row of triangles.
 
 The sequence of 4 passes for two rows is:  
-Pass 1: Black yarn, knit whatever it was given by the last selection of the
-previous set. Select for the black stitches for row 1 of this set of two rows.  
-Pass 2: Black yarn, Knit the first black stitches, select for the white stitches
-that will go in between the black stitches we just knitted, also for row 1 of
+Pass 1: White yarn, knit whatever it was given by the last selection of the
+previous set. Select for the white stitches for row 1 of this set of two rows.  
+Pass 2: White yarn, knit the first white stitches, select for the black stitches
+that will go in between the white stitches we just knitted, also for row 1 of
 this set.  
-Change color to white.  
-Pass 3: White yarn, knit the selected needles to complete row 1, select for the
-white stitches of row 2 of this set.  
-Pass 4: White yarn, knit the selected needles, select for the black stitches of
+Change color to black.  
+Pass 3: Black yarn, knit the selected needles to complete row 1, select for the
+black stitches of row 2 of this set.  
+Pass 4: Black yarn, knit the selected needles, select for the white stitches of
 row 2 of this set.  
-Change color to black.
+Change color to white.
 
-Notice that the selection is an "ABBA" sequence. Black, white, white, black;
+Notice that the selection is an "ABBA" sequence. White, black, black, white;
 repeat.
 
 Each set of four passes does the selections for two rows of the pattern. But the
@@ -176,18 +178,17 @@ is counted as the last pass of the previous set.
   feeder every time as it come out of the color changer. You may be able to stop
   in time to fix it.
 
-- AYAB 0.95 and earlier expect the black yarn first. The more usual convention is
-  to do the white first, more intuitive. That will likely be changed in a future
-  release of AYAB; for now the instructions describe black first. Otherwise
-  2-color DBJ works well as it is, doesn't particularly need any code changes.
+- The tutorial describes the instructions for knitting the background color first.
+  Starting in version 1.0.0, AYAB chooses the most common color in the image
+  as the background color.
 
 - You might be wondering what happens on the very first pass. There's nothing
   pre-selected on the main bed, so it only knits on the ribber (alternating
-  needles because of the lili settings) while selecting for the first black
+  needles because of the lili settings) while selecting for the first white
   pattern stitches. Technically I think that means that there's an extra ribber
   row at the beginning, but it gets absorbed into the backing pattern and is not
   noticeable. In subsequent first passes of the cycle of 4 passes/2 rows, it has
-  been provided with selected needles to knit in black.
+  been provided with selected needles to knit in white.
 
 - How do you end your pattern on exactly the right row at the end of a repeat?
   In Infinite Repeat you'll need to do one or two passes of the next cycle, but
