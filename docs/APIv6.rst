@@ -1,0 +1,171 @@
+.. _AYAB_serial-communication-specification-apiv6:
+
+AYAB Serial Communication Specification, API v6
+===============================================
+
+This document specifies the serial communication protocol used by the AYAB desktop
+software (host) to communicate with the firmware on the AYAB shield (device), starting
+with version 1.0.0 of both `software <https://github.com/AllYarnsAreBeautiful/ayab-desktop>`_ and `firmware <https://github.com/AllYarnsAreBeautiful/ayab-firmware>`_.
+
+.. _generic-configuration:
+
+Generic configuration
+---------------------
+
+Asynchronous serial communication at 115200 baud, 8N1 without hardware flow control,
+encoded by `SLIP protocol <https://tools.ietf.org/html/rfc1055.html>`_. SLIP packets are
+parsed sequentially. Checksums are calculated using the CRC8 algorithm as implemented in
+Dallas/Maxim application note 27.
+
+.. _API-v6:
+
+Protocol for API v6
+-------------------
+
+Initial handshake
+~~~~~~~~~~~~~~~~~
+
+The host sends a **reqInfo** message to the device, which responds with **cnfInfo**
+indicating its API and firmware versions.
+
+Work request
+~~~~~~~~~~~~
+
+The host waits for a **indState(true)** message before requesting work. On startup,
+the device continuously checks for the initialization of the machine (carriage passed left
+hall sensor). When this happens, it sends an **indState(true)** to tell the host that the
+machine is ready. After receiving this message, the host can send either a **reqStart**
+message to begin knitting, or a **reqTest** message to begin testing the hardware.
+The device confirms receipt of **reqStart** and **reqTest** messages by returning a
+**cnfStart** or **cnfTest** message, respectively.
+
+Knitting operation
+~~~~~~~~~~~~~~~~~~
+
+After a successful **reqStart**, and when it is ready to receive a further signal,
+the device begins to poll the host for line data with **reqLine**. (The device becomes
+ready after the carriage moves past the Hall sensor marking the beginning of the row.)
+The host answers with a **cnfLine** message containing information for the next row
+of knitting. After the row has been completed, the device sends another **reqLine** message
+to request the next line of data. When the host does not have any morelines to send,
+it sets the *lastLine* flag in its final **cnfLine** message.
+
+Hardware test operation
+~~~~~~~~~~~~~~~~~~~~~~~
+
+After a successful **reqTest**, the device begins to poll the host for commands.
+The host sends commands as zero-terminated text strings with an initial **cmd**
+id ('%'). Commands are case-sensitive. The host polls the device for test results in
+a similar fashion. The device sends test results asynchronously, as zero-terminated
+text strings with an initial **test** id. The hardware test is terminated when the host
+sends a '%quit' command.
+
+.. _message-identifier-format:
+
+Message identifier format
+-------------------------
+
+Messages start with a byte that identifies their type. This byte is called
+"id" or "message id" in the following document. This table lists all the bits
+of this byte and assigns their purpose:
+
++-----+-------+--------------------+------------------------------------------+
+| Bit | Value |        Name        |         Description and Values           |
++=====+=======+====================+==========================================+
+|     |       |                    | - 0 = the message is from the host       |
+|  7  |  128  | message source     | - 1 = the message is from the controller |
+|     |       |                    |                                          |
++-----+-------+--------------------+------------------------------------------+
+|     |       |                    | - 0 = the message is unprompted          |
+|  6  |   64  | message type       | - 1 = the message is confirmation        |
+|     |       |                    |   of a request                           |
++-----+-------+--------------------+------------------------------------------+
+|     |       |                    | - 0 = fixed-format message               |
+|  5  |   32  | message format     | - 1 = zero-terminated string             |
+|     |       |                    |                                          |
++-----+-------+--------------------+------------------------------------------+
+|     |       |                    | - 0 = not a debug message                |
+|  4  |   16  | debug flag         | - 1 = debug message                      |
+|     |       |                    |                                          |
++-----+-------+--------------------+------------------------------------------+
+|  3  |    8  |                    |                                          |
++-----+-------+                    | These are the values that identify the   |
+|  2  |    4  |                    | message.                                 |
++-----+-------+ message identifier |                                          |
+|  1  |    2  |                    |                                          |
++-----+-------+                    |                                          |
+|  0  |    1  |                    |                                          |
++-----+-------+--------------------+------------------------------------------+
+
+.. _message-definitions-apiv6:
+
+Message definitions (API v6)
+----------------------------
+
+The length is the total length with `id <message-identifier-format>`_
+and parameters. Note that the initial and terminal  ``0xc0`` bytes required
+by the SLIP protocol are not included in the message length.
+
+========== ========== ==== ======== ====================================================================
+  source      name     id  length        parameters
+========== ========== ==== ======== ====================================================================
+host       .. _m6-01: 0x01 6        ``0xaa 0xbb 0xcc 0xdd 0xee``      
+                                  
+           reqStart                 - ``0xaa`` = machine type
+
+                                      - ``0`` = KH-910 or KH-950
+                                      - ``1`` = KH-930, KH-940, or KH-965
+                                      - ``2`` = KH-270
+                                    - ``0xbb`` = start needle (Range: 0-198)
+                                    - ``0xcc`` = stop needle (Range: 0-199)
+                                    - ``0xdd`` = flags (bit 0: continuousReporting)
+                                    - ``0xee`` = CRC8 checksum
+device     .. _m6-C1: 0xC1 2        ``0x0a``
+
+           cnfStart                 - ``a`` = success (0 = false, 1 = true)
+device     .. _m6-82: 0x82 2        ``0xaa``
+
+           reqLine                  - ``aa`` = line number (Range: 0..255)
+host       .. _m6-42: 0x42 25 or 30 ``0xaa 0xbb 0xcc 0xdd[] 0xee``
+
+           cnfLine                  - ``aa`` = line number (Range: 0..255)
+                                    - ``bb`` = flags (bit 0: lastLine)
+                                    - ``cc`` = color information
+                                    - ``dd[]`` = binary pixel data (15 or 25 bytes)
+                                    - ``ee`` = CRC8 checksum
+host       .. _m6-03: 0x03 1
+
+           reqInfo 
+device     .. _m6-C3: 0xC3 4        ``0xaa 0xbb 0xcc``
+
+           cnfInfo                  - ``aa`` = API Version Identifier
+                                    - ``bb`` = Firmware Major Version
+                                    - ``cc`` = Firmware Minor Version
+device     .. _m6-84: 0x84 8        ``0x0a 0xBB 0xbb 0xCC 0xcc 0xdd 0xee``
+
+           indState                 - ``a`` = ready (0 = false, 1 = true)
+                                    - ``BBbb`` = left hall sensor value
+                                    - ``CCcc`` = right hall sensor value
+                                    - ``dd`` = the carriage
+
+                                      - ``0`` = no carriage detected
+                                      - ``1`` = Knit carriage
+                                      - ``2`` = Lace carriage
+                                      - ``3`` = Garter carriage
+                                    - ``ee`` = carriage position (needle number)
+host       .. _m6-04: 0x04 1        Request hardware test operation
+
+           reqTest 
+host       .. _m6-C4: 0xC4 2        ``0x0a``
+
+           cnfTest                  - ``a`` = success (0 = false, 1 = true)
+host       .. _m6-25: 0x25 var      A hardware test command string. The id is the character ``%``.
+                                  
+           cmd                      The length is variable. The string terminates with 0.
+device     .. _m6-a5: 0xa5 var      A string containing hardware test information.
+                                  
+           test                     The length is variable. The string terminates with 0.
+device     .. _m6-bf: 0xbf var      A debug string.
+                                  
+           debug                    The length is variable. The string terminates with 0.
+========== ========== ==== ======== ====================================================================
