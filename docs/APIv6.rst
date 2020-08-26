@@ -80,8 +80,8 @@ of this byte and assigns their purpose:
 |  6  |   64  | message type       | - 1 = the message is confirmation        |
 |     |       |                    |   of a request                           |
 +-----+-------+--------------------+------------------------------------------+
-|     |       |                    | - 0 = fixed-format message               |
-|  5  |   32  | message format     | - 1 = zero-terminated string             |
+|     |       |                    | - 0 = normal operation                   |
+|  5  |   32  | test flag          | - 1 = hardware test mode                 |
 |     |       |                    |                                          |
 +-----+-------+--------------------+------------------------------------------+
 |     |       |                    | - 0 = not a debug message                |
@@ -102,70 +102,100 @@ of this byte and assigns their purpose:
 Message definitions (API v6)
 ----------------------------
 
-The length is the total length with `id <message-identifier-format>`_
+The length is the total length with :ref:`id <message-identifier-format>`
 and parameters. Note that the initial and terminal  ``0xc0`` bytes required
 by the SLIP protocol are not included in the message length.
 
-========== ========== ==== ======== ====================================================================
+========== ========== ==== ====== =============================================
   source      name     id  length        parameters
-========== ========== ==== ======== ====================================================================
-host       .. _m6-01: 0x01 6        ``0xaa 0xbb 0xcc 0xdd 0xee``      
+========== ========== ==== ====== =============================================
+host       .. _m6-01: 0x01 6      ``0xaa 0xbb 0xcc 0xdd 0xee`      
                                   
-           reqStart                 - ``0xaa`` = machine type
+           reqStart_              - ``0xaa`` = machine type
 
-                                      - ``0`` = KH-910 or KH-950
-                                      - ``1`` = KH-930, KH-940, or KH-965
-                                      - ``2`` = KH-270
-                                    - ``0xbb`` = start needle (Range: 0-198)
-                                    - ``0xcc`` = stop needle (Range: 0-199)
-                                    - ``0xdd`` = flags (bit 0: continuousReporting)
-                                    - ``0xee`` = CRC8 checksum
-device     .. _m6-C1: 0xC1 2        ``0x0a``
+                                    - ``0`` = KH-910 or KH-950
+                                    - ``1`` = KH-930, KH-940, or KH-965
+                                    - ``2`` = KH-270
+                                  - ``0xbb`` = start needle (Range: 0-198)
+                                  - ``0xcc`` = stop needle (Range: 0-199)
+                                  - ``0xdd`` = flags (bit 0: continuousReporting)
+                                  - ``0xee`` = CRC8 checksum
+device     .. _m6-C1: 0xC1 2      ``0x0a``
 
-           cnfStart                 - ``a`` = success (0 = false, 1 = true)
-device     .. _m6-82: 0x82 2        ``0xaa``
+           cnfStart_              - ``a`` = success (0 = true, other values = false)
+device     .. _m6-82: 0x82 2      ``0xaa``
 
-           reqLine                  - ``aa`` = line number (Range: 0..255)
-host       .. _m6-42: 0x42 25 or 30 ``0xaa 0xbb 0xcc 0xdd[] 0xee``
+           reqLine_               - ``aa`` = line number (Range: 0..255)
+host       .. _m6-42: 0x42 25/30  ``0xaa 0xbb 0xcc 0xdd[] 0xee``
 
-           cnfLine                  - ``aa`` = line number (Range: 0..255)
-                                    - ``bb`` = flags (bit 0: lastLine)
-                                    - ``cc`` = color information
-                                    - ``dd[]`` = binary pixel data (15 or 25 bytes)
-                                    - ``ee`` = CRC8 checksum
+           cnfLine_               - ``aa`` = line number (Range: 0..255)
+                                  - ``bb`` = flags (bit 0: lastLine)
+                                  - ``cc`` = color information
+                                  - ``dd[]`` = binary pixel data (15 or 25 bytes)
+                                  - ``ee`` = CRC8 checksum
 host       .. _m6-03: 0x03 1
 
-           reqInfo 
-device     .. _m6-C3: 0xC3 4        ``0xaa 0xbb 0xcc``
+           reqInfo_
+device     .. _m6-C3: 0xC3 4      ``0xaa 0xbb 0xcc``
 
-           cnfInfo                  - ``aa`` = API Version Identifier
-                                    - ``bb`` = Firmware Major Version
-                                    - ``cc`` = Firmware Minor Version
-device     .. _m6-84: 0x84 8        ``0x0a 0xBB 0xbb 0xCC 0xcc 0xdd 0xee``
+           cnfInfo_               - ``aa`` = API Version Identifier
+                                  - ``bb`` = Firmware Major Version
+                                  - ``cc`` = Firmware Minor Version
+device     .. _m6-84: 0x84 8      ``0x0a 0xBB 0xbb 0xCC 0xcc 0xdd 0xee``
 
-           indState                 - ``a`` = ready (0 = false, 1 = true)
-                                    - ``BBbb`` = left hall sensor value
-                                    - ``CCcc`` = right hall sensor value
-                                    - ``dd`` = the carriage
+           indState_              - ``a`` = ready (0 = true, other values = false)
+                                  - ``BBbb`` = :class:`int` left hall sensor value
+                                  - ``CCcc`` = :class:`int` right hall sensor value
+                                  - ``dd`` = the carriage
 
-                                      - ``0`` = no carriage detected
-                                      - ``1`` = Knit carriage
-                                      - ``2`` = Lace carriage
-                                      - ``3`` = Garter carriage
-                                    - ``ee`` = carriage position (needle number)
-host       .. _m6-04: 0x04 1        Request hardware test operation
+                                    - ``0`` = no carriage detected
+                                    - ``1`` = Knit carriage
+                                    - ``2`` = Lace carriage
+                                    - ``3`` = Garter carriage
+                                  - ``ee`` = carriage position (needle number)
+host       .. _m6-04: 0x04 1      Request hardware test operation
 
-           reqTest 
-host       .. _m6-C4: 0xC4 2        ``0x0a``
+           reqTest_
+host       .. _m6-C4: 0xC4 2      ``0x0a``
 
-           cnfTest                  - ``a`` = success (0 = false, 1 = true)
-host       .. _m6-25: 0x25 var      A hardware test command string. The id is the character ``%``.
+           cnfTest_               - ``a`` = success (0 = true, other values = false)
+host       .. _m6-25: 0x25 1      Hardware test command requesting help on available commands.
                                   
-           cmd                      The length is variable. The string terminates with 0.
-device     .. _m6-a5: 0xa5 var      A string containing hardware test information.
+           helpCmd_               
+host       .. _m6-26: 0x26 1      Hardware test command requesting that the device 
+                                  send a test packet consisting of three bytes, 0x01 0x02 0x03.
+           sendCmd_               
+host       .. _m6-26: 0x27 1      Hardware test command requesting that the device beep. 
                                   
-           test                     The length is variable. The string terminates with 0.
-device     .. _m6-bf: 0xbf var      A debug string.
+           beepCmd_               
+host       .. _m6-26: 0x28 3      Hardware test command requesting that the device set a single 
+                                  solenoid.
+           setSingleCmd_               
+host       .. _m6-26: 0x29 3      Hardware test command requesting that the device set all 
+                                  solenoids.
+           setAllCmd_               
+host       .. _m6-26: 0x2a 1      Hardware test command requesting that the device read the 
+                                  EOL (end of line) Hall sensors.
+           readEOLsensorsCmd_               
+host       .. _m6-26: 0x2b 1      Hardware test command requesting that the device read the 
+                                  position encoders.
+           readEncodersCmd_               
+host       .. _m6-26: 0x2c 1      Hardware test command requesting that the device read the 
+                                  EOL sensors and position encoders once per second, sending
+           autoReadCmd_           a testRes_ message reporting the information on each occaision.
+host       .. _m6-26: 0x2d 1      Hardware test command requesting that the device test the 
+                                  solenoids by activating odd and even sensors alternately,
+           autoTestCmd_           once per second.
+host       .. _m6-26: 0x2e 1      Hardware test command requesting that the device stop the 
+                                  autoRead and autoTest operations.
+           stopCmd_               
+host       .. _m6-26: 0x2f 1      Hardware test command requesting that the device quit 
+                                  hardware test mode and return to normal operation.
+           quitCmd_               
+device     .. _m6-e0: 0xe0 var    A string containing hardware test information.
                                   
-           debug                    The length is variable. The string terminates with 0.
-========== ========== ==== ======== ====================================================================
+           testRes_               The length is variable. The string terminates with 0.
+device     .. _m6-99: 0x99 var    A debug string.
+                                  
+           debug_                 The length is variable. The string terminates with 0.
+========== ========== ==== ====== =============================================
