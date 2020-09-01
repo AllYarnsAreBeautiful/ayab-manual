@@ -109,7 +109,7 @@ by the SLIP protocol are not included in the message length.
 ========== ============ ==== ====== ==============================================================
 host       .. _m6-01:   0x01 6      ``0xaa 0xbb 0xcc 0xdd 0xee``      
                                   
-           reqStart_                - ``0xaa`` = machine type
+           reqStart_                - ``0xaa`` = machine type:
 
                                       - ``0`` = KH-910 or KH-950
                                       - ``1`` = KH-930, KH-940, or KH-965
@@ -118,9 +118,9 @@ host       .. _m6-01:   0x01 6      ``0xaa 0xbb 0xcc 0xdd 0xee``
                                     - ``0xcc`` = stop needle (Range: 0-199)
                                     - ``0xdd`` = flags (bit 0: continuousReporting)
                                     - ``0xee`` = CRC8 checksum
-device     .. _m6-C1:   0xC1 2      ``0x0a``
+device     .. _m6-C1:   0xC1 2      ``0xaa``
 
-           cnfStart_                - ``a`` = success (0 = true, other values = false)
+           cnfStart_                - ``aa`` = success (0 = true, other values = false)
 device     .. _m6-82:   0x82 2      ``0xaa``
 
            reqLine_                 - ``aa`` = line number (Range: 0..255)
@@ -139,62 +139,58 @@ device     .. _m6-C3:   0xC3 4      ``0xaa 0xbb 0xcc``
            cnfInfo_                 - ``aa`` = API Version Identifier
                                     - ``bb`` = Firmware Major Version
                                     - ``cc`` = Firmware Minor Version
-device     .. _m6-84:   0x84 8      ``0x0a 0xBB 0xbb 0xCC 0xcc 0xdd 0xee``
+device     .. _m6-84:   0x84 9      ``0xaa 0xBB 0xbb 0xCC 0xcc 0xdd 0xee 0xff``
 
-           indState_                - ``a`` = ready (0 = true, other values = false)
+           indState_                - ``aa`` = ready (0 = true, other values = false)
                                     - ``BBbb`` = `int` left hall sensor value
                                     - ``CCcc`` = `int` right hall sensor value
-                                    - ``dd`` = the carriage
+                                    - ``dd`` = carriage type:
 
                                       - ``0`` = no carriage detected
                                       - ``1`` = Knit carriage
                                       - ``2`` = Lace carriage
                                       - ``3`` = Garter carriage
-                                      - ``ee`` = carriage position (needle number)
+                                    - ``ee`` = carriage position (needle number)
+                                    - ``ff`` = carriage direction:
+
+                                      - ``0`` = direction not known
+                                      - ``1`` = Left
+                                      - ``2`` = Right
 host       .. _m6-04:   0x04 1      Request hardware test operation
 
            reqTest_
-host       .. _m6-C4:   0xC4 2      ``0x0a``
+device     .. _m6-C4:   0xC4 2      ``0xaa``
 
-           cnfTest_                 - ``a`` = success (0 = true, other values = false)
-host       .. _m6-25:   0x25 1      Hardware test command requesting help on available commands.
+           cnfTest_                 - ``aa`` = success (0 = true, other values = false)
+host       .. _m6-26:   0x26 1      Hardware test command requesting help on available commands.
                                   
            helpCmd_               
-host       .. _m6-26:   0x26 1      Hardware test command requesting that the device 
+host       .. _m6-27:   0x27 1      Hardware test command requesting that the device 
                                     send a test packet consisting of three bytes, 0x01 0x02 0x03.
            sendCmd_               
-host       .. _m6-27:   0x27 1      Hardware test command requesting that the device beep. 
+host       .. _m6-28:   0x28 1      Hardware test command requesting that the device beep. 
                                   
            beepCmd_               
-host       .. _m6-28:   0x28 3      ``0xaa 0x0b``
-
-           setOneCmd_               - ``aa`` = index of solenoid to set
-                                    - ``b``  = solenoid value (0 = unset, 1 = set   
-host       .. _m6-29:   0x29 3      ``0xAA 0xaa`` 
-                            
-           setAllCmd_               - ``AAaa`` = solenoid values (little endian encoding)
+host       .. _m6-29:   0x29 1      Hardware test command requesting that the device read the 
+                                    EOL (end of line) Hall sensors and the position encoders.
+           readCmd_               
 host       .. _m6-2A:   0x2A 1      Hardware test command requesting that the device read the 
-                                    EOL (end of line) Hall sensors.
-           readEOLCmd_               
-host       .. _m6-2B:   0x2B 1      Hardware test command requesting that the device read the 
-                                    position encoders.
-           readEncCmd_               
-host       .. _m6-2C:   0x2C 1      Hardware test command requesting that the device read the 
                                     EOL sensors and position encoders once per second, sending
-           autoReadCmd_             a testRes_ message reporting the information each time.
-host       .. _m6-2D:   0x2D 1      Hardware test command requesting that the device test the 
+           autoCmd_                 a testRes_ message reporting the information each time.
+host       .. _m6-2B:   0x2B 1      Hardware test command requesting that the device test the 
                                     solenoids by activating odd and even sensors alternately,
-           autoTestCmd_             once per second.
-host       .. _m6-2E:   0x2E 1      Hardware test command requesting that the device stop the 
-                                    autoRead and autoTest operations.
-           stopCmd_               
-host       .. _m6-2F:   0x2F 1      Hardware test command requesting that the device quit 
+           testCmd_                 once per second.
+host       .. _m6-2C:   0x2C 1      Hardware test command requesting that the device quit 
                                     hardware test mode and return to normal operation.
            quitCmd_               
-device     .. _m6-E0:   0xE0 var    A string containing hardware test information.
+host       .. _m6-2D:   0x2D 3      ``0xaa 0x0b``
+
+           setCmd_                  - ``aa`` = index of solenoid to set
+                                    - ``b``  = solenoid value (0 = unset, 1 = set   
+device     .. _m6-EE:   0xEE var    A string containing hardware test information.
                                   
            testRes_                 The length is variable. The string terminates with 0.
-device     .. _m6-99:   0x99 var    A debug string.
+device     .. _m6-9F:   0x9F var    A debug string.
                                   
            debug_                   The length is variable. The string terminates with 0.
 ========== ============ ==== ====== ==============================================================
