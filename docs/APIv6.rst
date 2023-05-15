@@ -105,7 +105,7 @@ and parameters. Note that the initial and terminal  ``0xc0`` bytes required
 by the SLIP protocol are not included in the message length.
 
 ========== ============ ==== ====== ==============================================================
-  source      name       id  length        parameters
+Source     Name         ID   Length Parameters
 ========== ============ ==== ====== ==============================================================
 host       .. _m6-01:   0x01 6      ``0xaa 0xbb 0xcc 0xdd 0xee``      
                                   
@@ -191,6 +191,48 @@ device     .. _m6-EE:   0xEE var    A string containing hardware test informatio
                                   
            testRes_                 The length is variable. The string terminates with 0.
 device     .. _m6-9F:   0x9F var    A debug string.
-                                  
+    
            debug_                   The length is variable. The string terminates with 0.
 ========== ============ ==== ====== ==============================================================
+
+
+Error codes:
+
+===== ============================================================================================
+Value Meaning
+===== ============================================================================================
+0x00  Success
+
+.     Message not understood:
+0x01  Expected longer message
+0x02  Unrecognized MsgId
+0x03  Unexpected MsgId
+0x04  Checksum error
+
+.     Invalid arguments:
+0x10  Machine type invalid
+0x11  Needle value invalid
+0x12  Null pointer argument
+0x13  Argument(s) invalid or incompatible
+
+.     Device not initialized:
+0x20  Machine type not initialized
+0x21  Carriage not initialized
+0x22  Direction not initialized
+0x23  Beltshift not initialized
+
+.     Machine in wrong FSM state:
+0xE0  MACHINE_STATE_INIT
+0xE1  MACHINE_STATE_READY
+0xE2  MACHINE_STATE_KNIT
+0xE3  MACHINE_STATE_TEST
+0xEF  WRONG_MACHINE_STATE
+
+.     Generic error codes:
+0xF0  Warning (ignorable error)
+0xF1  Recoverable error
+0xF2  Critical error
+0xF3  Fatal error
+0xFF  Unspecified failure
+===== ============================================================================================
+
