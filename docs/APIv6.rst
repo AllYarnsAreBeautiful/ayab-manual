@@ -31,9 +31,9 @@ indicating its API and firmware versions.
 Work request
 ~~~~~~~~~~~~
 
-The host waits for a **indState(true)** message before requesting work. On startup,
+The host waits for a **indState** message before requesting work. On startup,
 the device continuously checks for the initialization of the machine (carriage passed left
-hall sensor). When this happens, it sends an **indState(true)** to tell the host that the
+hall sensor). When this happens, it sends an **indState** to tell the host that the
 machine is ready. After receiving this message, the host can send either a **reqStart**
 message to begin knitting, or a **reqTest** message to begin testing the hardware.
 The device confirms receipt of **reqStart** and **reqTest** messages by returning a
@@ -120,7 +120,7 @@ host       .. _m6-01:   0x01 6      ``0xaa 0xbb 0xcc 0xdd 0xee``
                                     - ``0xee`` = CRC8 checksum
 device     .. _m6-C1:   0xC1 2      ``0xaa``
 
-           cnfStart_                - ``aa`` = success (0 = true, other values = false)
+           cnfStart_                - ``aa`` = success (0 = success, other values = error)
 device     .. _m6-82:   0x82 2      ``0xaa``
 
            reqLine_                 - ``aa`` = line number (Range: 0..255)
@@ -141,7 +141,7 @@ device     .. _m6-C3:   0xC3 4      ``0xaa 0xbb 0xcc``
                                     - ``cc`` = Firmware Minor Version
 device     .. _m6-84:   0x84 9      ``0xaa 0xBB 0xbb 0xCC 0xcc 0xdd 0xee 0xff``
 
-           indState_                - ``aa`` = ready (0 = true, other values = false)
+           indState_                - ``aa`` = ready (0 = ready, other values = not ready)
                                     - ``BBbb`` = `int` left hall sensor value
                                     - ``CCcc`` = `int` right hall sensor value
                                     - ``dd`` = carriage type:
@@ -161,12 +161,12 @@ host       .. _m6-04:   0x04 1      Request hardware test operation
            reqTest_
 device     .. _m6-C4:   0xC4 2      ``0xaa``
 
-           cnfTest_                 - ``aa`` = success (0 = true, other values = false)
+           cnfTest_                 - ``aa`` = success (0 = success, other values = error)
 host       .. _m6-26:   0x26 1      Hardware test command requesting help on available commands.
                                   
            helpCmd_               
 host       .. _m6-27:   0x27 1      Hardware test command requesting that the device 
-                                    send a test packet consisting of three bytes, 0x01 0x02 0x03.
+                                    send a test packet consisting of three bytes, 0x31 0x32 0x33.
            sendCmd_               
 host       .. _m6-28:   0x28 1      Hardware test command requesting that the device beep. 
                                   
@@ -186,7 +186,7 @@ host       .. _m6-2C:   0x2C 1      Hardware test command requesting that the de
 host       .. _m6-2D:   0x2D 3      ``0xaa 0x0b``
 
            setCmd_                  - ``aa`` = index of solenoid to set
-                                    - ``b``  = solenoid value (0 = unset, 1 = set   
+                                    - ``b``  = solenoid value (0 = unset, 1 = set)   
 device     .. _m6-EE:   0xEE var    A string containing hardware test information.
                                   
            testRes_                 The length is variable. The string terminates with 0.
