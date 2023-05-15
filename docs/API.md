@@ -20,10 +20,10 @@ a single-byte parameter (API version = 0x06), the firmware major version, and th
 firmware minor version.
 
 When the device is ready to receive a further signal, it sends a state indicator 
-token (IndState = 0x84) followed by a parameter value of 0x01. The six bytes that
+token (IndState = 0x84) followed by a parameter value of 0x00. The six bytes that
 follow encode the left-hand Hall sensor (uint16_t), right-hand Hall sensor
-(uint16_t), carriage type, and carriage position, respectively. Other parameter 
-values indicate an error state in the device.
+(uint16_t), carriage type, and carriage position, respectively. Parameter values
+other than 0 indicate an error state in the device.
 
 ## Start sequence
 
@@ -36,15 +36,15 @@ checksum of the first five bytes.
 
 The device confirms receipt of the start request by responding with a two-byte
 message consisting of a token (CnfStart = 0xC1) followed by a parameter value.
-A parameter value of 0x01 indicates that the device is ready to start the knitting
-operation. Other parameter values indicate that the device is not ready.
+A parameter value of 0x00 indicates that the device is ready to start the knitting
+operation. Parameter values other than 0 indicate that the device is not ready.
 
 ## Knitting sequence
 
 When the device is ready to knit it sends a two-byte message consisting of a
 token (reqLine = 0x82) followed by a parameter indicating the requested line.
-Parameter value for the first line is zero and is incremented for each successive
-line that is requested.
+The first line is represented by a parameter value of zero and is incremented for
+each successive line that is requested.
 
 The host responds with a message consisting of a token (CnfLine = 0x42), the
 requested line number, one byte of flag information, one byte of color information,
@@ -59,8 +59,8 @@ message consisting of a token (reqTest = 0x04) followed by the machine type.
 
 The device confirms receipt of the start request by responding with a two-byte
 message consisting of a token (cnfTest = 0xC4) followed by a parameter value.
-A parameter value of 0x01 indicates that the device is ready to start the testing
-operation. Other parameter values indicate that the device is not ready.
+A parameter value of 0x00 indicates that the device is ready to start the testing
+operation. Parameter values other than 0 indicate that the device is not ready.
 
 On receipt of the cnfTest message, the desktop will open a serial monitor to display
 test information from the device and to elicit user input at the appropriate prompts.
