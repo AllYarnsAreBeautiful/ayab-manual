@@ -72,15 +72,11 @@ bytes are required by the SLIP protocol are not included in the message length.
 
 | Source   | Name         | ID   | Length | Parameters                                                   |
 |----------|--------------|------|--------|--------------------------------------------------------------|
-| host     | **reqStart** | 0x01 | 6      | *0xaa 0xbb 0xcc 0xdd 0xee*                                   |
-|          |              |      |        | 0xaa = machine type:                                         |
-|          |              |      |        |     0 = KH-910 or KH-950                                     |
-|          |              |      |        |     1 = KH-930, KH-940, or KH-965                            |
-|          |              |      |        |     2 = KH-270                                               |
-|          |              |      |        | 0xbb = start needle (Range: 0-198)                           |
-|          |              |      |        | 0xcc = stop needle (Range: 0-199)                            |
-|          |              |      |        | 0xdd = flags (bit 0: continuous reporting)                   |
-|          |              |      |        | 0xee = CRC8 checksum                                         |
+| host     | **reqStart** | 0x01 | 5      | *0xaa 0xbb 0xcc 0xdd*                                        |
+|          |              |      |        | 0xaa = start needle (Range: 0-198)                           |
+|          |              |      |        | 0xbb = stop needle (Range: 0-199)                            |
+|          |              |      |        | 0xcc = flags (bit 0: continuous reporting)                   |
+|          |              |      |        | 0xdd = CRC8 checksum                                         |
 | device   | **cnfStart** | 0xC1 | 2      | *0xa*                                                        |
 |          |              |      |        | 0xaa = success (0 = success, other values = error)           |
 | device   | **reqLine**  | 0x82 | 2      | *0xaa*                                                       |
@@ -110,8 +106,15 @@ bytes are required by the SLIP protocol are not included in the message length.
 |          |              |      |        |     0 = direction not known                                  |
 |          |              |      |        |     1 = Left                                                 |
 |          |              |      |        |     2 = Right                                                |
-| host     | **reqTest**  | 0x04 | 1      | Request hardware test operation                              |
-| device   | **cnfTest**  | 0xC4 | 2      | *0xaa*                                                       |
+| host     | **reqTest**  | 0x04 | 1      | Request init                                                 |
+| device   | **cnfTest**  | 0xC4 | 3      | *0xaa 0xbb*                                                  |
+|          |              |      |        | 0xaa = machine type:                                         |
+|          |              |      |        |     0 = KH-910 or KH-950                                     |
+|          |              |      |        |     1 = KH-930, KH-940, or KH-965                            |
+|          |              |      |        |     2 = KH-270                                               |
+|          |              |      |        | 0xbb = CRC8 checksum                                         |
+| host     | **reqInit**  | 0x05 | 1      | Request hardware test operation                              |
+| device   | **cnfInit**  | 0xC5 | 2      | *0xaa*                                                       |
 |          |              |      |        | 0xaa = success (0 = success, other values = error)           |
 | host     | **helpCmd**  | 0x26 | 1      | Hardware test command requesting help on available commands. |
 | host     | **sendCmd**  | 0x27 | 1      | Hardware test command requesting that the device send a      |
@@ -135,6 +138,10 @@ bytes are required by the SLIP protocol are not included in the message length.
 | device   | **debug**    | 0x9F | var    | A debug string, of variable length, terminating in 0.        |
 
 ## Error codes
+
+As of APIv6, the only important distinction is between *Success* (0x00) and any other value.
+Informative error codes are provided for diagnostic purposes (that is, for debugging). Non-zero
+error codes are subject to change: such changes will be considered non-breaking.
 
 | Value | Meaning |
 |-------|---------|
