@@ -106,16 +106,16 @@ bytes are required by the SLIP protocol are not included in the message length.
 |          |              |      |        |     0 = direction not known                                  |
 |          |              |      |        |     1 = Left                                                 |
 |          |              |      |        |     2 = Right                                                |
-| host     | **reqTest**  | 0x04 | 1      | Request init                                                 |
-| device   | **cnfTest**  | 0xC4 | 3      | *0xaa 0xbb*                                                  |
+| host     | **reqTest**  | 0x04 | 1      | Request hardware test operation                              |
+| device   | **cnfTest**  | 0xC4 | 3      | *0xaa*                                                       |
+|          |              |      |        | 0xaa = success (0 = success, other values = error)           |
+| host     | **reqInit**  | 0x05 | 1      | Request initiation                                           |
+| device   | **cnfInit**  | 0xC5 | 2      | *0xaa 0xbb*                                                  |
 |          |              |      |        | 0xaa = machine type:                                         |
 |          |              |      |        |     0 = KH-910 or KH-950                                     |
 |          |              |      |        |     1 = KH-930, KH-940, or KH-965                            |
 |          |              |      |        |     2 = KH-270                                               |
 |          |              |      |        | 0xbb = CRC8 checksum                                         |
-| host     | **reqInit**  | 0x05 | 1      | Request hardware test operation                              |
-| device   | **cnfInit**  | 0xC5 | 2      | *0xaa*                                                       |
-|          |              |      |        | 0xaa = success (0 = success, other values = error)           |
 | host     | **helpCmd**  | 0x26 | 1      | Hardware test command requesting help on available commands. |
 | host     | **sendCmd**  | 0x27 | 1      | Hardware test command requesting that the device send a      |
 |          |              |      |        | test packet consisting of three bytes, 0x31 0x32 0x33.       |
