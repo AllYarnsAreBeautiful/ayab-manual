@@ -92,7 +92,7 @@ bytes are required by the SLIP protocol are not included in the message length.
 |          |              |      |        | 0xaa = API Version Identifier                                |
 |          |              |      |        | 0xbb = Firmware Major Version                                |
 |          |              |      |        | 0xcc = Firmware Minor Version                                |
-| device   | **indState** | 0x84 | 9      | *0xaa 0xbb 0xCC 0xcc 0xDD 0xdd 0xee 0xff 0xgg*               |
+| device   | **indState** | 0x84 | 10     | *0xaa 0xbb 0xCC 0xcc 0xDD 0xdd 0xee 0xff 0xgg*               |
 |          |              |      |        | 0xaa = ready (0 = ready, other values = not ready)           |
 |          |              |      |        | 0xbb = Finite State Machine state                            |
 |          |              |      |        | 0xCCcc = `int` left hall sensor value                        |
