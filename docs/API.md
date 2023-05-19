@@ -92,17 +92,18 @@ bytes are required by the SLIP protocol are not included in the message length.
 |          |              |      |        | 0xaa = API Version Identifier                                |
 |          |              |      |        | 0xbb = Firmware Major Version                                |
 |          |              |      |        | 0xcc = Firmware Minor Version                                |
-| device   | **indState** | 0x84 | 9      | *0xaa 0xBB 0xbb 0xCC 0xcc 0xdd 0xee 0xff*                    |
+| device   | **indState** | 0x84 | 9      | *0xaa 0xbb 0xCC 0xcc 0xDD 0xdd 0xee 0xff 0xgg*               |
 |          |              |      |        | 0xaa = ready (0 = ready, other values = not ready)           |
-|          |              |      |        | 0xBBbb = `int` left hall sensor value                        |
-|          |              |      |        | 0xCCcc = `int` right hall sensor value                       |
-|          |              |      |        | 0xdd = carriage type:                                        |
+|          |              |      |        | 0xbb = Finite State Machine state                            |
+|          |              |      |        | 0xCCcc = `int` left hall sensor value                        |
+|          |              |      |        | 0xDDdd = `int` right hall sensor value                       |
+|          |              |      |        | 0xee = carriage type:                                        |
 |          |              |      |        |     0 = no carriage detected                                 |
 |          |              |      |        |     1 = Knit carriage                                        |
 |          |              |      |        |     2 = Lace carriage                                        |
 |          |              |      |        |     3 = Garter carriage                                      |
-|          |              |      |        | 0xee = carriage position (needle number)                     |
-|          |              |      |        | 0xff = carriage direction:                                   |
+|          |              |      |        | 0xff = carriage position (needle number)                     |
+|          |              |      |        | 0xgg = carriage direction:                                   |
 |          |              |      |        |     0 = direction not known                                  |
 |          |              |      |        |     1 = Left                                                 |
 |          |              |      |        |     2 = Right                                                |
