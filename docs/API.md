@@ -40,7 +40,7 @@ begins to poll the host for line data with **reqLine**. (The device becomes read
 carriage moves past the Hall sensor marking the beginning of the row.) The host answers with a
 **cnfLine** message containing information for the next row of knitting. After the row has been
 completed, the device sends another **reqLine** message to request the next line of data. When the
-host does not have any morelines to send, it sets the *lastLine* flag in its final **cnfLine**
+host does not have any more lines to send, it sets the *lastLine* flag in its final **cnfLine**
 message.
 
 ### Hardware test operation
