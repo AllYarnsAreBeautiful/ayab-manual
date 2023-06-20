@@ -16,7 +16,8 @@ on:
         type: string
         options:
           - '0.95'
-
+env:
+  DEFAULT_VERSION: 0.95
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "deploy"
@@ -30,9 +31,15 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0 # fetch all commits/branches
-          
+      
       # Runs a set of commands using the runners shell
       - name: Run Mike
+        if: inputs.version
         run: |
           pip install -r requirements.txt
           mike deploy ${{ inputs.version }} latest -u -p
+      - name: Run Mike Update
+        if: inputs.version == ''
+        run: |
+          pip install -r requirements.txt
+          mike deploy $DEFAULT_VERSION latest -u -p
