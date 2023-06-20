@@ -33,8 +33,8 @@ jobs:
           fetch-depth: 0 # fetch all commits/branches
 
       # Set git user 
-        run: git config user.name github-actions
-        run: git config user.email github-actions@github.com
+      - run: git config user.name github-actions
+      - run: git config user.email github-actions@github.com
         
       # Runs a set of commands using the runners shell
       - name: Run Mike
