@@ -82,7 +82,7 @@ bytes are required by the SLIP protocol are not included in the message length.
 |          |              |      |        | 0xbb = stop needle (Range: 0-199)                            |
 |          |              |      |        | 0xcc = flags (bit 0: continuous reporting)                   |
 |          |              |      |        | 0xdd = CRC8 checksum                                         |
-| device   | **cnfStart** | 0xC1 | 2      | *0xaa*                                                        |
+| device   | **cnfStart** | 0xC1 | 2      | *0xaa*                                                       |
 |          |              |      |        | 0xaa = success (0 = success, other values = error)           |
 | device   | **reqLine**  | 0x82 | 2      | *0xaa*                                                       |
 |          |              |      |        | 0xaa = line number (Range: 0 - 255)                          |
@@ -93,10 +93,12 @@ bytes are required by the SLIP protocol are not included in the message length.
 |          |              |      |        | 0xdd[] = binary pixel data (15 or 25 bytes)                  |
 |          |              |      |        | 0xee = CRC8 checksum                                         |
 | host     | **reqInfo**  | 0x03 | 1      | Request firmware API version                                 |
-| device   | **cnfInfo**  | 0xC3 | 4      | *0xaa 0xbb 0xcc*                                             |
+| device   | **cnfInfo**  | 0xC3 | 6      | *0xaa 0xbb 0xcc 0xdd 0xee*                                   |
 |          |              |      |        | 0xaa = API Version Identifier                                |
 |          |              |      |        | 0xbb = Firmware Major Version                                |
 |          |              |      |        | 0xcc = Firmware Minor Version                                |
+|          |              |      |        | 0xdd = Firmware Patch Version                                |
+|          |              |      |        | 0xee = Firmware Dirty flag (0 = clean, 1 = dirty)            |
 | device   | **indState** | 0x84 | 10     | *0xaa 0xbb 0xCC 0xcc 0xDD 0xdd 0xee 0xff 0xgg*               |
 |          |              |      |        | 0xaa = ready (0 = ready, other values = not ready)           |
 |          |              |      |        | 0xbb = Finite State Machine state                            |
