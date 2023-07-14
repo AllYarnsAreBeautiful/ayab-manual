@@ -93,12 +93,12 @@ bytes are required by the SLIP protocol are not included in the message length.
 |          |              |      |        | 0xdd[] = binary pixel data (15 or 25 bytes)                  |
 |          |              |      |        | 0xee = CRC8 checksum                                         |
 | host     | **reqInfo**  | 0x03 | 1      | Request firmware API version                                 |
-| device   | **cnfInfo**  | 0xC3 | 6      | *0xaa 0xbb 0xcc 0xdd 0xee*                                   |
+| device   | **cnfInfo**  | 0xC3 | 22     | *0xaa 0xbb 0xcc 0xdd 0xee[17]*                               |
 |          |              |      |        | 0xaa = API Version Identifier                                |
 |          |              |      |        | 0xbb = Firmware Major Version                                |
 |          |              |      |        | 0xcc = Firmware Minor Version                                |
 |          |              |      |        | 0xdd = Firmware Patch Version                                |
-|          |              |      |        | 0xee = Firmware Dirty flag (0 = clean, 1 = dirty)            |
+|          |              |      |        | 0xee[17] = Firmware Suffix (max. 16 chars + \0)              |
 | device   | **indState** | 0x84 | 10     | *0xaa 0xbb 0xCC 0xcc 0xDD 0xdd 0xee 0xff 0xgg*               |
 |          |              |      |        | 0xaa = ready (0 = ready, other values = not ready)           |
 |          |              |      |        | 0xbb = Finite State Machine state                            |
