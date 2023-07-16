@@ -12,31 +12,38 @@ from the vector graphics program Inkscape to create scalable patterns.
 
 ## Using GIMP to create patterns and save as PNG file
 
-1. Download GIMP 2.10.10 (or newer) from [the GIMP homepage](https://www.gimp.org/downloads/) 
+1. Download the latest version of GIMP from [the GIMP homepage](https://www.gimp.org/downloads/) 
    and install it.
 1. Run GIMP.
 1. In GIMP, left-click File -> New.
-1. Select the desired hight and width in pixels (= number of rows and stitches 
-   per row, respectively), then left-click "OK". See [below](pattern_image_creation.md#how-to-determine-your-gauge-and-compensate-for-elongation) 
-   to learn how to compensate for elongation of the resulting fabric.
-1. In GIMP, left-click Image -> Modus -> Indexed. In the dialog that pops up, 
-   select "black/white (1bit)" for textiles with two colors. 
-1. Select the pencil tool (hotkey: N). 
+1. Enter the desired width and height in pixels (= number of stitches per row and number of rows, respectively),
+   then left-click "OK".
+1. Left-click Image -> Mode -> Indexed. In the dialog that pops up, 
+   select "Use black and white (1-bit) palette" for textiles with two colors. 
+1. Left-click Tools -> Paint Tools -> Pencil (hotkey: N). 
 1. Set the pencil tool settings to Size = 1.00 (1x1 pixel), Hardness = 100, 
    keep other tool options at default settings (Dynamics Off). Keep default 
    foreground color (black) and background color (white).
-1. Optionally show grid: Left-click View -> Show Grid. Then, left-click 
-   Image -> Configure Grid. Set Spacing:Horizontal = 1.00 pixels and 
-   Spacing:Vertical = 1.00 pixels. Left-click "OK".    
-1. Draw the pattern (Zoom in using View -> Zoom to see individual pixels):  
-   so that background color is represented by white pixels and contrast color 
-   (foreground) is represented by black pixels. 
-1. In GIMP, left-click File -> "Export as". In the "Export Image" dialog that 
-   pops up, type in a file name and select the target directory, then 
-   left-click "Select File Type (By Extension)" -> "PNG (.PNG)", 
+1. Show grid: Left-click View -> Show Grid.
+1. Configure Grid: Left-click Image -> Configure Grid. Set Spacing:Horizontal = 1.00 pixels and 
+   Spacing:Vertical = 1.00 pixels. Left-click "OK".
+1. Zoom in to see individual pixels. Left-click View -> Zoom -> select the percentage you want.    
+1. Draw the pattern:  
+   In most cases, your background color is represented by white pixels and contrast color 
+   (foreground) is represented by black pixels. You may need to set the pencil to black.
+   Left-click Tools -> Default colors.
+1. In case you make an error: Mouse over a white square on your image and press CTRL.
+   Your pencil will now color any square white. Fix your error. To return to black as
+   your foreground color, left-click Tools -> Default colors.
+1. Once you've finished your pattern, save the file in xcf format just in case
+   you need to make modifications later. Left-click File -> Save. Type in a file name, then
+   select the target directory. Select Save.
+1. Now save for AYAB. Left-click File -> "Export as". In the "Export Image" dialog that 
+   pops up, type in a file name and select the target directory.
+   Next, left-click "Select File Type (By Extension)" -> "PNG (.PNG)", 
    then left-click "Export". In the "Export as PNG" dialog that pops up, you can 
-   keep Compression level = 9 and optionally deselect all other options, then 
-   left-click "Export" at the bottom of that dialog.
+   keep Compression level = 9 and optionally deselect all other options.
+   Then left-click "Export" at the bottom of that dialog.
 1. You can close GIMP now.
 
 
