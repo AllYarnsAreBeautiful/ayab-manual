@@ -43,14 +43,14 @@ from the vector graphics program Inkscape to create scalable patterns.
 ## How to determine your gauge and compensate for elongation
 
 If you want to create fabrics with exact dimensions and compensate for the fact 
-that stitches are usually higher than wide, you should determine 
-your gauge first:
+that stitches are usually wider than high, you must first determine 
+your gauge:
 Choose your yarn and make a gauge swatch with it on your knitting machine (a 
 small test fabric produced with the same settings as used for the final 
 product). Determine the gauge (x = number of stitches per mm, y = number of rows 
 per mm).
 
-If the desired width (W) and hight (H) of the fabric or shape you want to create 
+If the desired width (W) and height (H) of the fabric or shape you want to create 
 is given, calculate the required number of stitches (s) according to formula 1):
 
 s = x * W ,
