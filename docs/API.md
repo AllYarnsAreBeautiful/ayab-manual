@@ -80,7 +80,7 @@ bytes are required by the SLIP protocol are not included in the message length.
 | host     | **reqStart** | 0x01 | 5      | *0xaa 0xbb 0xcc 0xdd*                                        |
 |          |              |      |        | 0xaa = start needle (Range: 0-198)                           |
 |          |              |      |        | 0xbb = stop needle (Range: 0-199)                            |
-|          |              |      |        | 0xcc = flags (bit 0: continuous reporting)                   |
+|          |              |      |        | 0xcc = flags (bit 0: hardware beep on/off)                   |
 |          |              |      |        | 0xdd = CRC8 checksum                                         |
 | device   | **cnfStart** | 0xC1 | 2      | *0xaa*                                                       |
 |          |              |      |        | 0xaa = success (0 = success, other values = error)           |
