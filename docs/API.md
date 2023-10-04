@@ -35,13 +35,15 @@ messages by returning a **cnfStart** or **cnfTest** message, respectively.
 
 ### Knitting operation
 
-After a successful **reqStart**, and when it is ready to receive a further signal, the device
-begins to poll the host for line data with **reqLine**. (The device becomes ready after the
-carriage moves past the Hall sensor marking the beginning of the row.) The host answers with a
-**cnfLine** message containing information for the next row of knitting. After the row has been
-completed, the device sends another **reqLine** message to request the next line of data. When the
-host does not have any more lines to send, it sets the *lastLine* flag in its final **cnfLine**
-message.
+The **reqStart** message includes pattern information, and the first row of data. After a successful
+**reqStart**, and when it is ready to receive a further signal, the device begins to poll the host
+for line data with **reqLine**. (The device becomes ready after the carriage moves past the Hall
+sensor marking the beginning of the row.) The host answers with a **cnfLine** message containing
+information for the next row of knitting after the current row has been completed. After the row
+has been completed, the device sends another **reqLine** message to request further data. When the
+host does not have any more lines to send, it sets the *lastLine* flag in its penultimate **cnfLine**
+message. The device will send one final **reqLine** to when it has completed the penultimate line.
+The host will respond with a final **cnfLine** message with the *nullData* flag set.
 
 ### Hardware test operation
 
@@ -77,20 +79,21 @@ bytes are required by the SLIP protocol are not included in the message length.
 
 | Source   | Name         | ID   | Length | Parameters                                                   |
 |----------|--------------|------|--------|--------------------------------------------------------------|
-| host     | **reqStart** | 0x01 | 5      | *0xaa 0xbb 0xcc 0xdd*                                        |
+| host     | **reqStart** | 0x01 | 20/25  | *0xaa 0xbb 0xcc 0xdd[] 0xee*                                 |
 |          |              |      |        | 0xaa = start needle (Range: 0-198)                           |
 |          |              |      |        | 0xbb = stop needle (Range: 0-199)                            |
 |          |              |      |        | 0xcc = flags (bit 0: continuous reporting)                   |
 |          |              |      |        |              (bit 1: hardware beep on/off)                   |
-|          |              |      |        | 0xdd = CRC8 checksum                                         |
+|          |              |      |        | 0xdd[] = binary pixel data (15 or 25 bytes)                  |
+|          |              |      |        | 0xee = CRC8 checksum                                         |
 | device   | **cnfStart** | 0xC1 | 2      | *0xaa*                                                       |
 |          |              |      |        | 0xaa = success (0 = success, other values = error)           |
 | device   | **reqLine**  | 0x82 | 2      | *0xaa*                                                       |
 |          |              |      |        | 0xaa = line number (Range: 0 - 255)                          |
 | host     | **cnfLine**  | 0x42 | 25/30  | *0xaa 0xbb 0xcc 0xdd[] 0xee*                                 |
 |          |              |      |        | 0xaa = line number (Range: 0 - 255)                          |
-|          |              |      |        | 0xbb = flags (bit 0: lastLine)                               |
-|          |              |      |        | 0xcc = color information                                     |
+|          |              |      |        | 0xbb = flags (bit 0: lastLine, bit 1: nullData)              |
+|          |              |      |        | 0xcc = color information (unused)                            |
 |          |              |      |        | 0xdd[] = binary pixel data (15 or 25 bytes)                  |
 |          |              |      |        | 0xee = CRC8 checksum                                         |
 | host     | **reqInfo**  | 0x03 | 1      | Request firmware API version                                 |
