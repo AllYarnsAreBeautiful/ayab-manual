@@ -35,14 +35,14 @@ messages by returning a **cnfStart** or **cnfTest** message, respectively.
 
 ### Knitting operation
 
-The **reqStart** message includes pattern information, plus the first row of data. After a successful
-**reqStart**, and when it is ready to receive a further signal, the device begins to poll the host
-for line data with **reqLine**. (The device becomes ready after the carriage moves past the Hall
-sensor marking the beginning of the row.) The host answers with a **cnfLine** message containing
-information for the next row of knitting after the current row has been completed. After the row
-has been completed, the device sends another **reqLine** message to request further data. When the
-host does not have any more lines to send, it sets the *lastLine* flag in its final **cnfLine**
-message.
+The device becomes ready to knit after the carriage moves past the Hall sensor marking the
+beginning of the row. Once in the `Ready` state, the device can receive a **reqStart** message 
+that includes pattern information, plus the first row of data. After a successful **reqStart**
+the first row can be knit, and the device begins to poll the host for further line data with
+**reqLine**. The host answers with a **cnfLine** message containing information for the next row
+of knitting after the current row has been completed. After the row has been knit, the device
+sends another **reqLine** message to request further data. When the host has no more data to
+send, it sets the *lastLine* flag in its final **cnfLine** message.
 
 ### Hardware test operation
 
