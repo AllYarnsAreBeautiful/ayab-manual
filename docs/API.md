@@ -35,7 +35,7 @@ messages by returning a **cnfStart** or **cnfTest** message, respectively.
 
 ### Knitting operation
 
-The **reqStart** message includes pattern information, and the first row of data. After a successful
+The **reqStart** message includes pattern information, plus the first row of data. After a successful
 **reqStart**, and when it is ready to receive a further signal, the device begins to poll the host
 for line data with **reqLine**. (The device becomes ready after the carriage moves past the Hall
 sensor marking the beginning of the row.) The host answers with a **cnfLine** message containing
