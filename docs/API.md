@@ -116,7 +116,7 @@ bytes are required by the SLIP protocol are not included in the message length.
 |          |              |      |        |     1 = Left                                                 |
 |          |              |      |        |     2 = Right                                                |
 | host     | **reqTest**  | 0x04 | 1      | Request hardware test operation                              |
-| device   | **cnfTest**  | 0xC4 | 3      | *0xaa*                                                       |
+| device   | **cnfTest**  | 0xC4 | 2      | *0xaa*                                                       |
 |          |              |      |        | 0xaa = success (0 = success, other values = error)           |
 | host     | **reqInit**  | 0x05 | 3      | *0xaa 0xbb*                                                  |
 |          |              |      |        | 0xaa = machine type:                                         |
@@ -125,6 +125,9 @@ bytes are required by the SLIP protocol are not included in the message length.
 |          |              |      |        |     2 = KH-270                                               |
 |          |              |      |        | 0xbb = CRC8 checksum                                         |
 | device   | **cnfInit**  | 0xC5 | 2      | *0xaa*                                                       |
+|          |              |      |        | 0xaa = success (0 = success, other values = error)           |
+| host     | **reqQuit**  | 0x0C | 1      | Request end of knitting operation                            |
+| device   | **cnfQuit**  | 0xCC | 2      | *0xaa*                                                       |
 |          |              |      |        | 0xaa = success (0 = success, other values = error)           |
 | host     | **helpCmd**  | 0x26 | 1      | Hardware test command requesting help on available commands. |
 | host     | **sendCmd**  | 0x27 | 1      | Hardware test command requesting that the device send a      |
