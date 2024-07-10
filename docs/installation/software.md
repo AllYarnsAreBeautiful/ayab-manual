@@ -7,7 +7,7 @@ The other main dependencies can be found in requirements.txt
 
 *For Debian/Ubuntu*
 
-    sudo apt-get install python3-pip python3-dev python3-virtualenv python3-gi
+    sudo apt-get install python3-pip python3-dev python3-virtualenv python3-gi libasound2-dev
 
 *For openSUSE*
 
