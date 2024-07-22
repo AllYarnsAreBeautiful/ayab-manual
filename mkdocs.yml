@@ -19,4 +19,4 @@ nav:
   - Frequently Asked Questions: faq.md
   - Development:
       - Connectors: development/connectors.md
-      - API: API.md
+      - API: development/API.md
