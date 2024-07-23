@@ -15,6 +15,8 @@ Checksums are calculated using the CRC8 algorithm as implemented in Dallas/Maxim
 Messages are limited in size to **64** bytes, not including the SLIP packet markers (`0xC0`
 bytes), but taking into account the fact that under SLIP, data bytes equal to `0xC0` or `0xDB`
 are escaped into two bytes, the maximum safe payload size is **32** bytes.
+This value is defined in the MAX_MSG_BUFFER_LEN constant in AYAB firmware und should be adapted
+accordingly in case of API message length changes.
 
 ## Protocol for API v6
 
