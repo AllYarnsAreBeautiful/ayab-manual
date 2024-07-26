@@ -41,13 +41,14 @@ messages by returning a **cnfStart** or **cnfTest** message, respectively.
 
 ### Knitting operation
 
-After a successful **reqStart**, and when it is ready to receive a further signal, the device
-begins to poll the host for line data with **reqLine**. (The device becomes ready after the
-carriage moves past the Hall sensor marking the beginning of the row.) The host answers with a
-**cnfLine** message containing information for the next row of knitting. After the row has been
-completed, the device sends another **reqLine** message to request the next line of data. When the
-host does not have any more lines to send, it sets the *lastLine* flag in its final **cnfLine**
-message.
+The device becomes ready to knit after the carriage moves past the Hall sensor marking the
+beginning of the row. Once in the `Ready` state, the device can receive a **reqStart** message 
+that includes pattern information, plus the first row of data. After a successful **reqStart**
+the first row can be knit, and the device begins to poll the host for further line data with
+**reqLine**. The host answers with a **cnfLine** message containing information for the next row
+of knitting after the current row has been completed. After the row has been knit, the device
+sends another **reqLine** message to request further data. When the host has no more data to
+send, it sets the *lastLine* flag in its final **cnfLine** message.
 
 ### Hardware test operation
 
@@ -83,21 +84,22 @@ bytes are required by the SLIP protocol are not included in the message length.
 
 | Source   | Name         | ID   | Length | Parameters                                                   |
 |----------|--------------|------|--------|--------------------------------------------------------------|
-| host     | **reqStart** | 0x01 | 5      | *0xaa 0xbb 0xcc 0xdd*                                        |
+| host     | **reqStart** | 0x01 | 19/30  | *0xaa 0xbb 0xcc 0xdd[] 0xee*                                 |
 |          |              |      |        | 0xaa = start needle (Range: 0-198)                           |
 |          |              |      |        | 0xbb = stop needle (Range: 0-199)                            |
 |          |              |      |        | 0xcc = flags (bit 0: continuous reporting)                   |
 |          |              |      |        |              (bit 1: hardware beep on/off)                   |
-|          |              |      |        | 0xdd = CRC8 checksum                                         |
+|          |              |      |        | 0xdd[] = binary pixel data (14 or 25 bytes)                  |
+|          |              |      |        | 0xee = CRC8 checksum                                         |
 | device   | **cnfStart** | 0xC1 | 2      | *0xaa*                                                       |
 |          |              |      |        | 0xaa = success (0 = success, other values = error)           |
 | device   | **reqLine**  | 0x82 | 2      | *0xaa*                                                       |
 |          |              |      |        | 0xaa = line number (Range: 0 - 255)                          |
-| host     | **cnfLine**  | 0x42 | 25/30  | *0xaa 0xbb 0xcc 0xdd[] 0xee*                                 |
+| host     | **cnfLine**  | 0x42 | 19/30  | *0xaa 0xbb 0xcc 0xdd[] 0xee*                                 |
 |          |              |      |        | 0xaa = line number (Range: 0 - 255)                          |
 |          |              |      |        | 0xbb = flags (bit 0: lastLine)                               |
-|          |              |      |        | 0xcc = color information                                     |
-|          |              |      |        | 0xdd[] = binary pixel data (15 or 25 bytes)                  |
+|          |              |      |        | 0xcc = color information (unused)                            |
+|          |              |      |        | 0xdd[] = binary pixel data (14 or 25 bytes)                  |
 |          |              |      |        | 0xee = CRC8 checksum                                         |
 | host     | **reqInfo**  | 0x03 | 1      | Request firmware API version                                 |
 | device   | **cnfInfo**  | 0xC3 | 22     | *0xaa 0xbb 0xcc 0xdd 0xee[17]*                               |
@@ -181,11 +183,13 @@ error codes are subject to change: such changes will be considered non-breaking.
 | 0x22  | Direction not initialized |
 | 0x23  | Beltshift not initialized |
 |       | Machine in wrong FSM state: |
-| 0xE0  | MACHINE_STATE_INIT |
-| 0xE1  | MACHINE_STATE_READY |
-| 0xE2  | MACHINE_STATE_KNIT |
-| 0xE3  | MACHINE_STATE_TEST |
-| 0xEF  | WRONG_MACHINE_STATE |
+| 0xE0  | Machine state OpIdle |
+| 0xE1  | Machine state OpInit |
+| 0xE2  | Machine state OpReady |
+| 0xE3  | Machine state OpKnit |
+| 0xE4  | Machine state OpTest |
+| 0xE5  | Machine state OpError |
+| 0xEF  | Wrong machine state |
 |       | Generic error codes: |
 | 0xF0  | Warning (ignorable error) |
 | 0xF1  | Recoverable error |
