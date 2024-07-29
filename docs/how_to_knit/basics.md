@@ -21,8 +21,7 @@ AYAB 0.9, find it on your computer in the folder [path to your AYAB installation
 1. Click Configure, wait a moment.
 1. Click Knit. Wait until it says "Please init machine"
 1. Set the KC change knob to KC1 or KC2.
-1. Move the carriage so the magnet on the back of the carriage crosses the left turn mark, and STOP.
-1. **IMPORTANT!!!** Wait 2 or 3 seconds, there will be a "triple-beep"
+1. Move the carriage so the magnet on the back of the carriage crosses the left turn mark. You should hear a "triple-beep".
 1. Continue across the row. After you pass the end of the selected needles, it should beep.
 
 Our pattern has some black squares in row 1, you can see that they have been selected forward to D position.  
