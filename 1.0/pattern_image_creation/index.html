@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Pattern Creation - AYAB Manual</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link href="../css/version-select.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Pattern Creation";
+        var mkdocs_page_input_path = "pattern_image_creation.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> AYAB Manual
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Installation</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../installation/hardware/">Hardware</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../installation/software/">Software</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../gui/">Graphical User Interface</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">How To Knit</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../how_to_knit/basics/">Basics</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../how_to_knit/dbj_2-color/">Double Bed Jaquard (2-color)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../how_to_knit/dbj_middle-color-twice/">Middle-Color-Twice</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../how_to_knit/dbj_heart-of-pluto/">Heart of Pluto</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../how_to_knit/circular_knitting/">Circular Knitting</a>
+                  </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Pattern Creation</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#using-gimp-to-create-patterns-and-save-as-png-file">Using GIMP to create patterns and save as PNG file</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#how-to-determine-your-gauge-and-compensate-for-elongation">How to determine your gauge and compensate for elongation</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#creating-scalable-patterns-with-inkscape">Creating scalable patterns with Inkscape</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#inkscape-step-by-step">Inkscape step by step</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#using-inkscape-to-scale-patterns-for-creation-of-differently-sized-textiles">Using Inkscape to scale patterns for creation of differently sized textiles</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#scaling-step-by-step">Scaling step by step</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../faq/">Frequently Asked Questions</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Development</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../development/connectors/">Connectors</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../development/API/">API</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">AYAB Manual</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+      <li>Pattern Creation</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/AllYarnsAreBeautiful/ayab-manual/edit/master/docs/pattern_image_creation.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <div class="toc">
+<ul>
+<li><a href="#pattern-creation">Pattern creation</a><ul>
+<li><a href="#using-gimp-to-create-patterns-and-save-as-png-file">Using GIMP to create patterns and save as PNG file</a></li>
+<li><a href="#how-to-determine-your-gauge-and-compensate-for-elongation">How to determine your gauge and compensate for elongation</a></li>
+<li><a href="#creating-scalable-patterns-with-inkscape">Creating scalable patterns with Inkscape</a></li>
+<li><a href="#inkscape-step-by-step">Inkscape step by step</a></li>
+<li><a href="#using-inkscape-to-scale-patterns-for-creation-of-differently-sized-textiles">Using Inkscape to scale patterns for creation of differently sized textiles</a></li>
+<li><a href="#scaling-step-by-step">Scaling step by step</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<h1 id="pattern-creation">Pattern creation</h1>
+<p>You can use free open source software to design patterns. Create an image with a 
+width of 200 pixels or less with indexed colors. For two color knitwork, 
+make the image monochromatic: black and white (1 bit) with each pixel 
+representing a stitch. Save it in the PNG file format. 
+The following instructions show how to achieve this using GIMP and how to benefit
+from the vector graphics program Inkscape to create scalable patterns. </p>
+<h2 id="using-gimp-to-create-patterns-and-save-as-png-file">Using GIMP to create patterns and save as PNG file</h2>
+<ol>
+<li>Download the latest version of GIMP from <a href="https://www.gimp.org/downloads/">the GIMP homepage</a> 
+   and install it.</li>
+<li>Run GIMP.</li>
+<li>In GIMP, left-click File -&gt; New.</li>
+<li>Enter the desired width and height in pixels (= number of stitches per row and number of rows, respectively),
+   then left-click "OK".</li>
+<li>Left-click Image -&gt; Mode -&gt; Indexed. In the dialog that pops up, 
+   select "Use black and white (1-bit) palette" for textiles with two colors. </li>
+<li>Left-click Tools -&gt; Paint Tools -&gt; Pencil (hotkey: N). </li>
+<li>Set the pencil tool settings to Size = 1.00 (1x1 pixel), Hardness = 100, 
+   keep other tool options at default settings (Dynamics Off). Keep default 
+   foreground color (black) and background color (white).</li>
+<li>Show grid: Left-click View -&gt; Show Grid.</li>
+<li>Configure Grid: Left-click Image -&gt; Configure Grid. Set Spacing:Horizontal = 1.00 pixels and 
+   Spacing:Vertical = 1.00 pixels. Left-click "OK".</li>
+<li>Zoom in to see individual pixels. Left-click View -&gt; Zoom -&gt; select the percentage you want.    </li>
+<li>Draw the pattern:<br />
+   In most cases, your background color is represented by white pixels and contrast color 
+   (foreground) is represented by black pixels. You may need to set the pencil to black.
+   Left-click Tools -&gt; Default colors.</li>
+<li>In case you make an error: Mouse over a white square on your image and press CTRL.
+   Your pencil will now color any square white. Fix your error. To return to black as
+   your foreground color, left-click Tools -&gt; Default colors.</li>
+<li>Once you've finished your pattern, save the file in xcf format just in case
+   you need to make modifications later. Left-click File -&gt; Save. Type in a file name, then
+   select the target directory. Select Save.</li>
+<li>Now save for AYAB. Left-click File -&gt; "Export as". In the "Export Image" dialog that 
+   pops up, type in a file name and select the target directory.
+   Next, left-click "Select File Type (By Extension)" -&gt; "PNG (.PNG)", 
+   then left-click "Export". In the "Export as PNG" dialog that pops up, you can 
+   keep Compression level = 9 and optionally deselect all other options.
+   Then left-click "Export" at the bottom of that dialog.</li>
+<li>You can close GIMP now.</li>
+</ol>
+<h2 id="how-to-determine-your-gauge-and-compensate-for-elongation">How to determine your gauge and compensate for elongation</h2>
+<p>If you want to create fabrics with exact dimensions and compensate for the fact 
+that stitches are usually wider than high, you must first determine 
+your gauge:
+Choose your yarn and make a gauge swatch with it on your knitting machine (a 
+small test fabric produced with the same settings as used for the final 
+product). Determine the gauge (x = number of stitches per mm, y = number of rows 
+per mm).</p>
+<p>If the desired width (W) and height (H) of the fabric or shape you want to create 
+is given, calculate the required number of stitches (s) according to formula 1):</p>
+<p>s = x * W ,</p>
+<p>and calculate the required number of rows (r) according to the following 
+formula 2):</p>
+<p>r = y * H .</p>
+<p>Otherwise, if the desired number of stitches per row (s) and the desired 
+resulting aspect ratio [W:H] of the fabric or shape is given, use the following 
+formula 3):</p>
+<p>r = s * y / (x * [W:H]) .</p>
+<h2 id="creating-scalable-patterns-with-inkscape">Creating scalable patterns with Inkscape</h2>
+<p>To create patterns that can be scaled with optimal quality, design them in 
+a vector graphics program. The following instructions use Inkscape which is open 
+source. A video tutorial that also explains how to fill shapes with a repetitive 
+pattern and how to adjust the pattern fill according to your gauge can be found 
+in a <a href="https://it-by-derandere.blogspot.com/2019/04/scalable-knitting-patterns-with-open.html">post on the blog by DerAndere</a>.
+Here are the basic steps:</p>
+<h2 id="inkscape-step-by-step">Inkscape step by step</h2>
+<ol>
+<li>Download Inkscape 0.92 (or newer) for free from the <a href="https://inkscape.org/">Inkscape homepage</a> 
+   and install it.</li>
+<li>Run Inkscape, left-click "View" and activate the option "page grid".</li>
+<li>Left-click File -&gt; Document properties. In the dialog that pops up, Set 
+   user-defined hight and width of the document in mm, so that the document is 
+   about twice as big as the desired size of the textile to be designed. 
+   Left-click the tab "grid" and set grid units to mm. Then set "spacing X" = 1 
+   and "spacing Y" = 1. Close the dialog. </li>
+<li>Left-click on the tool "Create rectangle and squares"  tool (hotkey: F4) in 
+   the left toolbar and draw. </li>
+<li>Choose the select tool (hotkey: F1). Select your rectangle and adjust it 
+   using the tool controls that appear in the toolbar at the top. The width 
+   and hight in mm of that rectangle should equal exactly the desired width (W) 
+   and hight (H) of the fabric part you want to produce.</li>
+<li>Left-click "Fill and Stroke" ([Shift]+[Ctrl]+[F]) -&gt; Fill -&gt; "Solid color". 
+   Set the value RGBA = ffffffff (white). Left-click the tab "Stroke color" and 
+   set it to "No color". </li>
+<li>Left-click on one of the drawing tools in the left toolbar and draw a shape 
+   of the desired size inside the existing (invisible) rectangle from step 4-6. 
+   For Bézier-curves, the drawing mode has to be selected from the toolbar at 
+   the top before drawing and double-click or pressing the [enter] key ends 
+   drawing.</li>
+<li>Choose the select tool (hotkey: F1). Select your second shape and adjust it 
+   using the tool controls or by dragging the handles of the shape with the 
+   mouse.</li>
+<li>Left-click Object -&gt; "Fill and Stroke" ([Shift]+[Ctrl]+[F]) and set stroke 
+   color and/or fill color to "No color", RGBA = ffffffff (white) or 
+   RGBA = 000000ff (black). </li>
+<li>Left-click File -&gt; "Save as..." and choose a destination and file name. It 
+   is recommended to indicate the part size in the file name. </li>
+<li>Determine the gauge (x = number of stitches per mm, 
+   y = number of rows per mm) as described <a href="./#how-to-determine-your-gauge-and-compensate-for-elongation">above</a>.</li>
+<li>Use the select-tool, select all objects including the background rectangle.
+   Left-click Object -&gt; Transform..... Left-click the tab "Scale". 
+   Change % to mm, verify that the option "proportional scaling" is disabled 
+   and set Hight to the new hight h:<br />
+   h = H * y / x .<br />
+   Here, H is the desired fabric hight in mm. Left-click Apply.  </li>
+<li>Calculate the required stitches per row (s) for your textile using 
+   formula 1): s = x * W . 
+   Here, x is again the number of stitches per mm, W is the desired fabric 
+   width (see step 5) in mm. </li>
+<li>Select all objects, including the invisible background-rectangle and 
+   left-click File -&gt; "Export as PNG" ([Shift]+[Ctrl]+[E]). 
+   Left-click the tab "Selection" and set unit to px. Set<br />
+   Image size:Width to the value of s (required stitches per row). 
+   Left-click "Export as", set the target path, type in a file name that 
+   indicates the part size and gauge and left-click "Export". </li>
+<li>It is recommended to undo step 12 by going to Edit -&gt; Undo ([Ctrl]+[Z]) 
+   before making further adjustments to the design inside Inkscape.</li>
+<li>Optionally, open the exported PNG in GIMP 2.10 (or newer) and increase 
+   contrast by left-clicking Colors -&gt; Levels and adjusting the Input min and 
+   max value (black triangle: set black point, white triangle: set white 
+   point). Left-click OK. Left-click Image -&gt; Mode -&gt; Indexed -&gt; black/white 
+   (1bit). Then edit the pattern using the pencil tool and export as PNG as 
+   described <a href="./#using-gimp-to-create-patterns-and-save-as-png-file">in the previous section</a>.</li>
+</ol>
+<h2 id="using-inkscape-to-scale-patterns-for-creation-of-differently-sized-textiles">Using Inkscape to scale patterns for creation of differently sized textiles</h2>
+<p>If you have a pattern saved as SVG file and you want to change the resulting 
+fabric size, you can scale it using Inkscape: </p>
+<h2 id="scaling-step-by-step">Scaling step by step</h2>
+<ol>
+<li>Open the SVG file in Inkscape.</li>
+<li>If you want to scale the width of contours and Bézier-curves with the rest of 
+   the shapes, select those objects and left-click Path -&gt; "Convert object to 
+   path".</li>
+<li>Select all objects, including the invisible background-rectangle.</li>
+<li>Left-click Object -&gt; Transform... ([Shift]+[Ctrl]+[M]). If you want to keep 
+   the aspect ratio, activate the option "Scale proportionally".
+   Set the scaling factor in percent (or change % to mm and set the desired 
+   Width (and Hight) in mm). Then left-click Apply.</li>
+<li>Continue with steps 12-16 of the <a href="./#creating-scalable-patterns-with-inkscape">previous section</a>.      </li>
+</ol>
+<p>This article was written by <a href="https://it-by-derandere.blogspot.com/p/blog-page_46.html">DerAndere</a><br />
+<a href="https://github.com/AllYarnsAreBeautiful/ayab-manual">Feel free to improve it!</a></p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../how_to_knit/circular_knitting/" class="btn btn-neutral float-left" title="Circular Knitting"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../faq/" class="btn btn-neutral float-right" title="Frequently Asked Questions">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/AllYarnsAreBeautiful/ayab-manual" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../how_to_knit/circular_knitting/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../faq/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+      <script src="../js/version-select.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

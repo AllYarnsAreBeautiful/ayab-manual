@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>API - AYAB Manual</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link href="../../css/version-select.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "API";
+        var mkdocs_page_input_path = "development/API.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> AYAB Manual
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Installation</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../installation/hardware/">Hardware</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../installation/software/">Software</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../gui/">Graphical User Interface</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">How To Knit</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../how_to_knit/basics/">Basics</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../how_to_knit/dbj_2-color/">Double Bed Jaquard (2-color)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../how_to_knit/dbj_middle-color-twice/">Middle-Color-Twice</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../how_to_knit/dbj_heart-of-pluto/">Heart of Pluto</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../how_to_knit/circular_knitting/">Circular Knitting</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../pattern_image_creation/">Pattern Creation</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../faq/">Frequently Asked Questions</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Development</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../connectors/">Connectors</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">API</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#generic-configuration">Generic configuration</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#protocol-for-api-v6">Protocol for API v6</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#api-version-check">API version check</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#specification-of-knitting-machine-type">Specification of knitting machine type</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#work-request">Work request</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#knitting-operation">Knitting operation</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#hardware-test-operation">Hardware test operation</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#message-identifier-format">Message identifier format</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#message-definitions-api-v6">Message definitions (API v6)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#error-codes">Error codes</a>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">AYAB Manual</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+          <li>Development &raquo;</li>
+      <li>API</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/AllYarnsAreBeautiful/ayab-manual/edit/master/docs/development/API.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="ayab-serial-communication-specification-api-v6">AYAB Serial Communication Specification, API v6</h1>
+<p>This document specifies the serial communication protocol used by the AYAB desktop software (host)
+to communicate with the firmware on the AYAB shield (device), starting with version 1.0.0 of both
+<a href="https://github.com/AllYarnsAreBeautiful/ayab-desktop">software</a> and
+<a href="https://github.com/AllYarnsAreBeautiful/ayab-firmware">firmware</a>.</p>
+<h2 id="generic-configuration">Generic configuration</h2>
+<p>Asynchronous serial communication at 115200 baud, 8N1 without hardware flow control, encoded by
+<a href="https://tools.ietf.org/html/rfc1055.html">SLIP protocol</a>. SLIP packets are parsed sequentially.
+Checksums are calculated using the CRC8 algorithm as implemented in Dallas/Maxim application note
+27.</p>
+<p>Messages are limited in size to <strong>64</strong> bytes, not including the SLIP packet markers (<code>0xC0</code>
+bytes), but taking into account the fact that under SLIP, data bytes equal to <code>0xC0</code> or <code>0xDB</code>
+are escaped into two bytes, the maximum safe payload size is <strong>32</strong> bytes.
+This value is defined in the MAX_MSG_BUFFER_LEN constant in AYAB firmware und should be adapted
+accordingly in case of API message length changes.</p>
+<h2 id="protocol-for-api-v6">Protocol for API v6</h2>
+<h3 id="api-version-check">API version check</h3>
+<p>The host sends a <strong>reqInfo</strong> message to the device, which responds with <strong>cnfInfo</strong> indicating the
+API version used by its firmware.</p>
+<h3 id="specification-of-knitting-machine-type">Specification of knitting machine type</h3>
+<p>The host sends a <strong>reqInit</strong> message to the device specifying the knitting machine type in use.
+The device responds with <strong>cnfInit</strong> indicating the success or otherwise of the initialization.</p>
+<h3 id="work-request">Work request</h3>
+<p>The host waits for a <strong>indState</strong> message before requesting work. On startup, the device
+continuously checks for the initialization of the machine (carriage passed left hall sensor). When
+this happens, it sends an <strong>indState</strong> to tell the host that the machine is ready. After receiving
+this message, the host can send either a <strong>reqStart</strong> message to begin knitting, or a <strong>reqTest</strong>
+message to begin testing the hardware. The device confirms receipt of <strong>reqStart</strong> and <strong>reqTest</strong>
+messages by returning a <strong>cnfStart</strong> or <strong>cnfTest</strong> message, respectively.</p>
+<h3 id="knitting-operation">Knitting operation</h3>
+<p>After a successful <strong>reqStart</strong>, and when it is ready to receive a further signal, the device
+begins to poll the host for line data with <strong>reqLine</strong>. (The device becomes ready after the
+carriage moves past the Hall sensor marking the beginning of the row.) The host answers with a
+<strong>cnfLine</strong> message containing information for the next row of knitting. After the row has been
+completed, the device sends another <strong>reqLine</strong> message to request the next line of data. When the
+host does not have any more lines to send, it sets the <em>lastLine</em> flag in its final <strong>cnfLine</strong>
+message.</p>
+<h3 id="hardware-test-operation">Hardware test operation</h3>
+<p>After a successful <strong>reqTest</strong>, the device begins to poll the host for commands. The host polls
+the device for test results in a similar fashion. The device sends test results asynchronously, as
+zero-terminated text strings with an initial <strong>testRes</strong> id. The hardware test is terminated when
+the host sends <strong>quitCmd</strong>.</p>
+<h2 id="message-identifier-format">Message identifier format</h2>
+<p>Messages start with a byte that identifies their type. This byte is called "id" or "message id" in
+the following document. This table lists all the bits of this byte and assigns their purpose:</p>
+<table>
+<thead>
+<tr>
+<th>Bit</th>
+<th>Value</th>
+<th>Name</th>
+<th>Description and Values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>7</td>
+<td>128</td>
+<td>message source</td>
+<td>0 = the message is from the host</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>1 = the message is from the controller</td>
+</tr>
+<tr>
+<td>6</td>
+<td>64</td>
+<td>message type</td>
+<td>0 = the message is unprompted</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>1 = the message is confirmation of a request</td>
+</tr>
+<tr>
+<td>5</td>
+<td>32</td>
+<td>test flag</td>
+<td>0 = normal operation</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>1 = hardware test mode</td>
+</tr>
+<tr>
+<td>4</td>
+<td>16</td>
+<td>debug flag</td>
+<td>0 = not a debug message</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>1 = debug message</td>
+</tr>
+<tr>
+<td>3</td>
+<td>8</td>
+<td>message identifier</td>
+<td>These are the values that identify the message.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>4</td>
+<td>message identifier</td>
+<td></td>
+</tr>
+<tr>
+<td>1</td>
+<td>2</td>
+<td>message identifier</td>
+<td></td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>message identifier</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="message-definitions-api-v6">Message definitions (API v6)</h2>
+<p>The length is the total length with id and parameters. Note that the initial and terminal 0xc0
+bytes are required by the SLIP protocol are not included in the message length.</p>
+<table>
+<thead>
+<tr>
+<th>Source</th>
+<th>Name</th>
+<th>ID</th>
+<th>Length</th>
+<th>Parameters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>host</td>
+<td><strong>reqStart</strong></td>
+<td>0x01</td>
+<td>5</td>
+<td><em>0xaa 0xbb 0xcc 0xdd</em></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>0xaa = start needle (Range: 0-198)</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>0xbb = stop needle (Range: 0-199)</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>0xcc = flags (bit 0: continuous reporting)</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>(bit 1: hardware beep on/off)</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>0xdd = CRC8 checksum</td>
+</tr>
+<tr>
+<td>device</td>
+<td><strong>cnfStart</strong></td>
+<td>0xC1</td>
+<td>2</td>
+<td><em>0xaa</em></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>0xaa = success (0 = success, other values = error)</td>
+</tr>
+<tr>
+<td>device</td>
+<td><strong>reqLine</strong></td>
+<td>0x82</td>
+<td>2</td>
+<td><em>0xaa</em></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>0xaa = line number (Range: 0 - 255)</td>
+</tr>
+<tr>
+<td>host</td>
+<td><strong>cnfLine</strong></td>
+<td>0x42</td>
+<td>25/30</td>
+<td><em>0xaa 0xbb 0xcc 0xdd[] 0xee</em></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>0xaa = line number (Range: 0 - 255)</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>0xbb = flags (bit 0: lastLine)</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>0xcc = color information</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>0xdd[] = binary pixel data (15 or 25 bytes)</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>0xee = CRC8 checksum</td>
+</tr>
+<tr>
+<td>host</td>
+<td><strong>reqInfo</strong></td>
+<td>0x03</td>
+<td>1</td>
+<td>Request firmware API version</td>
+</tr>
+<tr>
+<td>device</td>
+<td><strong>cnfInfo</strong></td>
+<td>0xC3</td>
+<td>22</td>
+<td><em>0xaa 0xbb 0xcc 0xdd 0xee[17]</em></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>0xaa = API Version Identifier</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>0xbb = Firmware Major Version</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>0xcc = Firmware Minor Version</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>0xdd = Firmware Patch Version</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>0xee[17] = Firmware Suffix (max. 16 chars + \0)</td>
+</tr>
+<tr>
+<td>device</td>
+<td><strong>indState</strong></td>
+<td>0x84</td>
+<td>10</td>
+<td><em>0xaa 0xbb 0xCC 0xcc 0xDD 0xdd 0xee 0xff 0xgg</em></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>0xaa = ready (0 = ready, other values = not ready)</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>0xbb = Finite State Machine state</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>0xCCcc = <code>int</code> left hall sensor value</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>0xDDdd = <code>int</code> right hall sensor value</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>0xee = carriage type:</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>0 = no carriage detected</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>1 = Knit carriage</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>2 = Lace carriage</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>3 = Garter carriage</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>0xff = carriage position (needle number)</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>0xgg = carriage direction:</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>0 = direction not known</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>1 = Left</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>2 = Right</td>
+</tr>
+<tr>
+<td>host</td>
+<td><strong>reqTest</strong></td>
+<td>0x04</td>
+<td>1</td>
+<td>Request hardware test operation</td>
+</tr>
+<tr>
+<td>device</td>
+<td><strong>cnfTest</strong></td>
+<td>0xC4</td>
+<td>2</td>
+<td><em>0xaa</em></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>0xaa = success (0 = success, other values = error)</td>
+</tr>
+<tr>
+<td>host</td>
+<td><strong>reqInit</strong></td>
+<td>0x05</td>
+<td>3</td>
+<td><em>0xaa 0xbb</em></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>0xaa = machine type:</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>0 = KH-910 or KH-950</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>1 = KH-930, KH-940, or KH-965</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>2 = KH-270</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>0xbb = CRC8 checksum</td>
+</tr>
+<tr>
+<td>device</td>
+<td><strong>cnfInit</strong></td>
+<td>0xC5</td>
+<td>2</td>
+<td><em>0xaa</em></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>0xaa = success (0 = success, other values = error)</td>
+</tr>
+<tr>
+<td>host</td>
+<td><strong>reqQuit</strong></td>
+<td>0x0C</td>
+<td>1</td>
+<td>Request end of knitting operation</td>
+</tr>
+<tr>
+<td>device</td>
+<td><strong>cnfQuit</strong></td>
+<td>0xCC</td>
+<td>2</td>
+<td><em>0xaa</em></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>0xaa = success (0 = success, other values = error)</td>
+</tr>
+<tr>
+<td>host</td>
+<td><strong>helpCmd</strong></td>
+<td>0x26</td>
+<td>1</td>
+<td>Hardware test command requesting help on available commands.</td>
+</tr>
+<tr>
+<td>host</td>
+<td><strong>sendCmd</strong></td>
+<td>0x27</td>
+<td>1</td>
+<td>Hardware test command requesting that the device send a</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>test packet consisting of three bytes, 0x31 0x32 0x33.</td>
+</tr>
+<tr>
+<td>host</td>
+<td><strong>beepCmd</strong></td>
+<td>0x28</td>
+<td>1</td>
+<td>Hardware test command requesting that the device beep.</td>
+</tr>
+<tr>
+<td>host</td>
+<td><strong>readCmd</strong></td>
+<td>0x29</td>
+<td>1</td>
+<td>Hardware test command requesting that the device read the</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>EOL (end of line) Hall sensors and the position encoders.</td>
+</tr>
+<tr>
+<td>host</td>
+<td><strong>autoCmd</strong></td>
+<td>0x2A</td>
+<td>1</td>
+<td>Hardware test command requesting that the device read the</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>EOL sensors and position encoders once per second, sending</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>a <strong>testRes</strong> message reporting the information each time.</td>
+</tr>
+<tr>
+<td>host</td>
+<td><strong>testCmd</strong></td>
+<td>0x2B</td>
+<td>1</td>
+<td>Hardware test command requesting that the device test the</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>solenoids by activating odd and even sensors alternately,</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>once per second.</td>
+</tr>
+<tr>
+<td>host</td>
+<td><strong>quitCmd</strong></td>
+<td>0x2C</td>
+<td>1</td>
+<td>Hardware test command requesting that the device quit</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>hardware test mode and return to normal operation.</td>
+</tr>
+<tr>
+<td>host</td>
+<td><strong>setCmd</strong></td>
+<td>0x2D</td>
+<td>3</td>
+<td><em>0xaa 0xbb</em></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>0xaa = index of solenoid to set</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>0xbb = solenoid value (0 = unset, 1 = set)</td>
+</tr>
+<tr>
+<td>device</td>
+<td><strong>testRes</strong></td>
+<td>0xEE</td>
+<td>var</td>
+<td>A string containing hardware test information.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>The length is variable. The string terminates with 0.</td>
+</tr>
+<tr>
+<td>device</td>
+<td><strong>debug</strong></td>
+<td>0x9F</td>
+<td>var</td>
+<td>A debug string, of variable length, terminating in 0.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="error-codes">Error codes</h2>
+<p>As of APIv6, the only important distinction is between <em>Success</em> (0x00) and any other value.
+Informative error codes are provided for diagnostic purposes (that is, for debugging). Non-zero
+error codes are subject to change: such changes will be considered non-breaking.</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0x00</td>
+<td>Success</td>
+</tr>
+<tr>
+<td></td>
+<td>Message not understood:</td>
+</tr>
+<tr>
+<td>0x01</td>
+<td>Expected longer message</td>
+</tr>
+<tr>
+<td>0x02</td>
+<td>Unrecognized MsgId</td>
+</tr>
+<tr>
+<td>0x03</td>
+<td>Unexpected MsgId</td>
+</tr>
+<tr>
+<td>0x04</td>
+<td>Checksum error</td>
+</tr>
+<tr>
+<td></td>
+<td>Invalid arguments:</td>
+</tr>
+<tr>
+<td>0x10</td>
+<td>Machine type invalid</td>
+</tr>
+<tr>
+<td>0x11</td>
+<td>Needle value invalid</td>
+</tr>
+<tr>
+<td>0x12</td>
+<td>Null pointer argument</td>
+</tr>
+<tr>
+<td>0x13</td>
+<td>Argument(s) invalid or incompatible</td>
+</tr>
+<tr>
+<td></td>
+<td>Device not initialized:</td>
+</tr>
+<tr>
+<td>0x20</td>
+<td>Machine type not initialized</td>
+</tr>
+<tr>
+<td>0x21</td>
+<td>Carriage not initialized</td>
+</tr>
+<tr>
+<td>0x22</td>
+<td>Direction not initialized</td>
+</tr>
+<tr>
+<td>0x23</td>
+<td>Beltshift not initialized</td>
+</tr>
+<tr>
+<td></td>
+<td>Machine in wrong FSM state:</td>
+</tr>
+<tr>
+<td>0xE0</td>
+<td>MACHINE_STATE_INIT</td>
+</tr>
+<tr>
+<td>0xE1</td>
+<td>MACHINE_STATE_READY</td>
+</tr>
+<tr>
+<td>0xE2</td>
+<td>MACHINE_STATE_KNIT</td>
+</tr>
+<tr>
+<td>0xE3</td>
+<td>MACHINE_STATE_TEST</td>
+</tr>
+<tr>
+<td>0xEF</td>
+<td>WRONG_MACHINE_STATE</td>
+</tr>
+<tr>
+<td></td>
+<td>Generic error codes:</td>
+</tr>
+<tr>
+<td>0xF0</td>
+<td>Warning (ignorable error)</td>
+</tr>
+<tr>
+<td>0xF1</td>
+<td>Recoverable error</td>
+</tr>
+<tr>
+<td>0xF2</td>
+<td>Critical error</td>
+</tr>
+<tr>
+<td>0xF3</td>
+<td>Fatal error</td>
+</tr>
+<tr>
+<td>0xFF</td>
+<td>Unspecified failure</td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../connectors/" class="btn btn-neutral float-left" title="Connectors"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/AllYarnsAreBeautiful/ayab-manual" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../connectors/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+      <script src="../../js/version-select.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
