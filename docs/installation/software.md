@@ -1,65 +1,109 @@
-# Linux
+# Software
 
-## Prerequisites
+## Linux
 
-You need Python 3.5 and from your package manager's repository.
-The other main dependencies can be found in requirements.txt
+### Prerequisites
+
+AYAB is built with [Qt](https://www.qt.io). The official list of supported Linux distributions is published [on the Qt website](https://doc.qt.io/qt-6/linux.html#supported-configurations), but most recent distributions should have no problem running AYAB.
+
+The AYAB [AppImage](https://appimage.org) includes most dependencies the application needs to run, such as Python and Qt.
+
+If you have a desktop environment running you should be ready to run AYAB as you downloaded it. However, to flash the AYAB firmware to your shield or interface, you'll need to install `avrdude`, which you can generally install with your package manager:
 
 *For Debian/Ubuntu*
 
-    sudo apt-get install python3-pip python3-dev python3-virtualenv python3-gi
+    sudo apt install avrdude
 
 *For openSUSE*
 
-    sudo zypper install python3-pip python3-virtualenv python3-gi
+    sudo zypper install avrdude
 
-*All Distributions*
+*For Fedora*
+
+    sudo yum install avrdude
+
+#### Serial port access permissions
 
 To be able to communicate with your Arduino, it might be necessary to add the rights for USB communication by adding your user to some groups.
 
     sudo usermod -a -G tty [userName]
     sudo usermod -a -G dialout [userName]
 
-## Installation
+After doing that you may need to close and reopen your session.
 
-Checkout the git repository
+### Installation
 
-    git clone https://github.com/AllYarnsAreBeautiful/ayab-desktop
+Download the Linux AppImage from [ayab-knitting.com](https://ayab-knitting.com/ayab-software/).
 
-Create a virtual enviroment in the cloned repository
+Follow the [AppImage instructions](https://docs.appimage.org/introduction/quickstart.html#how-to-run-an-appimage) to make the AppImage executable.
 
-    cd ayab-desktop
-    virtualenv -p python3 --system-site-packages venv/
-    source venv/bin/activate
-    pip3 install -r requirements.txt
+Then you can double-click the AppImage to start AYAB.
 
-Now start ayab with
+## Windows
 
-    python3 -m fbs run
+### Prerequisites
 
-# Windows
+AYAB requires Windows 10 or Windows 11.
 
-Requires Windows 10 or Windows 7
+### USB Serial port setup
 
-The Windows setup is available at 
-[ayab-knitting.com](https://ayab-knitting.com/ayab-software/).  
+Depending on your Windows version and the make of your Arduino board, you may need to install an USB Serial driver. Recent Windows versions should prompt you to install the necessary drivers automatically though, so it's best to first try plugging the board in and see if it is detected as a serial device in AYAB.
+
+If you have trouble getting the board to be detected, installing the [Arduino IDE](https://www.arduino.cc/en/software) and following its instructions is recommended. Until the board is detected in the Arduino IDE it won't work with AYAB.
+
+### Installation
+
+Download the Windows setup from [ayab-knitting.com](https://ayab-knitting.com/ayab-software/).  
+
 Run the setup, install AYAB and run it with the icon on your Desktop.
 
-Important:
+**Important**: when choosing the installation directory, make sure that you do not overwrite any previous versions. Remove them or use another folder for installation.
 
-- When choosing the installation directory, make sure that you do not overwrite any previous versions. Remove them or use another folder for installation.
-- Currently, no spaces in the installation path are allowed.
+## macOS
 
-# macOS
+### Prerequisites
 
-Requires macOS 10.12 or newer
+AYAB requires macOS 11 (Big Sur) or newer.
 
-Please make sure that you have installed the [SiLabs CP210x "VCP" Driver](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers?tab=downloads) - it is required for use with most new boards.
+### USB Serial port setup
 
-Download the DMG image from [ayab-knitting.com](https://ayab-knitting.com/ayab-software/), open the DMG image and drag&drop the app to your Application folder.
-Then run AYAB from your Application folder.
+Depending on your macOS version and the make of your Arduino board, you may need to install an USB Serial driver. Recent macOS versions tend to have
+all the necessary drivers pre-installed though, so it's best to first try plugging the board in and see if it is detected as a serial device in AYAB.
 
-Important:
+If you have trouble getting the board to be detected, installing the [Arduino IDE](https://www.arduino.cc/en/software) and following its instructions is recommended. Until the board is detected in the Arduino IDE it won't work with AYAB.
 
-- In case macOS tells you the application can't be opened because it's from
-  an unidentified developer, just Ctrl+Click it and choose "Open".
+### Installation
+
+Download the macOS `dmg` file from [ayab-knitting.com](https://ayab-knitting.com/ayab-software/).
+
+When you double-click the downloaded `dmg` file, macOS will probably complain that it cannot identify the software:
+
+![](../img/macos/ayab-dmg-blocked.png)
+
+To open the disk image anyway, you have to hold `Ctrl` and click (or right-click) the file, and select `Open` in the pop-up menu that appears:
+
+![](../img/macos/ayab-dmg-right-click.png)
+
+You should get similar warning dialog as before, but this time with the option to open the disk image anyway:
+
+![](../img/macos/ayab-dmg-confirm-open.png)
+
+Once you confirm, you get to see what's in the disk image:
+
+![](../img/macos/ayab-dmg-contents.png)
+
+Drag the AYAB icon to the `Applications` folder shortcut. You can now "eject" the disk image and put it in the trash.
+
+Then run AYAB from your Applications folder. Again, macOS will likely warn you about insecure software:
+
+![](../img/macos/ayab-app-blocked.png)
+
+The workaround is the same. First, click `Show in Finder` to make the app icon visible in case it is not already. Then, `Ctrl`-click or right-click the app icon and select `Open`:
+
+![](../img/macos/ayab-app-right-click.png)
+
+You now get the option of opening the application:
+
+![](../img/macos/ayab-app-confirm-open.png)
+
+You only have to do this confirmation once. Until you overwrite the app with a different version, macOS will remember you authorized it to run and not bother you again when you run it.
