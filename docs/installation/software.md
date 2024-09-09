@@ -39,6 +39,8 @@ Follow the [AppImage instructions](https://docs.appimage.org/introduction/quicks
 
 Then you can double-click the AppImage to start AYAB.
 
+You can now head over to [Firmware](./firmware.md) to update your Arduino board.
+
 ## Windows
 
 ### Prerequisites
@@ -58,6 +60,8 @@ Download the Windows setup from [ayab-knitting.com](https://ayab-knitting.com/ay
 Run the setup, install AYAB and run it with the icon on your Desktop.
 
 **Important**: when choosing the installation directory, make sure that you do not overwrite any previous versions. Remove them or use another folder for installation.
+
+You can now head over to [Firmware](./firmware.md) to update your Arduino board.
 
 ## macOS
 
@@ -107,3 +111,5 @@ You now get the option of opening the application:
 ![](../img/macos/ayab-app-confirm-open.png)
 
 You only have to do this confirmation once. Until you overwrite the app with a different version, macOS will remember you authorized it to run and not bother you again when you run it.
+
+You can now head over to [Firmware](./firmware.md) to update your Arduino board.
