@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../img/favicon.ico" />
-    <title>Hardware - AYAB Manual</title>
+    <title>Firmware - AYAB Manual</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
@@ -13,8 +13,8 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Hardware";
-        var mkdocs_page_input_path = "installation/hardware.md";
+        var mkdocs_page_name = "Firmware";
+        var mkdocs_page_input_path = "installation/firmware.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -47,13 +47,15 @@
               </ul>
               <p class="caption"><span class="caption-text">Installation</span></p>
               <ul class="current">
-                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Hardware</a>
-    <ul class="current">
-    </ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../hardware/">Hardware</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../software/">Software</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../firmware/">Firmware</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Firmware</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#uploading-the-firmware">Uploading the firmware</a>
+    </li>
+    </ul>
                   </li>
               </ul>
               <ul>
@@ -103,9 +105,9 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../.." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
           <li>Installation &raquo;</li>
-      <li>Hardware</li>
+      <li>Firmware</li>
     <li class="wy-breadcrumbs-aside">
-          <a href="https://github.com/AllYarnsAreBeautiful/ayab-manual/edit/master/docs/installation/hardware.md" class="icon icon-github"> Edit on GitHub</a>
+          <a href="https://github.com/AllYarnsAreBeautiful/ayab-manual/edit/master/docs/installation/firmware.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
@@ -113,21 +115,31 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="hardware-install">Hardware install</h1>
-<p>AYAB hardware comes in two versions, known as the shield and interface versions.
-Electronically they are the same, except that they use different flavors of the Arduino chip, so they need different drivers.  The Arduino is soldered onto the interface, in the shield version it's a separate board that sits underneath.</p>
-<p>The Arduino itself is powered from the USB cable. For the power connection to the machine's patterning mechanism, follow the installation instructions that came with your hardware.<br />
-See also:
-<a href="https://vimeo.com/99870358">https://vimeo.com/99870358</a> Click the CC button to see subtitles in English. And for the interface;
-<a href="https://wiki.evilmadscientist.com/AYAB_Hardware_Installation">https://wiki.evilmadscientist.com/AYAB_Hardware_Installation</a></p>
-<p><strong>Very Important: In the shield version, you have to isolate the USB of the Arduino from the Power Connector to prevent short circuits!!</strong></p>
-<p><strong>Very Important: Please use a high-quality USB cable. With some cheap cables, the computer doesn't recognize the hardware!</strong></p>
+                <h1 id="firmware">Firmware</h1>
+<p>Part of the software that makes up AYAB runs on the Arduino board that is either plugged into your AYAB shield or part of your AYAB interface. We call this part the <strong>firmware</strong>. It is very small (about the size of a plain text email) but crucial to the operation of AYAB!</p>
+<p>The AYAB desktop application you installed on your computer contains the necessary firmware ready to copy to the Arduino board, but you need to ask it to do that operation. We call this "uploading" or "flashing" the firmware.</p>
+<p>You should perform this operation every time you install a new AYAB version on your computer. Or, if you have multiple versions of AYAB installed (for testing, for example), every time you switch from one version to another.</p>
+<p>Starting with AYAB 1.0, the same firmware is used regardless of the knitting machine you install the shield or interface into. So, if you have multiple knitting machines and move your AYAB shield or interface between them, there is no need to upload the firmware again every time you switch between machines.</p>
+<h2 id="uploading-the-firmware">Uploading the firmware</h2>
+<p>These steps assume you have already followed the <a href="../software/">Software installation</a> instructions.</p>
+<p>Do not launch the AYAB application yet! First, plug your Arduino board or AYAB interface into your computer with the correct USB cable. At least one LED should light up on the board. If the computer prompts you to install drivers, follow its instructions.</p>
+<p>Note that the shield or interface does not need to be connected to the knitting machine for this operation, but if it is, there is no need to separate it from the machine either.</p>
+<p>Next, launch the AYAB software. Open to the <strong>Tools</strong> menu and choose the <strong>Load AYAB firmware</strong> item.</p>
+<p><img alt="" src="../../img/menu-tools-load-firmware.png" /></p>
+<p>AYAB's <em>Firmware Flashing Utility</em> opens.</p>
+<p><img alt="" src="../../img/firmware-flashing-utility.png" /></p>
+<p>Look at the <strong>Port</strong> drop-down in the top right of the window. If it is empty, it means your Arduino board was not detected. Make sure the board is correctly plugged in; to give it another chance, you will have to close the <em>Firmware Flashing Utility</em> and re-open it so that it tries to detect the board again.</p>
+<p>If multiple devices appear in the list and you're not sure which is your AYAB board, you can try unplugging non-essential USB devices from your computer, then close and re-open the <em>Firmware Flashing Utility</em> so that the list is refreshed.</p>
+<p>Once you have selected the correct <strong>Port</strong>, you can go on to select the <strong>uno</strong> controller (this is the only type of Arduino board that AYAB 1.0 supports), then the <strong>Firmware Version</strong> of which there will generally only be one — the one that works with the AYAB application you are running.</p>
+<p>Once the firmware version is selected, the <strong>Flash</strong> button becomes available. Click it, and if everything goes to plan, after a few seconds the software should tell you the operation is complete:</p>
+<p><img alt="" src="../../img/firmware-flashing-done.png" /></p>
+<p>Close the pop-up and the <em>Firmware Flashing Utility</em>. You're all set to knit!</p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../.." class="btn btn-neutral float-left" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../software/" class="btn btn-neutral float-right" title="Software">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../software/" class="btn btn-neutral float-left" title="Software"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../gui/" class="btn btn-neutral float-right" title="Graphical User Interface">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -154,10 +166,10 @@ See also:
         </span>
     
     
-      <span><a href="../.." style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../software/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../software/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../../gui/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
