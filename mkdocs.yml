@@ -3,6 +3,8 @@ theme: readthedocs
 repo_url: https://github.com/AllYarnsAreBeautiful/ayab-manual
 plugins:
   - search
+markdown_extensions:
+- attr_list
 nav:
   - Home: index.md
   - Installation:
