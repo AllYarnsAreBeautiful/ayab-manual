@@ -5,11 +5,12 @@ plugins:
   - search
 nav:
   - Home: index.md
+  - Release notes:
+    - What's new in AYAB 1.0: whats-new-in-1.0.md
   - Installation:
       - Hardware: installation/hardware.md
       - Software: installation/software.md
       - Firmware: installation/firmware.md
-  - Graphical User Interface: gui.md
   - How To Knit:
     - Basics: how_to_knit/basics.md
     - Double Bed Jaquard (2-color): how_to_knit/dbj_2-color.md
