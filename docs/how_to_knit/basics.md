@@ -14,7 +14,8 @@ AYAB:
    (KH910 manual, pp. 10-15, 18-21).
 1. Position the carriage so that the magnet on the center back of the carriage is outside the left turn mark.
 1. Run the AYAB software. In AYAB, left-click “Open Image File” or choose “Open Image File” from the File menu and select the file `triangles_60x10.png` that is located in the folder that opens by default (if you want to knit a different pattern, choose a black/white raster image, preferably in `.png` file format. It must be at least as wide as the needles you are using).
-1. In the AYAB software, leave all the settings as they are: Single Bed, Colors 2, Infinite Repeat unchecked, Start Row 1, Start Needle 30, Stop Needle 30, Alignment Center, Knit Side Image unchecked. 
+1. In the AYAB software, leave all the settings as they are: Single Bed, Colors 2, Infinite Repeat unchecked, Start Row 1, Start Needle 30, Stop Needle 30, Alignment Center.
+1. You can leave **Knit Side Image** unchecked if you want the pattern to appear as it is in the file on the purl side of the work, i.e. the side facing you as you knit — this is how it worked with the original Brother electronics. If you check **Knit Side Image**, the image will be horizontally flipped so that it appears "correct" on the knit side of the work, also often called the "right" side. Note that before AYAB 1.0, the software always flipped the image.
 1. Click Knit. Wait until it says “Please start machine.” 
 1. Set the KC change knob to KC1 or KC2.
 1. Move the carriage so the magnet on the back of the carriage crosses the left turn mark. You should hear a "triple-beep".
@@ -60,7 +61,7 @@ Using the lace carriage and starting from the left, go through the usual AYAB st
 1. Click Knit in the software.
 1. Move the lace carriage over the left turn mark and wait for the beep.
 1. Continue across, it will select needles according to row 1 of the pattern and beep on the right.
-1. Return across to the left. Are there any needles selected? If yes, go over to the right again, and back. Are there any needles selected?
+1. Return across to the left. Are there any needles selected (i.e. in `D` position)? If yes, go over to the right again, and back. Repeat until no needles are selected.
 1. When you’re on the left with no needles selected, abandon the lace carriage on the left extension rail and knit two rows with the main carriage (usually two rows, can be more). Notice that there are no beeps, AYAB ignores the main carriage in this case.
 1. Repeat: pass the Lace carriage across and back until nothing is selected and it’s on the left, then two rows with the main carriage.
 
