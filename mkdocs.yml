@@ -9,6 +9,8 @@ nav:
   - Home: index.md
   - Release notes:
     - What's new in AYAB 1.0: whats-new-in-1.0.md
+  - Help: 
+    - Getting Help: help/discord.md
   - Installation:
       - Hardware: installation/hardware.md
       - Software: installation/software.md
@@ -24,4 +26,3 @@ nav:
   - Development:
       - Connectors: development/connectors.md
       - API: development/API.md
-  - Help: help/discord.md
