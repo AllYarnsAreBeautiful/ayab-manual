@@ -12,7 +12,7 @@ We're currently running a Beta to test the next version of the software. If you'
 
 You can file a bug through [Github](https://github.com/AllYarnsAreBeautiful/ayab-desktop/issues). Click the green "New Issue" button and give us as much detail as you can. 
 
-Please include the version of the software that you're working with. If you're in the beta, navigate to `Help` -> `About` and include the string there.
+Please include the version of the software that you're working with. If you're in the beta, navigate to `AYAB` -> `About AYAB` and include the string there.
 
 We may reach out for more information if we need it.
 
