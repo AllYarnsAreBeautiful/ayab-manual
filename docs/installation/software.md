@@ -1,46 +1,5 @@
 # Software
 
-## Linux
-
-### Prerequisites
-
-AYAB is built with [Qt](https://www.qt.io). The official list of supported Linux distributions is published [on the Qt website](https://doc.qt.io/qt-6/linux.html#supported-configurations), but most recent distributions should have no problem running AYAB.
-
-The AYAB [AppImage](https://appimage.org) includes most dependencies the application needs to run, such as Python and Qt.
-
-If you have a desktop environment running you should be ready to run AYAB as you downloaded it. However, to flash the AYAB firmware to your shield or interface, you'll need to install `avrdude`, which you can generally install with your package manager:
-
-*For Debian/Ubuntu*
-
-    sudo apt install avrdude
-
-*For openSUSE*
-
-    sudo zypper install avrdude
-
-*For Fedora*
-
-    sudo yum install avrdude
-
-#### Serial port access permissions
-
-To be able to communicate with your Arduino, it might be necessary to add the rights for USB communication by adding your user to some groups.
-
-    sudo usermod -a -G tty [userName]
-    sudo usermod -a -G dialout [userName]
-
-After doing that you may need to close and reopen your session.
-
-### Installation
-
-Download the Linux AppImage from [ayab-knitting.com](https://ayab-knitting.com/ayab-software/).
-
-Follow the [AppImage instructions](https://docs.appimage.org/introduction/quickstart.html#how-to-run-an-appimage) to make the AppImage executable.
-
-Then you can double-click the AppImage to start AYAB.
-
-You can now head over to [Firmware](./firmware.md) to update your Arduino board.
-
 ## Windows
 
 ### Prerequisites
@@ -111,5 +70,46 @@ You now get the option of opening the application:
 ![](../img/macos/ayab-app-confirm-open.png)
 
 You only have to do this confirmation once. Until you overwrite the app with a different version, macOS will remember you authorized it to run and not bother you again when you run it.
+
+You can now head over to [Firmware](./firmware.md) to update your Arduino board.
+
+## Linux
+
+### Prerequisites
+
+AYAB is built with [Qt](https://www.qt.io). The official list of supported Linux distributions is published [on the Qt website](https://doc.qt.io/qt-6/linux.html#supported-configurations), but most recent distributions should have no problem running AYAB.
+
+The AYAB [AppImage](https://appimage.org) includes most dependencies the application needs to run, such as Python and Qt.
+
+If you have a desktop environment running you should be ready to run AYAB as you downloaded it. However, to flash the AYAB firmware to your shield or interface, you'll need to install `avrdude`, which you can generally install with your package manager:
+
+*For Debian/Ubuntu*
+
+    sudo apt install avrdude
+
+*For openSUSE*
+
+    sudo zypper install avrdude
+
+*For Fedora*
+
+    sudo yum install avrdude
+
+#### Serial port access permissions
+
+To be able to communicate with your Arduino, it might be necessary to add the rights for USB communication by adding your user to some groups.
+
+    sudo usermod -a -G tty [userName]
+    sudo usermod -a -G dialout [userName]
+
+After doing that you may need to close and reopen your session.
+
+### Installation
+
+Download the Linux AppImage from [ayab-knitting.com](https://ayab-knitting.com/ayab-software/).
+
+Follow the [AppImage instructions](https://docs.appimage.org/introduction/quickstart.html#how-to-run-an-appimage) to make the AppImage executable.
+
+Then you can double-click the AppImage to start AYAB.
 
 You can now head over to [Firmware](./firmware.md) to update your Arduino board.
