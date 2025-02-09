@@ -24,3 +24,4 @@ nav:
   - Development:
       - Connectors: development/connectors.md
       - API: development/API.md
+  - Help: help/discord.md
