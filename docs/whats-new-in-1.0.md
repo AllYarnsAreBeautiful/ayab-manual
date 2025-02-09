@@ -29,3 +29,7 @@ Apart from a number of bug fixes, the following are the main changes in AYAB 1.0
 - **Arduino Mega** boards are no longer supported. Current supported hardware is the **[AYAB Shield](https://www.ayab-knitting.com/ayab-shield/)** used with an **Arduino Uno** board, and the EMSL **[AYAB Interface](https://www.ayab-knitting.com/ayab-interface/)**.
 - A new **Hardware Test** dialog is available from the **Tools** > **Test AYAB Device** menu item. It lets you check communication with the AYAB hardware.
 - The AYAB application now checks for **new releases** on startup and will prompt you to upgrade if a new release is available.
+
+## Get the latest software
+
+The latest release is [1.0.0-beta5](https://github.com/AllYarnsAreBeautiful/ayab-desktop/releases/tag/1.0.0-beta5). Choose the correct binary for your operating system (.exe for windows, .dmg for mac)
