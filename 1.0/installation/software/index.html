@@ -56,33 +56,33 @@
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="./">Software</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#linux">Linux</a>
+    <li class="toctree-l2"><a class="reference internal" href="#windows">Windows</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#prerequisites">Prerequisites</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#serial-port-access-permissions">Serial port access permissions</a>
     </li>
-        </ul>
+    <li class="toctree-l3"><a class="reference internal" href="#usb-serial-port-setup">USB Serial port setup</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#installation">Installation</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#windows">Windows</a>
+    <li class="toctree-l2"><a class="reference internal" href="#macos">macOS</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#prerequisites_1">Prerequisites</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#usb-serial-port-setup">USB Serial port setup</a>
+    <li class="toctree-l3"><a class="reference internal" href="#usb-serial-port-setup_1">USB Serial port setup</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#installation_1">Installation</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#macos">macOS</a>
+    <li class="toctree-l2"><a class="reference internal" href="#linux">Linux</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#prerequisites_2">Prerequisites</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#serial-port-access-permissions">Serial port access permissions</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#usb-serial-port-setup_1">USB Serial port setup</a>
+        </ul>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#installation_2">Installation</a>
     </li>
@@ -147,8 +147,45 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="software">Software</h1>
-<h2 id="linux">Linux</h2>
+<h2 id="windows">Windows</h2>
 <h3 id="prerequisites">Prerequisites</h3>
+<p>AYAB requires Windows 10 or Windows 11.</p>
+<h3 id="usb-serial-port-setup">USB Serial port setup</h3>
+<p>Depending on your Windows version and the make of your Arduino board, you may need to install an USB Serial driver. Recent Windows versions should prompt you to install the necessary drivers automatically though, so it's best to first try plugging the board in and see if it is detected as a serial device in AYAB.</p>
+<p>If you have trouble getting the board to be detected, installing the <a href="https://www.arduino.cc/en/software">Arduino IDE</a> and following its instructions is recommended. Until the board is detected in the Arduino IDE it won't work with AYAB.</p>
+<h3 id="installation">Installation</h3>
+<p>Download the Windows setup from <a href="https://ayab-knitting.com/ayab-software/">ayab-knitting.com</a>.  </p>
+<p>Run the setup, install AYAB and run it with the icon on your Desktop.</p>
+<p><strong>Important</strong>: when choosing the installation directory, make sure that you do not overwrite any previous versions. Remove them or use another folder for installation.</p>
+<p>You can now head over to <a href="../firmware/">Firmware</a> to update your Arduino board.</p>
+<h2 id="macos">macOS</h2>
+<h3 id="prerequisites_1">Prerequisites</h3>
+<p>AYAB requires macOS 11 (Big Sur) or newer.</p>
+<h3 id="usb-serial-port-setup_1">USB Serial port setup</h3>
+<p>Depending on your macOS version and the make of your Arduino board, you may need to install an USB Serial driver. Recent macOS versions tend to have
+all the necessary drivers pre-installed though, so it's best to first try plugging the board in and see if it is detected as a serial device in AYAB.</p>
+<p>If you have trouble getting the board to be detected, installing the <a href="https://www.arduino.cc/en/software">Arduino IDE</a> and following its instructions is recommended. Until the board is detected in the Arduino IDE it won't work with AYAB.</p>
+<h3 id="installation_1">Installation</h3>
+<p>Download the macOS <code>dmg</code> file from <a href="https://ayab-knitting.com/ayab-software/">ayab-knitting.com</a>.</p>
+<p>When you double-click the downloaded <code>dmg</code> file, macOS will probably complain that it cannot identify the software:</p>
+<p><img alt="" src="../../img/macos/ayab-dmg-blocked.png" /></p>
+<p>To open the disk image anyway, you have to hold <code>Ctrl</code> and click (or right-click) the file, and select <code>Open</code> in the pop-up menu that appears:</p>
+<p><img alt="" src="../../img/macos/ayab-dmg-right-click.png" /></p>
+<p>You should get similar warning dialog as before, but this time with the option to open the disk image anyway:</p>
+<p><img alt="" src="../../img/macos/ayab-dmg-confirm-open.png" /></p>
+<p>Once you confirm, you get to see what's in the disk image:</p>
+<p><img alt="" src="../../img/macos/ayab-dmg-contents.png" /></p>
+<p>Drag the AYAB icon to the <code>Applications</code> folder shortcut. You can now "eject" the disk image and put it in the trash.</p>
+<p>Then run AYAB from your Applications folder. Again, macOS will likely warn you about insecure software:</p>
+<p><img alt="" src="../../img/macos/ayab-app-blocked.png" /></p>
+<p>The workaround is the same. First, click <code>Show in Finder</code> to make the app icon visible in case it is not already. Then, <code>Ctrl</code>-click or right-click the app icon and select <code>Open</code>:</p>
+<p><img alt="" src="../../img/macos/ayab-app-right-click.png" /></p>
+<p>You now get the option of opening the application:</p>
+<p><img alt="" src="../../img/macos/ayab-app-confirm-open.png" /></p>
+<p>You only have to do this confirmation once. Until you overwrite the app with a different version, macOS will remember you authorized it to run and not bother you again when you run it.</p>
+<p>You can now head over to <a href="../firmware/">Firmware</a> to update your Arduino board.</p>
+<h2 id="linux">Linux</h2>
+<h3 id="prerequisites_2">Prerequisites</h3>
 <p>AYAB is built with <a href="https://www.qt.io">Qt</a>. The official list of supported Linux distributions is published <a href="https://doc.qt.io/qt-6/linux.html#supported-configurations">on the Qt website</a>, but most recent distributions should have no problem running AYAB.</p>
 <p>The AYAB <a href="https://appimage.org">AppImage</a> includes most dependencies the application needs to run, such as Python and Qt.</p>
 <p>If you have a desktop environment running you should be ready to run AYAB as you downloaded it. However, to flash the AYAB firmware to your shield or interface, you'll need to install <code>avrdude</code>, which you can generally install with your package manager:</p>
@@ -167,47 +204,10 @@
 sudo usermod -a -G dialout [userName]
 </code></pre>
 <p>After doing that you may need to close and reopen your session.</p>
-<h3 id="installation">Installation</h3>
+<h3 id="installation_2">Installation</h3>
 <p>Download the Linux AppImage from <a href="https://ayab-knitting.com/ayab-software/">ayab-knitting.com</a>.</p>
 <p>Follow the <a href="https://docs.appimage.org/introduction/quickstart.html#how-to-run-an-appimage">AppImage instructions</a> to make the AppImage executable.</p>
 <p>Then you can double-click the AppImage to start AYAB.</p>
-<p>You can now head over to <a href="../firmware/">Firmware</a> to update your Arduino board.</p>
-<h2 id="windows">Windows</h2>
-<h3 id="prerequisites_1">Prerequisites</h3>
-<p>AYAB requires Windows 10 or Windows 11.</p>
-<h3 id="usb-serial-port-setup">USB Serial port setup</h3>
-<p>Depending on your Windows version and the make of your Arduino board, you may need to install an USB Serial driver. Recent Windows versions should prompt you to install the necessary drivers automatically though, so it's best to first try plugging the board in and see if it is detected as a serial device in AYAB.</p>
-<p>If you have trouble getting the board to be detected, installing the <a href="https://www.arduino.cc/en/software">Arduino IDE</a> and following its instructions is recommended. Until the board is detected in the Arduino IDE it won't work with AYAB.</p>
-<h3 id="installation_1">Installation</h3>
-<p>Download the Windows setup from <a href="https://ayab-knitting.com/ayab-software/">ayab-knitting.com</a>.  </p>
-<p>Run the setup, install AYAB and run it with the icon on your Desktop.</p>
-<p><strong>Important</strong>: when choosing the installation directory, make sure that you do not overwrite any previous versions. Remove them or use another folder for installation.</p>
-<p>You can now head over to <a href="../firmware/">Firmware</a> to update your Arduino board.</p>
-<h2 id="macos">macOS</h2>
-<h3 id="prerequisites_2">Prerequisites</h3>
-<p>AYAB requires macOS 11 (Big Sur) or newer.</p>
-<h3 id="usb-serial-port-setup_1">USB Serial port setup</h3>
-<p>Depending on your macOS version and the make of your Arduino board, you may need to install an USB Serial driver. Recent macOS versions tend to have
-all the necessary drivers pre-installed though, so it's best to first try plugging the board in and see if it is detected as a serial device in AYAB.</p>
-<p>If you have trouble getting the board to be detected, installing the <a href="https://www.arduino.cc/en/software">Arduino IDE</a> and following its instructions is recommended. Until the board is detected in the Arduino IDE it won't work with AYAB.</p>
-<h3 id="installation_2">Installation</h3>
-<p>Download the macOS <code>dmg</code> file from <a href="https://ayab-knitting.com/ayab-software/">ayab-knitting.com</a>.</p>
-<p>When you double-click the downloaded <code>dmg</code> file, macOS will probably complain that it cannot identify the software:</p>
-<p><img alt="" src="../../img/macos/ayab-dmg-blocked.png" /></p>
-<p>To open the disk image anyway, you have to hold <code>Ctrl</code> and click (or right-click) the file, and select <code>Open</code> in the pop-up menu that appears:</p>
-<p><img alt="" src="../../img/macos/ayab-dmg-right-click.png" /></p>
-<p>You should get similar warning dialog as before, but this time with the option to open the disk image anyway:</p>
-<p><img alt="" src="../../img/macos/ayab-dmg-confirm-open.png" /></p>
-<p>Once you confirm, you get to see what's in the disk image:</p>
-<p><img alt="" src="../../img/macos/ayab-dmg-contents.png" /></p>
-<p>Drag the AYAB icon to the <code>Applications</code> folder shortcut. You can now "eject" the disk image and put it in the trash.</p>
-<p>Then run AYAB from your Applications folder. Again, macOS will likely warn you about insecure software:</p>
-<p><img alt="" src="../../img/macos/ayab-app-blocked.png" /></p>
-<p>The workaround is the same. First, click <code>Show in Finder</code> to make the app icon visible in case it is not already. Then, <code>Ctrl</code>-click or right-click the app icon and select <code>Open</code>:</p>
-<p><img alt="" src="../../img/macos/ayab-app-right-click.png" /></p>
-<p>You now get the option of opening the application:</p>
-<p><img alt="" src="../../img/macos/ayab-app-confirm-open.png" /></p>
-<p>You only have to do this confirmation once. Until you overwrite the app with a different version, macOS will remember you authorized it to run and not bother you again when you run it.</p>
 <p>You can now head over to <a href="../firmware/">Firmware</a> to update your Arduino board.</p>
               
             </div>
