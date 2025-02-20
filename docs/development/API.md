@@ -112,10 +112,10 @@ bytes are required by the SLIP protocol are not included in the message length.
 |          |              |      |        | 0xCCcc = `int` left hall sensor value                        |
 |          |              |      |        | 0xDDdd = `int` right hall sensor value                       |
 |          |              |      |        | 0xee = carriage type:                                        |
-|          |              |      |        |     0 = no carriage detected                                 |
-|          |              |      |        |     1 = Knit carriage                                        |
-|          |              |      |        |     2 = Lace carriage                                        |
-|          |              |      |        |     3 = Garter carriage                                      |
+|          |              |      |        |     FF = no carriage detected                                 |
+|          |              |      |        |     0 = Knit carriage                                        |
+|          |              |      |        |     1 = Lace carriage                                        |
+|          |              |      |        |     2 = Garter carriage                                      |
 |          |              |      |        | 0xff = carriage position (needle number)                     |
 |          |              |      |        | 0xgg = carriage direction:                                   |
 |          |              |      |        |     0 = direction not known                                  |
