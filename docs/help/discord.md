@@ -4,15 +4,13 @@
 
 We do most user support on Discord. Please direct your questions to the [#help](https://discord.gg/jafq6UJaDc) channel.
 
-## Beta
-
-We're currently running a Beta to test the next version of the software. If you'd like to join and have some time to help find bugs, please fill out this [Google form](https://docs.google.com/forms/d/e/1FAIpQLScrvKoOgSTzqSSM6C5RM8FxQkjqvx_cg5yfC1-vhSgppvmkvA/viewform?usp=sf_link).
-
 ## File a bug
 
-You can file a bug through [Github](https://github.com/AllYarnsAreBeautiful/ayab-desktop/issues). Click the green "New Issue" button and give us as much detail as you can. 
+You can file a bug through [Github](https://github.com/AllYarnsAreBeautiful/ayab-desktop/issues). 
 
-Please include the version of the software that you're working with. If you're in the beta, navigate to `AYAB` -> `About AYAB` and include the string there.
+First check and see if anyone has already reported your bug, if they have feel free to add more information about how you reproduced the error. If not click the green "New Issue" button and give us as much detail as you can. 
+
+Please include the version of the software that you're working with. If you have the 1.0 release, navigate to `AYAB` -> `About AYAB` and include the string there.
 
 We may reach out for more information if we need it.
 
