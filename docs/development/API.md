@@ -118,9 +118,9 @@ bytes are required by the SLIP protocol are not included in the message length.
 |          |              |      |        |     3 = Garter carriage                                      |
 |          |              |      |        | 0xff = carriage position (needle number)                     |
 |          |              |      |        | 0xgg = carriage direction:                                   |
-|          |              |      |        |     0 = direction not known                                  |
-|          |              |      |        |     1 = Left                                                 |
-|          |              |      |        |     2 = Right                                                |
+|          |              |      |        |     0 = Left                                                 |
+|          |              |      |        |     1 = Right                                                |
+|          |              |      |        |     other = direction not known                              |
 | host     | **reqTest**  | 0x04 | 1      | Request hardware test operation                              |
 | device   | **cnfTest**  | 0xC4 | 2      | *0xaa*                                                       |
 |          |              |      |        | 0xaa = success (0 = success, other values = error)           |
