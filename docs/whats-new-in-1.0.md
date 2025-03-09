@@ -17,25 +17,25 @@ Apart from a number of bug fixes, the following are the main changes in AYAB 1.0
 
 ## Features
 - AYAB no longer automatically flips images horizontally. Now, the pixels you see on the left of your screen correspond to needles on the left of the machine as you knit. If you want your image to appear "as-is" on the knit ("right") side of the work, if it contains text for example, you need to flip it first, which you can easily do with the new **Knit Side Image** checkbox. You can set this option to be checked by default in the **Preferences** dialog if you want to default to the previous AYAB behavior.
+- On most supported knitting machine models (see Known Issues for details), you can now start knitting with the carriage at the right end of the machine, not just the left end.
 - Communications between the AYAB desktop application and the machine have been optimized, such that the **initial 2-second delay** has now been **removed**, and you also no longer have to wait at the end of each row — a beep will sound almost as soon as the carriage is past the last needle, and you can turn around as quickly as you like.
 - A **Simulation** mode now lets you preview the needle selections that the machine will do while knitting the pattern, even when no machine is connected. It can be accessed by selecting **Simulation** as the **Port** in the settings side panel.
 - You can now load patterns from **DesignAKnit** files in the `.pat` and `.stp` formats. Note that only the image content is loaded, no shaping or other instructions.
 - Two new **Image Actions** have been added: **Stretch** and **Reflect**.
+- In multicolor (double-bed Jacquard) modes, the colors are now ordered by **frequency** (number of pixels) instead of lightness.
 
 ## System and packaging
 - AYAB now requires **Windows 10 or newer**, **macOS 11 or newer**, or **Ubuntu Linux 22.04 or equivalent/newer**.
 - A Linux **AppImage** is now available, so that Linux users no longer have to build AYAB from source.
 - The AYAB firmware is now shared between all Brother machine models. You no longer select a machine model in the **Firmware Flashing** dialog; it is selected in the **Preferences** dialog and can be changed without having to flash the firmware again.
-- **Arduino Mega** boards are no longer supported. Current supported hardware is the **[AYAB Shield](https://www.ayab-knitting.com/ayab-shield/)** used with an **Arduino Uno** board, and the EMSL **[AYAB Interface](https://www.ayab-knitting.com/ayab-interface/)**.
+- **Arduino Mega** boards are no longer supported. Current supported hardware is the **[AYAB Shield](https://www.ayab-knitting.com/ayab-shield/)** used with an **Arduino Uno R3** board, and the EMSL **[AYAB Interface](https://www.ayab-knitting.com/ayab-interface/)**.
 - A new **Hardware Test** dialog is available from the **Tools** > **Test AYAB Device** menu item. It lets you check communication with the AYAB hardware.
 - The AYAB application now checks for **new releases** on startup and will prompt you to upgrade if a new release is available.
 
 ## Known issues
+- Starting on the right with the lace and garter carriages does not work on KH-910 and KH-950, due to a hardware limitation in the AYAB Shield/Interface. We're looking into ways to upgrade existing hardware to support detection of all carriages on the right.
+- Unplugging the USB cable during usage may cause a crash of the application.
+- The application does not prevent the activation of a screensaver, make sure to disable it before starting to knit.
 
-- Starting on the right for 910 and 950 does not work (AYAB Shield/Interface hardware limitation)
-- Unplugging USB during usage may cause a crash of the application
-- Application does not prevent activation of screensaver
-  
 ## Get the latest software
-
-The latest release is [1.0.0](https://github.com/AllYarnsAreBeautiful/ayab-desktop/releases/tag/1.0.0). Choose the correct binary for your operating system (.exe for windows, .dmg for mac)
+You can find the latest release on [GitHub](https://github.com/AllYarnsAreBeautiful/ayab-desktop/releases/latest). Choose the correct binary for your operating system (`.exe` for Windows, `.dmg` for macOS, `.AppImage` for Linux).
