@@ -3,7 +3,7 @@
 Apart from a number of bug fixes, the following are the main changes in AYAB 1.0 compared to AYAB 0.95:
 
 ## User interface
-- A **Preferences** dialog has been introduced, allowing you to set defaults for most settings. It is opened through the **Preferences** menu (on Windows and Linux), or the **Preferences** menu item in the **AYAB** menu on macOS.
+- A **Preferences** dialog has been introduced, allowing you to set defaults for most settings. It is opened through the **Preferences** menu (on Windows and Linux), or the **Preferences** menu item in the **AYAB** menu on macOS. **Make sure you select the correct machine type in this menu before knitting.**
 - The user interface has been translated into several non-English languages. Open the **Preferences** dialog to select a language.
 - The **Configure** button has been removed, you can now directly click the **Knit** button.
 - Needles on the left and right sides of the bed are now called **Left** and **Right** instead of **Orange** and **Green**.
@@ -30,6 +30,12 @@ Apart from a number of bug fixes, the following are the main changes in AYAB 1.0
 - A new **Hardware Test** dialog is available from the **Tools** > **Test AYAB Device** menu item. It lets you check communication with the AYAB hardware.
 - The AYAB application now checks for **new releases** on startup and will prompt you to upgrade if a new release is available.
 
+## Known issues
+
+- Starting on the right for 910 and 950 does not work (AYAB Shield/Interface hardware limitation)
+- Unplugging USB during usage may cause a crash of the application
+- Application does not prevent activation of screensaver
+  
 ## Get the latest software
 
-The latest release is [1.0.0-beta5](https://github.com/AllYarnsAreBeautiful/ayab-desktop/releases/tag/1.0.0-beta5). Choose the correct binary for your operating system (.exe for windows, .dmg for mac)
+The latest release is [1.0.0](https://github.com/AllYarnsAreBeautiful/ayab-desktop/releases/tag/1.0.0). Choose the correct binary for your operating system (.exe for windows, .dmg for mac)
