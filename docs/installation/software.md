@@ -41,8 +41,7 @@ Now start ayab with
 
 Requires Windows 10 or Windows 7
 
-The Windows setup is available at 
-[ayab-knitting.com](https://ayab-knitting.com/ayab-software/).  
+The Windows setup is available at our [Github Releases](https://github.com/AllYarnsAreBeautiful/ayab-desktop/releases/tag/v0.95) page.
 Run the setup, install AYAB and run it with the icon on your Desktop.
 
 Important:
@@ -56,7 +55,7 @@ Requires macOS 10.12 or newer
 
 Please make sure that you have installed the [SiLabs CP210x "VCP" Driver](http://www.silabs.com/products/mcu/pages/usbtouartbridgevcpdrivers.aspx) - it is required for use with most new boards.
 
-Download the DMG image from [ayab-knitting.com](https://ayab-knitting.com/ayab-software/), open the DMG image and drag&drop the app to your Application folder.
+Download the DMG image from our [Github Releases](https://github.com/AllYarnsAreBeautiful/ayab-desktop/releases/tag/v0.95) page, open the DMG image and drag&drop the app to your Application folder.
 Then run AYAB from your Application folder.
 
 Important:
