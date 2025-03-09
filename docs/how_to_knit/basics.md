@@ -1,5 +1,17 @@
 # Basics
 
+## Set up AYAB
+
+### Make sure you have the latest firmware
+
+Follow instructions [here](https://manual.ayab-knitting.com/1.0/installation/firmware/)
+
+### Select your machine
+
+1. Open the AYAB desktop software
+2. On the toolbar select AYAB -> Preferences
+3. Select your machine from the dropdown
+
 ## Single Bed Fair Isle
 
 To create your own patterns, refer to [section "Pattern creation"](../pattern_image_creation.md). 
