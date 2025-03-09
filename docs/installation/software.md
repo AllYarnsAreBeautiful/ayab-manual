@@ -14,7 +14,7 @@ If you have trouble getting the board to be detected, installing the [Arduino ID
 
 ### Installation
 
-Download the Windows setup from [ayab-knitting.com](https://ayab-knitting.com/ayab-software/).  
+Download the Windows setup from [Github Releases Page](https://github.com/AllYarnsAreBeautiful/ayab-desktop/releases/tag/1.0.0).
 
 Run the setup, install AYAB and run it with the icon on your Desktop.
 
@@ -37,7 +37,7 @@ If you have trouble getting the board to be detected, installing the [Arduino ID
 
 ### Installation
 
-Download the macOS `dmg` file from [ayab-knitting.com](https://ayab-knitting.com/ayab-software/).
+Download the macOS `dmg` file from [Github Releases Page](https://github.com/AllYarnsAreBeautiful/ayab-desktop/releases/tag/1.0.0). 
 
 When you double-click the downloaded `dmg` file, macOS will probably complain that it cannot identify the software:
 
@@ -106,7 +106,7 @@ After doing that you may need to close and reopen your session.
 
 ### Installation
 
-Download the Linux AppImage from [ayab-knitting.com](https://ayab-knitting.com/ayab-software/).
+Download the Linux AppImage from [Github Releases Page](https://github.com/AllYarnsAreBeautiful/ayab-desktop/releases/tag/1.0.0). 
 
 Follow the [AppImage instructions](https://docs.appimage.org/introduction/quickstart.html#how-to-run-an-appimage) to make the AppImage executable.
 
