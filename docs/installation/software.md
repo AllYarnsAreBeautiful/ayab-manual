@@ -20,6 +20,8 @@ Run the setup, install AYAB and run it with the icon on your Desktop.
 
 **Important**: when choosing the installation directory, make sure that you do not overwrite any previous versions. Remove them or use another folder for installation.
 
+Once AYAB opens, make sure to open the preferences panel (**Preferences** > **Set Preferences**) and select your knitting machine model.
+
 You can now head over to [Firmware](./firmware.md) to update your Arduino board.
 
 ## macOS
@@ -39,37 +41,15 @@ If you have trouble getting the board to be detected, installing the [Arduino ID
 
 Download the macOS `dmg` file from [Github Releases Page](https://github.com/AllYarnsAreBeautiful/ayab-desktop/releases/tag/1.0.0). 
 
-When you double-click the downloaded `dmg` file, macOS will probably complain that it cannot identify the software:
-
-![](../img/macos/ayab-dmg-blocked.png)
-
-To open the disk image anyway, you have to hold `Ctrl` and click (or right-click) the file, and select `Open` in the pop-up menu that appears:
-
-![](../img/macos/ayab-dmg-right-click.png)
-
-You should get similar warning dialog as before, but this time with the option to open the disk image anyway:
-
-![](../img/macos/ayab-dmg-confirm-open.png)
-
-Once you confirm, you get to see what's in the disk image:
+When you double-click the downloaded `dmg` file, you get to see what's in the disk image:
 
 ![](../img/macos/ayab-dmg-contents.png)
 
 Drag the AYAB icon to the `Applications` folder shortcut. You can now "eject" the disk image and put it in the trash.
 
-Then run AYAB from your Applications folder. Again, macOS will likely warn you about insecure software:
+Then run AYAB from your **Applications** folder.
 
-![](../img/macos/ayab-app-blocked.png)
-
-The workaround is the same. First, click `Show in Finder` to make the app icon visible in case it is not already. Then, `Ctrl`-click or right-click the app icon and select `Open`:
-
-![](../img/macos/ayab-app-right-click.png)
-
-You now get the option of opening the application:
-
-![](../img/macos/ayab-app-confirm-open.png)
-
-You only have to do this confirmation once. Until you overwrite the app with a different version, macOS will remember you authorized it to run and not bother you again when you run it.
+Once AYAB opens, make sure to open the preferences panel (**AYAB** > **Settings…**) and select your knitting machine model.
 
 You can now head over to [Firmware](./firmware.md) to update your Arduino board.
 
@@ -111,5 +91,7 @@ Download the Linux AppImage from [Github Releases Page](https://github.com/AllYa
 Follow the [AppImage instructions](https://docs.appimage.org/introduction/quickstart.html#how-to-run-an-appimage) to make the AppImage executable.
 
 Then you can double-click the AppImage to start AYAB.
+
+Once AYAB opens, make sure to open the preferences panel (**Preferences** > **Set Preferences**) and select your knitting machine model.
 
 You can now head over to [Firmware](./firmware.md) to update your Arduino board.
