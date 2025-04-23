@@ -80,7 +80,7 @@ To create patterns that can be scaled with optimal quality, design them in
 a vector graphics program. The following instructions use Inkscape which is open 
 source. A video tutorial that also explains how to fill shapes with a repetitive 
 pattern and how to adjust the pattern fill according to your gauge can be found 
-in a [post on the blog by DerAndere](https://it-by-derandere.blogspot.com/2019/04/scalable-knitting-patterns-with-open.html).
+[on the homepage of DerAndere](https://derandere.gitlab.io/scalable-knitting-patterns-inkscape).
 Here are the basic steps:
 
 ## Inkscape step by step
@@ -164,5 +164,5 @@ fabric size, you can scale it using Inkscape:
 
 
 
-This article was written by [DerAndere](https://it-by-derandere.blogspot.com/p/blog-page_46.html)  
+This article was written by [DerAndere](https://derandere.gitlab.io/)  
 [Feel free to improve it!](https://github.com/AllYarnsAreBeautiful/ayab-manual)
