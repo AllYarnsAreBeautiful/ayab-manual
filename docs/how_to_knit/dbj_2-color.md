@@ -57,8 +57,10 @@ it's doing.
 - Knit one or two rows of FNR.
 - Carriage on left, outside the left turn mark.
 - Set the row counter, RC=000
-- Set up the carriages as shown on page 39 of the KR850 manual:  
-    Page 39.png  
+- Set up the carriages as shown on page 39 of the KR850 manual:
+
+  ![ ](img/dbj_2-color/Page_39.png)
+
   Main bed: Both part buttons in; KC1 or KC2.  
   I usually use KC2 rather than KC1.  
   Ribber: Both sliders (cam levers) up. Both lili buttons to lili.  
@@ -268,7 +270,7 @@ Slide Lever         | IiIi           | IiIi           |
 
 
 This article is copied from [ravelry](https://www.ravelry.com/discuss/ayab/3714047/1-25) 
-and modified by [DerAndere](https://it-by-derandere.blogspot.com/p/blog-page_46.html).
+and modified by [DerAndere](https://derandere.gitlab.io/).
 Thanks, Adrienne!
 Settings for alternative Jacquard variants were taken from 
 [a blog post by "steel breeze"](http://machineknitting101.blogspot.com/2010/08/double-bed-jacquard-variations.html) 
